@@ -1,2 +1,6 @@
 <script></script>
-<template></template>
+<template>
+    <div>
+        <h1>PUBBLICAZIONI</h1>
+    </div>
+</template>

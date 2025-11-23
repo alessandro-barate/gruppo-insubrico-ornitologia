@@ -77,13 +77,62 @@ export default {
                     <nav>
                         <!-- Nav menu -->
                         <ul>
-                            <li>chi siamo</li>
-                            <li>progetti</li>
-                            <li>gli uccelli della provincia di varese</li>
-                            <li>conferenze e corsi</li>
-                            <li>pubblicazioni</li>
-                            <li>news</li>
-                            <li>link utili</li>
+                            <li>
+                              <a>
+                                <router-link :to="{ name: 'AboutUs' }" class="link">
+                                  chi siamo
+                                </router-link>
+                              </a>
+                            </li>
+                            <li>
+                              <a>
+                                <router-link :to="{ name: 'Projects' }" class="link">
+                                  progetti
+                                </router-link>
+                              </a>
+                            </li>
+                            <li>
+                              <a>
+                                <router-link :to="{ name: 'Birds' }" class="link">
+                                  gli uccelli della provincia di varese
+                                </router-link>
+                              </a>
+                            </li>
+                            <li>
+                              <a>
+                                <router-link :to="{ name: 'Conferences' }" class="link">
+                                  conferenze
+                                </router-link>
+                              </a>
+                            </li>
+                            <li>
+                              <a>
+                                <router-link :to="{ name: 'Courses' }" class="link">
+                                  corsi
+                                </router-link>
+                              </a>
+                            </li>
+                            <li>
+                              <a>
+                                <router-link :to="{ name: 'Publications' }" class="link">
+                                  pubblicazioni
+                                </router-link>
+                              </a>
+                            </li>
+                            <li>
+                              <a>
+                                <router-link :to="{ name: 'News' }" class="link">
+                                  news
+                                </router-link>
+                              </a>
+                            </li>
+                            <li>
+                              <a>
+                                <router-link :to="{ name: 'Links' }" class="link">
+                                  link utili
+                                </router-link>
+                              </a>
+                            </li>
                         </ul>
                         <!-- END Nav menu -->
                     </nav>
