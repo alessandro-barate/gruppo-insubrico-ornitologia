@@ -1,15 +1,7 @@
-##
+# Template per iniziare progetti con Vue e Vite
 
-Template per iniziare progetti con Vue e Vite
-
-##
-
-##
-
-Installazione
+## Installazione
 Nel terminale:
 
 - npm install
   -- npm run dev
-
-##
