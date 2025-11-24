@@ -40,31 +40,6 @@ export default {
       hamburger.classList.toggle("active");
       navMenu.classList.toggle("active");
     },
-
-    // To make the nav list disappear when a link is clicked
-    listDisappearance() {
-      const hamburger = document.querySelector(".hamburger");
-      const navMenu = document.querySelector(".nav-menu");
-
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
-    },
-
-    // To make the events and news container appear when a link is clicked
-    containerAppearance() {
-      const newsEvents = document.getElementById("news-events-container");
-
-      newsEvents.classList.remove("display-none");
-      newsEvents.classList.add("display-block");
-    },
-
-    // To make the events and news container disappear when a link is clicked
-    containerDisappearance() {
-      const newsEvents = document.getElementById("news-events-container");
-
-      newsEvents.classList.remove("display-block");
-      newsEvents.classList.add("display-none");
-    },
   },
 };
 </script>
@@ -76,7 +51,7 @@ export default {
                 <div class="col">
                     <nav>
                         <!-- Nav menu -->
-                        <ul>
+                        <ul class="nav-menu d-flex">
                             <li>
                               <a>
                                 <router-link :to="{ name: 'AboutUs' }" class="link">
@@ -141,3 +116,28 @@ export default {
         </div>
     </header>
 </template>
+
+<style scoped>
+  .sticky-header {
+    top: 0;
+    z-index: 1000;
+    position: sticky;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .container {
+    background-color: rgba(0, 119, 255, 0.89);
+  }
+
+  nav {
+    width: 65%;
+    margin: 0 auto;
+  }
+
+  .nav-menu {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-evenly;
+  }
+
+</style>
