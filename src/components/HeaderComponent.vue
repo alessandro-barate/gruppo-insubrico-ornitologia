@@ -122,7 +122,6 @@ export default {
     top: 0;
     z-index: 1000;
     position: sticky;
-    transition: all 0.2s ease-in-out;
   }
 
   .container {

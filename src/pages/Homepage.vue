@@ -141,14 +141,21 @@ export default {
           <!-- Bottom paragraph -->
           <div class="subscribe-text-bottom">
             <h3>ISCRIZIONE ANNUALE</h3>
-            <p>Chiunque condivida gli scopi della nostra associazione e abbia un po’ di tempo libero da dedicare a questa particolare forma di “volontariato di ricerca”, o voglia comunque sostenere il GIO, può iscriversi pagando una quota annuale di 20 euro (10 euro per minorenni e studenti). La quota di iscrizione comprende l’assicurazione “responsabilità civile” obbligatoria per le onlus. All’iscrizione il GIO rilascia una tessera, con il “bollino” di validità dell’anno in corso, a cui si aggiungeranno i successivi bollini annuali adesivi.</p>
+            <p>Chiunque condivida gli scopi della nostra associazione e abbia un po’ di tempo libero da dedicare a questa particolare forma di “volontariato di ricerca”, o voglia comunque sostenere il GIO, può iscriversi pagando una quota annuale di 20 euro (10 euro per minorenni e studenti).
+            <br>
+            La quota di iscrizione comprende l’assicurazione “responsabilità civile” obbligatoria per le onlus. All’iscrizione il GIO rilascia una tessera, con il “bollino” di validità dell’anno in corso, a cui si aggiungeranno i successivi bollini annuali adesivi.</p>
 
             <h3>RIUNIONI MENSILI</h3>
-            <p>Ci riuniamo il secondo lunedì di ogni mese (escluso agosto, di solito) in un locale presso il Comune di Casciago (VA), dove ci aggiorniamo sui progetti in corso, proponiamo e organizziamo iniziative con un “ordine del giorno” che viene mandato dal Presidente tempestivamente per mail a tutti i soci, che possono proporre ulteriori argomenti o apportare modifiche.  Gli incontri ufficiali (come l’assemblea annuale) vengono invece tenuti presso la nostra sede al Civico Museo Insubrico di Storia Naturale a Clivio (VA).
+            <p>Ci riuniamo il secondo lunedì di ogni mese (escluso agosto, di solito) in un locale presso il Comune di Casciago (VA), dove ci aggiorniamo sui progetti in corso, proponiamo e organizziamo iniziative con un “ordine del giorno” che viene mandato dal Presidente tempestivamente per mail a tutti i soci, che possono proporre ulteriori argomenti o apportare modifiche.
+            <br>
+            Gli incontri ufficiali (come l’assemblea annuale) vengono invece tenuti presso la nostra sede al Civico Museo Insubrico di Storia Naturale a Clivio (VA).
+            <br>
             Le riunioni mensili sono incontri informali in cui ci si confronta anche su osservazioni ornitologiche, viaggi naturalistici, commenti e visione di pubblicazioni e fotografie ecc.</p>
 
             <h3>COMUNICAZIONI TRA I SOCI</h3>
-            <p>Tutti i soci sono compresi nella mailing-list del GIO, attraverso cui si viene informati dell’intera attività del gruppo. Alcuni argomenti, di solito quelli più formali e amministrativi, vengono trattati dal Consiglio Direttivo, che ne informa quindi il resto dei soci in occasione delle riunioni mensili. Abbiamo anche un Tesoriere e un Vice-tesoriere che si occupano delle questioni finanziarie (entrate e uscite, rendiconto economico, rimborsi spese, acquisti vari).</p>
+            <p>Tutti i soci sono compresi nella mailing-list del GIO, attraverso cui si viene informati dell’intera attività del gruppo. Alcuni argomenti, di solito quelli più formali e amministrativi, vengono trattati dal Consiglio Direttivo, che ne informa quindi il resto dei soci in occasione delle riunioni mensili.
+            <br>
+            Abbiamo anche un Tesoriere e un Vice-tesoriere che si occupano delle questioni finanziarie (entrate e uscite, rendiconto economico, rimborsi spese, acquisti vari).</p>
           </div>
           <!-- END bottom paragraph -->
         </section>
@@ -195,7 +202,7 @@ export default {
 }
 
 .second-paragraph {
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 }
 
 .jumbo-image img {
