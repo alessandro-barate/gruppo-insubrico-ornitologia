@@ -32,7 +32,7 @@ export default {
               <img
                 class="footer-logo"
                 src="../assets/img/logo/bird-only.webp"
-                alt="Insubria logo"
+                alt="Gruppo Insubrico di Ornitologia logo"
               />
             </div>
             <!-- END logo footer -->
@@ -116,7 +116,7 @@ export default {
 
           <!-- Copyright container -->
           <div class="copyright-container">
-            <p>&copy; 2024 Insubria WildLife APS</p>
+            <p>&copy; 2014 Gruppo Insubrico di Ornitologia - Tutti i diritti riservati</p>
           </div>
           <!-- END copyright container -->
         </div>
@@ -124,3 +124,7 @@ export default {
     </div>
   </footer>
 </template>
+
+<style scoped lang="scss">
+
+</style>

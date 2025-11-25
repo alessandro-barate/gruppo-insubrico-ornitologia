@@ -48,10 +48,23 @@ export default {
   <header>
     <div class="container nav-bg-blue">
       <div class="row">
-        <div class="col">
-          <nav>
+        <div class="col d-flex">
+          <!-- Logo section -->
+           <div class="logo-section">
+            <img src="../assets/images/logo.svg" class="logo" alt=""></img>
+          </div>
+          <!-- END logo section -->
+
           <!-- Nav menu -->
+          <nav>
             <ul class="nav-menu d-flex">
+              <li>
+                <a>
+                  <router-link :to="{ name: 'Homepage' }" class="link">
+                    Home
+                  </router-link>
+                </a>
+              </li>
               <li>
                 <a>
                   <router-link :to="{ name: 'AboutUs' }" class="link">
@@ -109,33 +122,49 @@ export default {
                 </a>
               </li>
             </ul>
-            <!-- END Nav menu -->
           </nav>
+          <!-- END Nav menu -->
+          <!-- Search bar section -->
+           <div class="search-bar-section">
+
+           </div>
+          <!-- Search bar section -->
         </div>
       </div>
     </div>
   </header>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .sticky-header {
     top: 0;
     z-index: 1000;
     position: sticky;
   }
 
+
   .container {
     margin-bottom: 0px;
   }
 
+  .logo-section {
+    width: 10%;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+
+    .logo {
+      width: 70%;
+    }
+  }
+
   nav {
-    width: 70%;
-    margin: 0 auto;
+    width: 80%;
   }
 
   .nav-menu {
-    padding-top: .9375rem;
-    padding-bottom: .9375rem;
+    width: 100%;
+    padding-top: 2.5rem;
     justify-content: space-evenly;
 
     a:hover {

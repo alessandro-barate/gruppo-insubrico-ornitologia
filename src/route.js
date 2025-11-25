@@ -14,7 +14,7 @@ import Publications from "./pages/Publications.vue";
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'Homepage',
     component: Homepage
   },
   {
