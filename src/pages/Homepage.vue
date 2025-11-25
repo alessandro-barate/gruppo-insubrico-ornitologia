@@ -30,20 +30,24 @@ export default {
           </div>
 
           <!-- News list -->
-           <div class="news-list-container">
+          <div class="news-list-container">
             <div class="news-list-box d-flex">
-              <div class="single-news bg-red">
+              <div class="single-news">
                 <img src="../assets/images/bird-1.webp" alt="">
               </div>
-              <div class="single-news bg-green">
+              <div class="single-news">
                 <img src="../assets/images/bird-2.jpg" alt="">
               </div>
-              <div class="single-news bg-blue">
+              <div class="single-news">
                 <img src="../assets/images/bird-3.jpg" alt="">
               </div>
             </div>
-           </div>
-           <!-- END news list -->
+          </div>
+          <!-- END news list -->
+          
+          <div class="news-button">
+            <button>Leggi tutte le news</button>
+          </div>
          </section>
         <!-- END news overview -->
       </div>
@@ -54,7 +58,7 @@ export default {
 h1 {
   font-size: 7rem;
   font-weight: bold;
-  background: linear-gradient(90deg, #0077FF, #0d83c8);
+  background: linear-gradient(90deg, #0077FF, #5cd20d);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -97,7 +101,7 @@ h1 {
 
     .title-1,
     .title-2 {
-      background: linear-gradient(90deg, #0077FF, #0d83c8);
+      background: linear-gradient(90deg, #0077FF, #5cd20d);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -147,7 +151,7 @@ h1 {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.4s ease;
+        transition: transform 0.8s ease;
         
         &:hover {
           transform: scale(1.1);
@@ -157,13 +161,24 @@ h1 {
   }
 }
 
-.bg-red {
-  background-color: red;
-}
-.bg-blue {
-  background-color: blue;
-}
-.bg-green {
-  background-color: green;
+.news-button {
+  width: 100%;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+
+  button {
+    color: white;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: linear-gradient(90deg, #0077FF, #5cd20d);
+
+    &:hover {
+      color: red;
+      transition: color 0.8s ease;
+    }
+  }
 }
 </style>
