@@ -28,6 +28,22 @@ export default {
               <p>Le nostre news più recenti</p>
             </div>
           </div>
+
+          <!-- News list -->
+           <div class="news-list-container">
+            <div class="news-list-box d-flex">
+              <div class="single-news bg-red">
+                <img src="../assets/images/bird-1.webp" alt="">
+              </div>
+              <div class="single-news bg-green">
+                <img src="../assets/images/bird-2.jpg" alt="">
+              </div>
+              <div class="single-news bg-blue">
+                <img src="../assets/images/bird-3.jpg" alt="">
+              </div>
+            </div>
+           </div>
+           <!-- END news list -->
          </section>
         <!-- END news overview -->
       </div>
@@ -109,5 +125,45 @@ h1 {
       padding-top: 6rem;
     }
   }
+}
+
+.news-list-container {
+  width: 95%;
+  margin: 0 auto;
+
+  .news-list-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 20px;
+
+    .single-news {
+      height: 18.75rem;
+      object-fit: cover;
+      overflow: hidden;
+      border-radius: 1rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+        
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.bg-red {
+  background-color: red;
+}
+.bg-blue {
+  background-color: blue;
+}
+.bg-green {
+  background-color: green;
 }
 </style>
