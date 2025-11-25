@@ -46,7 +46,7 @@ export default {
 
 <template>
   <header>
-    <div class="container">
+    <div class="container nav-bg-blue">
       <div class="row">
         <div class="col">
           <nav>
@@ -111,11 +111,6 @@ export default {
             </ul>
             <!-- END Nav menu -->
           </nav>
-          <div class="banner-container">
-            <div class="banner-img">
-              <img src="../assets/images/banner-with-logo.jpg" alt="">
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -131,8 +126,7 @@ export default {
   }
 
   .container {
-    margin-bottom: 50px;
-    background-color: rgba(0, 119, 255, 0.89);
+    margin-bottom: 0px;
   }
 
   nav {
@@ -141,24 +135,13 @@ export default {
   }
 
   .nav-menu {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: .9375rem;
+    padding-bottom: .9375rem;
     justify-content: space-evenly;
-  }
 
-  .banner-container {
-    width: 100%;
-  }
-
-  .banner-img {
-    width: 83%;
-    margin: 0 auto;
-
-    img {
-      margin-bottom: -4px;
-      border-radius: 20px 20px 0 0 ;
-      box-shadow: 0 0 20px 5px rgba(143, 167, 199, 1);
+    a:hover {
+      color: bisque;
+      transition: 0.3s;
     }
   }
-
 </style>

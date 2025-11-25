@@ -1,9 +1,15 @@
+/*********************
+GENERAL SPACING RESET
+**********************/
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+/********+
+V-CLOAK
+*********/
 [v-cloak] {
     display: none;
 }
