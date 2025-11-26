@@ -149,9 +149,17 @@ export default {
         <!-- END activities section -->
 
         <!-- Contacts section -->
-        <section>
-          <div class="contacts-container">
-            <div class="contacts-box">1</div>
+        <section class="contacts-container">
+          <div class="contacts-box d-flex">
+            <div class="contacts-text uppercase">
+              <h3 class="text-1">resta sempre aggiornato!</h3>
+              <h3 class="text-2">seguici sui nostri</h3>
+              <h2 class="text-3">social</h2>
+              <hr>
+              <h3 class="text-4">e iscriviti alla</h3>
+              <h2 class="text-5">newsletter</h2>
+            </div>
+            <div class="socials-container"></div>
           </div>
         </section>
         <!-- END contacts section -->
@@ -171,17 +179,6 @@ export default {
   width: 100%;
   height: 800px;
   overflow: hidden;
-}
-
-.title-section::after {
-  content: '';
-  position: absolute;
-  bottom: -0.0625rem;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: #ffffff;
-  clip-path: polygon(0 100%, 100% 0, 100% 100%);
 }
 
 .title-container {
@@ -347,33 +344,11 @@ export default {
   }
 }
 
-.subscription-container::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: #ffffff;
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-}
-
-.subscription-container::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: #ffffff;
-  clip-path: polygon(0 100%, 100% 0, 100% 100%);
-}
-
 .activities-container {
   width: 90%;
   margin: 0 auto;
   padding-top: 5rem;
-  padding-bottom: 8rem;
+  padding-bottom: 5rem;
   position: relative;
 
   hr {
@@ -494,12 +469,115 @@ export default {
 
 .contacts-container {
   width: 100%;
-  background-color: #d2420d;
+  position: relative;
+  background-image: linear-gradient(
+      90deg,
+      rgba(0, 119, 255, 0.85),
+      rgba(92, 210, 13, 0.85)
+    ), url(../assets/images/social.jpg);
+  padding-top: 10rem;
+  min-height: 900px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
   .contacts-box {
-    width: 80%;
-    height: 500px;
+    width: 95%;
+    padding: 2rem;
     margin: 0 auto;
+
+    .contacts-text {
+      width: 60%;
+
+      h2 {
+        font-size: 6rem;
+      }
+
+      h3 {
+        font-size: 3rem;
+      }
+
+      hr {
+        width: 250px;
+        margin-left: 25rem;
+        border-left: 2px solid rgb(141, 141, 141);
+      }
+
+      .text-1 {
+        margin-bottom: 0.8rem;
+      }
+
+      .text-2 {
+        margin-left: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .text-3 {
+        margin-left: 7rem;
+        margin-bottom: 3rem;
+      }
+
+      .text-4 {
+        margin-top: 2rem;
+        margin-left: 3rem;
+        margin-bottom: 2rem;
+      }
+
+      .text-5 {
+        margin-left: 4rem;
+      }
+    }
+
+    .socials-container {
+      width: 40%;
+      background-color: #0dd217;
+    }
   }
+}
+
+// Effect on ::before and ::after
+.title-section::after {
+  content: '';
+  position: absolute;
+  bottom: -0.0625rem;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: #ffffff;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+.subscription-container::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: #ffffff;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.subscription-container::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: #ffffff;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+.contacts-container::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: #ffffff;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 </style>
