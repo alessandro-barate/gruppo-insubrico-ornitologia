@@ -8,7 +8,7 @@ export default {
     <div class="row">
       <div class="col">
         <!-- Jumbo section -->
-        <section class="title-section d-flex">
+        <section class="title-section jumbo-bg d-flex">
           <div class="empty-box"></div>
           <div class="title-container">
             <h1>GRUPPO INSUBRICO DI ORNITOLOGIA</h1>
@@ -20,9 +20,10 @@ export default {
         <!-- News overview -->
          <section>
           <div class="news-container d-flex">
-            <div class="news-title">
+            <div class="sections-title">
               <h2 class="title-1">LE ULTIME</h2>
               <h2 class="title-2">NEWS</h2>
+              <h2 class="title-1">DEL GIO</h2>
             </div>
             <div class="news-description">
               <p>Le nostre news più recenti</p>
@@ -50,10 +51,34 @@ export default {
           </div>
          </section>
         <!-- END news overview -->
+
+        <!-- About us section -->
+        <section>
+          <div class="subscription-container news-container">
+            <div class="sections-title subscription-title">
+              <h2 class="title-1">DIVENTA NOSTRO</h2>
+              <h2 class="title-2">SOCIO</h2>
+            </div>
+            <div class="subscription-box">
+              <div class="card-logo">
+                <img src="" alt="">
+              </div>
+              <div class="subscription-description">
+                <h3>ISCRIVITI AL GIO</h3>
+                <p>Vuoi iscriverti?</p>
+              </div>
+              <div class="subscription-button">
+                <button>Iscriviti</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- END about us section -->
       </div>
     </div>
   </div>
 </template>
+
 <style scoped lang="scss">
 h1 {
   font-size: 7rem;
@@ -64,12 +89,15 @@ h1 {
   color: transparent;
 }
 
+.jumbo-bg {
+  background: url(../assets/images/jumbo-home.webp) center/cover no-repeat;
+}
+
 .title-section {
   padding-top: 10rem;
   position: relative;
   width: 100%;
   height: 800px;
-  background: url(../assets/images/jumbo-home.webp) center/cover no-repeat;
   overflow: hidden;
 }
 
@@ -96,7 +124,7 @@ h1 {
 .news-container {
   width: 100%;
 
-  .news-title {
+  .sections-title {
     width: 50%;
 
     .title-1,
@@ -134,6 +162,7 @@ h1 {
 .news-list-container {
   width: 95%;
   margin: 0 auto;
+  margin-top: 2rem;
 
   .news-list-box {
     display: grid;
@@ -180,5 +209,28 @@ h1 {
       transition: color 0.8s ease;
     }
   }
+}
+
+.subscription-container {
+  padding-top: 10rem;
+  width: 100%;
+  position: relative;
+  min-height: 800px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(../assets/images/parallax-image.jpg);
+}
+
+.subscription-container::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: #ffffff;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 </style>
