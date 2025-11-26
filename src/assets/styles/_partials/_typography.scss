@@ -2,5 +2,24 @@
 FONT SIZES
 ***********/
 h1 {
-  font-size: 2.5rem;
+  font-size: 7rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #0077FF, #5cd20d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/**********
+UPPERCASE
+**********/
+.uppercase {
+  text-transform: uppercase;
+}
+
+/***********
+FONT COLORS
+***********/
+h1 {
+  text-shadow: 0 0 10px rgba(0, 119, 255, 0.5), 0 0 20px rgba(92, 210, 13, 0.3);
 }

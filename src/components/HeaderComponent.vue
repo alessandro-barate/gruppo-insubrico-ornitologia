@@ -46,7 +46,7 @@ export default {
 
 <template>
   <header>
-    <div class="container nav-bg-blue">
+    <div class="container gradient-color">
       <div class="row">
         <div class="col d-flex">
           <!-- Logo section -->
