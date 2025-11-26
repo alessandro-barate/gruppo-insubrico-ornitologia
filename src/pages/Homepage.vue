@@ -9,11 +9,9 @@ export default {
       <div class="col">
         <!-- Jumbo section -->
         <section class="title-section jumbo-bg d-flex">
-          <div class="empty-box"></div>
           <div class="title-container">
-            <h1>GRUPPO INSUBRICO DI ORNITOLOGIA</h1>
+            <h1 class="uppercase">gruppo insubrico di ornitologia g.i.o.</h1>
           </div>
-          <div class="empty-box"></div>
         </section>
         <!-- END jumbo section -->
 
@@ -23,10 +21,11 @@ export default {
             <div class="sections-title">
               <h2 class="title-1 uppercase">le ultime</h2>
               <h2 class="title-2 uppercase">news</h2>
-              <h2 class="title-1 uppercase">del gio</h2>
+              <h2 class="title-1 uppercase">del g.i.o.</h2>
             </div>
             <div class="news-description">
               <p>Le nostre news più recenti</p>
+              <br>
             </div>
           </div>
 
@@ -67,11 +66,15 @@ export default {
                 <img src="../assets/images/subscribe-icon.svg" alt="">
               </div>
               <div class="subscription-description">
-                <h3 class="uppercase">unisciti al gio!</h3>
-                <p>Vuoi iscriverti?</p>
+                <h3 class="uppercase">unisciti al g.i.o.!</h3>
+                <p>Vuoi diventare parte del gruppo o solo sostenerci?
+                  <br>
+                  Scopri come.
+                </p>
+                <p>Ti aspettiamo!</p>
               </div>
               <div class="subscription-button button">
-                <button>Iscriviti</button>
+                <button>Diventa socio</button>
               </div>
             </div>
           </div>
@@ -81,6 +84,7 @@ export default {
         <!-- Activities section -->
         <section>
           <div class="activities-container news-container d-flex">
+            <!-- Grid section -->
             <div class="activities-box">
               <div class="activities-list d-grid uppercase">
                 <div class="activity-card card-1 d-flex">
@@ -94,7 +98,7 @@ export default {
                 </div>
                 <div class="activity-card card-2 d-flex">
                   <div class="card-default d-flex">
-                    <span class="gradient-color">l'aviofauna di varese</span>
+                    <span class="gradient-color">aviofauna</span>
                   </div>
                   <div class="card-hover gradient-color">
                     <img src="../assets/images/arrow-right.svg" alt="">
@@ -130,15 +134,27 @@ export default {
                 </div>
               </div>
             </div>
+            <!-- END grid section -->
+
             <hr>
+
+            <!-- Activities title and description -->
             <div class="sections-title activities-title">
               <h2 class="title-1 uppercase">scopri le nostre</h2>
               <h2 class="title-2 gradient-color uppercase">attività</h2>
-              <h2 class="title-1 uppercase">vediamole insieme</h2>
             </div>
+            <!-- END activities title and description -->
           </div>
         </section>
         <!-- END activities section -->
+
+        <!-- Contacts section -->
+        <section>
+          <div class="contacts-container">
+            <div class="contacts-box">1</div>
+          </div>
+        </section>
+        <!-- END contacts section -->
       </div>
     </div>
   </div>
@@ -168,12 +184,8 @@ export default {
   clip-path: polygon(0 100%, 100% 0, 100% 100%);
 }
 
-.empty-box {
-  width: 20%;
-}
-
 .title-container {
-  width: 60%;
+  width: 100%;
   text-align: center;
 }
 
@@ -249,7 +261,7 @@ export default {
 .button {
   width: 100%;
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 4rem;
   padding-bottom: 3rem;
 
   button {
@@ -327,10 +339,11 @@ export default {
   }
 
   hr {
-    color: white;
-    width:  10%;
+    width: 10%;
+    border: none;
     margin-left: 10rem;
     margin-bottom: 2rem;
+    border-bottom: 2px solid rgb(141, 141, 141);
   }
 }
 
@@ -357,11 +370,21 @@ export default {
 }
 
 .activities-container {
-  width: 100%;
-  margin-top: 5rem;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
+  position: relative;
+
+  hr {
+    height: 150px;
+    align-self: center;
+    border: none;
+    border-left: 2px solid rgb(141, 141, 141);
+  }
 
   .activities-box {
-    width: 50%;
+    width: 55%;
 
     .activities-list {
       grid-template-rows: repeat(2, 1);
@@ -369,7 +392,7 @@ export default {
       .activity-card {
         border-radius: 0.5rem;
         position: relative;
-        height: 14rem;
+        height: 13rem;
         overflow: hidden;
         cursor: pointer;
 
@@ -390,8 +413,7 @@ export default {
           span {
             font-weight: bold;
             width: 100%;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
+            padding: 0.5rem;
             display: inline-block;
             opacity: 0.8;
           }
@@ -419,6 +441,7 @@ export default {
           p {
             color: black;
             font-weight: 500;
+            padding: 0.5rem;
           }
         }
 
@@ -460,8 +483,23 @@ export default {
     }
   }
 
-  .activities-title .title-2 {
+  .activities-title {
+    margin-top: 4rem;
+
+    .title-2 {
     margin-bottom: 2rem;
+    }
+  }
+}
+
+.contacts-container {
+  width: 100%;
+  background-color: #d2420d;
+
+  .contacts-box {
+    width: 80%;
+    height: 500px;
+    margin: 0 auto;
   }
 }
 </style>

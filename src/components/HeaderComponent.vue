@@ -167,9 +167,12 @@ export default {
     padding-top: 2.5rem;
     justify-content: space-evenly;
 
-    a:hover {
+    a {
+      transition: 0.5s ease-in-out;
+
+      &:hover {
       color: bisque;
-      transition: 0.3s;
+      }
     }
   }
 </style>
