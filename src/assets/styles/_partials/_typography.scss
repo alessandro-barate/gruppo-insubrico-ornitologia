@@ -10,18 +10,13 @@ h1 {
   color: transparent;
 }
 
+h2, h3 {
+  font-weight: 500;
+}
+
 /**********
 UPPERCASE
 **********/
 .uppercase {
   text-transform: uppercase;
 }
-
-/***********
-FONT COLORS
-***********/
-// h1,
-// .title-1,
-// .title-2 {
-//   text-shadow: 0 0 10px rgba(0, 119, 255, 0.5), 0 0 20px rgba(92, 210, 13, 0.3);
-// }

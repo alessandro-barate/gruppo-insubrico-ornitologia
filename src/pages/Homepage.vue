@@ -159,7 +159,32 @@ export default {
               <h3 class="text-4">e iscriviti alla</h3>
               <h2 class="text-5">newsletter</h2>
             </div>
-            <div class="socials-container"></div>
+            <div class="socials-container d-flex">
+              <div class="facebook">
+                <a href="https://www.facebook.com/GruppoInsubricoDiOrnitologia" target="_blank">
+                  <img src="../assets/images/facebook.svg" alt="Facebook logo e link">
+                </a>
+                <h3>Aggiungigi su Facebook</h3>
+              </div>
+
+              <hr class="space-1">
+
+              <div class="instagram">
+                <a href="https://www.instagram.com/gruppoinsubricoornitologia/" target="_blank">
+                  <img src="../assets/images/instagram.svg" alt="Instagram logo e link">
+                </a>
+                <h3>Seguici su Instagram</h3>
+              </div>
+
+              <hr class="space-2">
+
+              <div class="newsletter">
+                <a href="">
+                  <img src="../assets/images/newsletter.svg" alt="Newsletter e link">
+                </a>
+                <h3>Iscriviti alla nostra newsletter</h3>
+              </div>
+            </div>
           </div>
         </section>
         <!-- END contacts section -->
@@ -489,6 +514,7 @@ export default {
 
     .contacts-text {
       width: 60%;
+      color: white;
 
       h2 {
         font-size: 6rem;
@@ -531,7 +557,38 @@ export default {
 
     .socials-container {
       width: 40%;
-      background-color: #0dd217;
+      flex-direction: column;
+
+      .space-1 {
+        border: none;
+        width: 150px;
+        margin-left: 19rem;
+        border-bottom: 2px solid black;
+      }
+
+      .space-2 {
+        border: none;
+        width: 250px;
+        margin-left: 6rem;
+        border-bottom: 2px solid black;
+      }
+
+      .facebook,
+      .instagram,
+      .newsletter {
+        display: flex;
+        padding-left: 3rem;
+        align-items: center;
+        height: calc(100% / 3);
+
+        a {
+          width: 20%;
+        }
+
+        h3 {
+          padding-left: 4rem;
+        }
+      }
     }
   }
 }
