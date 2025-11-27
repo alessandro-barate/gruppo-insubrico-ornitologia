@@ -11,7 +11,7 @@ export default {
         }
       });
     }, {
-      threshold: 0.8  
+      threshold: 0.3
     });
     const newsBox = document.querySelector('.news-box');
     const subscriptionTitle = document.querySelector('.subscription-title');
@@ -23,18 +23,18 @@ export default {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          observerLow.unobserve(entry.target);
         }
       });
     }, {
-      threshold: 0.6
+      threshold: 0.1
     });
 
     const observerBottom = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          observerBottom.unobserve(entry.target);
         }
       });
     }, {
@@ -645,12 +645,12 @@ export default {
       }
 
       .first-box {
-        opacity: 1;
+        opacity: 0;
         overflow: hidden;
-        transform: translateY(-100%);
+        transform: translateX(100%);
 
         &.visible {
-          animation: slideInTop 1s ease-in-out forwards;
+          animation: slideInLeft 1s ease-in-out forwards;
         }
       }
 
