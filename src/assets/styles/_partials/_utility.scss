@@ -34,3 +34,11 @@ BUTTON
 button {
     transition: color 0.5s ease-in-out;
 }
+
+/********
+OVERLAY
+********/
+.overlay {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}

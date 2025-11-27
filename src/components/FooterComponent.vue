@@ -123,11 +123,6 @@ export default {
 
   .logo-text {
     padding: 3rem;
-
-    h1 {
-      color: black;
-      font-size: 3rem;
-    }
   }
 
   .details-container  {

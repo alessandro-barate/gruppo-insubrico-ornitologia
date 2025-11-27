@@ -55,8 +55,16 @@ export default {
       <div class="col">
         <!-- Jumbo section -->
         <section class="title-section jumbo-bg d-flex">
-          <div class="title-container">
-            <h1 class="uppercase">gruppo insubrico di ornitologia g.i.o.</h1>
+          <div class="overlay">
+            <div class="title-container">
+              <p class="uppercase">gruppo insubrico</p>
+            </div>
+            <div class="title-container title-container-2">
+              <p class="uppercase">di ornitologia</p>
+            </div>
+            <div class="title-container title-container-3">
+              <p class="uppercase">g.i.o.</p>
+            </div>
           </div>
         </section>
         <!-- END jumbo section -->
@@ -257,7 +265,6 @@ export default {
 }
 
 .title-section {
-  padding-top: 10rem;
   position: relative;
   width: 100%;
   height: 800px;
@@ -266,7 +273,31 @@ export default {
 
 .title-container {
   width: 100%;
-  text-align: center;
+  text-align: start;
+  padding-top: 10rem;
+  padding-left: 10rem;
+
+  p {
+  line-height: 10rem;
+  font-size: 5rem;
+  font-weight: 500;
+  background: linear-gradient(90deg, #0077FF, #5cd20d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+}
+
+.title-container-2 {
+  text-align: end;
+  padding-top: 1rem;
+  padding-right: 10rem;
+}
+
+.title-container-3 {
+  text-align: start;
+  padding-top: 1rem;
+  padding-left: 30rem;
 }
 
 .news-container {
@@ -647,7 +678,7 @@ export default {
       .first-box {
         opacity: 0;
         overflow: hidden;
-        transform: translateX(100%);
+        transform: translateX(50%);
 
         &.visible {
           animation: slideInLeft 1s ease-in-out forwards;
