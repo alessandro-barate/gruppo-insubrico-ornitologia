@@ -15,9 +15,26 @@ export default {
     });
     const newsBox = document.querySelector('.news-box');
     const subscriptionTitle = document.querySelector('.subscription-title');
+    const activitiesTitle = document.querySelector('.activities-title');
+    const firstBox = document.querySelector('.first-box');
+    const secondBox = document.querySelector('.second-box');
+
+    const observerBottom = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });   
 
     if (newsBox) observer.observe(newsBox);
     if (subscriptionTitle) observer.observe(subscriptionTitle);
+    if (activitiesTitle) observer.observe(activitiesTitle);
+    if (firstBox) observer.observe(firstBox);
+    if (secondBox) observerBottom.observe(secondBox);
   }
 }
 </script>
@@ -74,7 +91,7 @@ export default {
         <!-- Subscribe section -->
         <section>
           <div class="subscription-container news-container">
-            <div class="sections-title part-4 subscription-title">
+            <div class="sections-title subscription-title">
               <h2 class="title-1 uppercase">diventa nostro</h2>
               <h2 class="title-2 gradient-color uppercase">socio</h2>
             </div>
@@ -174,12 +191,18 @@ export default {
         <section class="contacts-container">
           <div class="contacts-box d-flex">
             <div class="contacts-text uppercase">
-              <h3 class="text-1">resta sempre aggiornato!</h3>
-              <h3 class="text-2">seguici sui nostri</h3>
-              <h2 class="text-3">social</h2>
+              <div class="first-box">
+                <h3 class="text-1">resta sempre aggiornato!</h3>
+                <h3 class="text-2">seguici sui nostri</h3>
+                <h2 class="text-3">social</h2>
+              </div>
+
               <hr>
-              <h3 class="text-4">e iscriviti alla</h3>
-              <h2 class="text-5">newsletter</h2>
+
+              <div class="second-box">
+                <h3 class="text-4">e iscriviti alla</h3>
+                <h2 class="text-5">newsletter</h2>
+              </div>
             </div>
             <div class="socials-container d-flex">
               <div class="facebook">
@@ -270,8 +293,6 @@ export default {
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      opacity: 0;
-      transform: translateY(-100%);
     }
 
     .title-1 {
@@ -363,12 +384,10 @@ export default {
 
   .sections-title {
     margin-bottom: 2rem;
+    overflow: hidden;
 
-    .part-4 {
-      overflow: hidden;
-      white-space: nowrap;
-      width: 100%;
-      text-align: left;
+    .title-1,
+    .title-2 {
       opacity: 0;
       transform: translateY(-100%);
     }
@@ -553,9 +572,23 @@ export default {
 
   .activities-title {
     margin-top: 4rem;
+    overflow: hidden;
 
+    .title-1,
     .title-2 {
-    margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateX(100%);
+    }
+
+    &.visible{
+      .title-1 {
+        animation: slideInRight 1s ease-in-out forwards;
+      }
+
+      .title-2 {
+        margin-bottom: 2rem;
+        animation: slideInRight 1s ease-in-out 0.3s forwards;
+      }
     }
   }
 }
@@ -596,6 +629,26 @@ export default {
         width: 250px;
         margin-left: 25rem;
         border-left: 2px solid rgb(141, 141, 141);
+      }
+
+      .first-box {
+        opacity: 1;
+        overflow: hidden;
+        transform: translateY(-100%);
+
+        &.visible {
+          animation: slideInLeft 1s ease-in-out forwards;
+        }
+      }
+
+      .second-box {
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(100%);
+
+        &.visible {
+          animation: slideInBottom 1s ease-in-out forwards;
+        }
       }
 
       .text-1 {
@@ -744,6 +797,28 @@ export default {
 @keyframes slideInTop {
   from {
     transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    transform: translateY(100%);
     opacity: 0;
   }
   to {
