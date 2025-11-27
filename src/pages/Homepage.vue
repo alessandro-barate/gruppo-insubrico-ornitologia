@@ -87,7 +87,7 @@ export default {
             <!-- Grid section -->
             <div class="activities-box">
               <div class="activities-list d-grid uppercase">
-                <div class="activity-card card-1 d-flex">
+                <router-link :to="{ name: 'Projects' }" class="activity-card card-1 d-flex">
                   <div class="card-default d-flex">
                     <span class="gradient-color">progetti</span>
                   </div>
@@ -95,8 +95,9 @@ export default {
                     <img src="../assets/images/arrow-right.svg" alt="">
                     <p>progetti</p>
                   </div>
-                </div>
-                <div class="activity-card card-2 d-flex">
+                </router-link>
+
+                <router-link :to="{ name: 'Birds' }" class="activity-card card-2 d-flex">
                   <div class="card-default d-flex">
                     <span class="gradient-color">aviofauna</span>
                   </div>
@@ -104,8 +105,9 @@ export default {
                     <img src="../assets/images/arrow-right.svg" alt="">
                     <p>l'aviofauna di varese</p>
                   </div>
-                </div>
-                <div class="activity-card card-3 d-flex">
+                </router-link>
+
+                <router-link :to="{ name: 'Conferences' }" class="activity-card card-3 d-flex">
                   <div class="card-default d-flex">
                     <span class="gradient-color">conferenze</span>
                   </div>
@@ -113,8 +115,9 @@ export default {
                     <img src="../assets/images/arrow-right.svg" alt="">
                     <p>conferenze</p>
                   </div>
-                </div>
-                <div class="activity-card card-4 d-flex">
+                </router-link>
+
+                <router-link :to="{ name: 'Courses' }" class="activity-card card-4 d-flex">
                   <div class="card-default d-flex">
                     <span class="gradient-color">corsi</span>
                   </div>
@@ -122,8 +125,9 @@ export default {
                     <img src="../assets/images/arrow-right.svg" alt="">
                     <p>corsi</p>
                   </div>
-                </div>
-                <div class="activity-card card-5 d-flex">
+                </router-link>
+
+                <router-link :to="{ name: 'Publications' }" class="activity-card card-5 d-flex">
                   <div class="card-default d-flex">
                     <span class="gradient-color">pubblicazioni</span>
                   </div>
@@ -131,7 +135,7 @@ export default {
                     <img src="../assets/images/arrow-right.svg" alt="">
                     <p>pubblicazioni</p>
                   </div>
-                </div>
+                </router-link>
               </div>
             </div>
             <!-- END grid section -->
@@ -501,7 +505,7 @@ export default {
       rgba(92, 210, 13, 0.85)
     ), url(../assets/images/social.jpg);
   padding-top: 10rem;
-  min-height: 900px;
+  min-height: 875px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

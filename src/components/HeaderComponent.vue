@@ -60,63 +60,63 @@ export default {
             <ul class="nav-menu d-flex">
               <li>
                 <a>
-                  <router-link :to="{ name: 'Homepage' }" class="link">
+                  <router-link :to="{ name: 'Homepage' }">
                     Home
                   </router-link>
                 </a>
               </li>
               <li>
                 <a>
-                  <router-link :to="{ name: 'AboutUs' }" class="link">
+                  <router-link :to="{ name: 'AboutUs' }">
                   Chi siamo
                   </router-link>
                 </a>
               </li>
               <li>
                 <a>
-                  <router-link :to="{ name: 'Projects' }" class="link">
+                  <router-link :to="{ name: 'Projects' }">
                   Progetti
                   </router-link>
                 </a>
               </li>
               <li>
                 <a>
-                  <router-link :to="{ name: 'Birds' }" class="link">
+                  <router-link :to="{ name: 'Birds' }">
                   Gli uccelli della provincia di Varese
                   </router-link>
                 </a>
               </li>
               <li>
                 <a>
-                  <router-link :to="{ name: 'Conferences' }" class="link">
+                  <router-link :to="{ name: 'Conferences' }">
                   Conferenze
                   </router-link>
                 </a>
               </li>
               <li>
                 <a>
-                  <router-link :to="{ name: 'Courses' }" class="link">
+                  <router-link :to="{ name: 'Courses' }">
                   Corsi
                   </router-link>
                 </a>
               </li>
               <li>
                 <a>
-                  <router-link :to="{ name: 'Publications' }" class="link">
+                  <router-link :to="{ name: 'Publications' }">
                   Pubblicazioni
                   </router-link>
-                  </a>
+                </a>
               </li>
               <li>
                 <a>
-                  <router-link :to="{ name: 'News' }" class="link">
+                  <router-link :to="{ name: 'News' }">
                   News
                   </router-link>
-                  </a>
+                </a>
               </li>
               <li>
                 <a>
-                  <router-link :to="{ name: 'Links' }" class="link">
+                  <router-link :to="{ name: 'Links' }">
                   Link utili
                   </router-link>
                 </a>
