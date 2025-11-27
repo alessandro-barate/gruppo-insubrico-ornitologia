@@ -3,13 +3,13 @@ import { createRouter, createWebHistory } from "vue-router";
 // Pages
 import AboutUs from "./pages/AboutUs.vue";
 import Birds from "./pages/Birds.vue";
-import Conferences from "./pages/Conferences.vue";
-import Courses from "./pages/Courses.vue";
+import ConferencesCourses from "./pages/ConferencesCourses.vue";
 import Homepage from "./pages/Homepage.vue";
 import Links from "./pages/Links.vue";
 import News from "./pages/News.vue";
 import Projects from "./pages/Projects.vue";
 import Publications from "./pages/Publications.vue";
+import Socials from "./pages/Socials.vue";
 
 const routes = [
   {
@@ -28,14 +28,14 @@ const routes = [
     component: Birds
   },
   {
-    path: '/conferences',
-    name: 'Conferences',
-    component: Conferences
+    path: '/conferences-courses',
+    name: 'ConferencesCourses',
+    component: ConferencesCourses
   },
   {
     path: '/courses',
-    name: 'Courses',
-    component: Courses
+    name: 'Socials',
+    component: Socials
   },
   {
     path: '/links',

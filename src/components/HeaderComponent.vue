@@ -82,21 +82,21 @@ export default {
               <li>
                 <a>
                   <router-link :to="{ name: 'Birds' }">
-                  Gli uccelli della provincia di Varese
+                  Aviofauna di Varese
                   </router-link>
                 </a>
               </li>
               <li>
                 <a>
-                  <router-link :to="{ name: 'Conferences' }">
-                  Conferenze
+                  <router-link :to="{ name: 'ConferencesCourses' }">
+                  Conferenze e Corsi
                   </router-link>
                 </a>
               </li>
               <li>
                 <a>
-                  <router-link :to="{ name: 'Courses' }">
-                  Corsi
+                  <router-link :to="{ name: 'Socials' }">
+                  Socials
                   </router-link>
                 </a>
               </li>

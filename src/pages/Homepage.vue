@@ -1,6 +1,24 @@
 <script>
 export default {
-  name: 'Homepage'
+  name: 'Homepage',
+
+  mounted() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.8  
+    });
+    const newsBox = document.querySelector('.news-box');
+    const subscriptionTitle = document.querySelector('.subscription-title');
+
+    if (newsBox) observer.observe(newsBox);
+    if (subscriptionTitle) observer.observe(subscriptionTitle);
+  }
 }
 </script>
 <template>
@@ -18,10 +36,10 @@ export default {
         <!-- News overview -->
          <section>
           <div class="news-container d-flex">
-            <div class="sections-title">
-              <h2 class="title-1 uppercase">le ultime</h2>
-              <h2 class="title-2 uppercase">news</h2>
-              <h2 class="title-1 uppercase">del g.i.o.</h2>
+            <div class="sections-title news-box">
+              <h2 class="title-1 part-1 uppercase">le ultime</h2>
+              <h2 class="title-2 part-2 uppercase">news</h2>
+              <h2 class="title-1 part-3 uppercase">del g.i.o.</h2>
             </div>
             <div class="news-description">
               <p>Le nostre news più recenti</p>
@@ -56,7 +74,7 @@ export default {
         <!-- Subscribe section -->
         <section>
           <div class="subscription-container news-container">
-            <div class="sections-title subscription-title">
+            <div class="sections-title part-4 subscription-title">
               <h2 class="title-1 uppercase">diventa nostro</h2>
               <h2 class="title-2 gradient-color uppercase">socio</h2>
             </div>
@@ -107,7 +125,7 @@ export default {
                   </div>
                 </router-link>
 
-                <router-link :to="{ name: 'Conferences' }" class="activity-card card-3 d-flex">
+                <router-link :to="{ name: 'ConferencesCourses' }" class="activity-card card-3 d-flex">
                   <div class="card-default d-flex">
                     <span class="gradient-color">conferenze</span>
                   </div>
@@ -117,7 +135,7 @@ export default {
                   </div>
                 </router-link>
 
-                <router-link :to="{ name: 'Courses' }" class="activity-card card-4 d-flex">
+                <router-link :to="{ name: 'ConferencesCourses' }" class="activity-card card-4 d-flex">
                   <div class="card-default d-flex">
                     <span class="gradient-color">corsi</span>
                   </div>
@@ -221,12 +239,39 @@ export default {
   .sections-title {
     width: 50%;
 
+    .part-1,
+    .part-2,
+    .part-3 {
+      overflow: hidden; /* Nasconde l'elemento fino a quando non entra nella pagina */
+      white-space: nowrap; /* Impedisce al testo di andare a capo */
+      width: 100%;
+      text-align: left;
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    &.visible {
+      .part-1 {
+        animation: slideInLeft 1s ease-in-out forwards;
+      }
+
+      .part-2 {
+        animation: slideInLeft 1s ease-in-out 0.3s forwards;
+      }
+
+      .part-3 {
+        animation: slideInLeft 1s ease-in-out 0.6s forwards;
+      }
+    }
+
     .title-1,
     .title-2 {
       background: linear-gradient(90deg, #0077FF, #5cd20d);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      opacity: 0;
+      transform: translateY(-100%);
     }
 
     .title-1 {
@@ -318,6 +363,25 @@ export default {
 
   .sections-title {
     margin-bottom: 2rem;
+
+    .part-4 {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      text-align: left;
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    &.visible{
+      .title-1 {
+        animation: slideInTop 1s ease-in-out forwards;
+      }
+
+      .title-2 {
+        animation: slideInTop 1s ease-in-out 0.3s forwards;
+      }
+    }
   }
 
   .subscription-box {
@@ -592,7 +656,7 @@ export default {
           position: relative;
           padding: 8px 6px 4px 6px;
           border: 3px solid black;
-          
+
           &::before {
             content: '';
             position: absolute;
@@ -663,5 +727,28 @@ export default {
   height: 150px;
   background: #ffffff;
   clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+// Keyframes
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+      opacity: 1;
+  }
 }
 </style>
