@@ -44,7 +44,7 @@ export default {
     <button aria-label="Torna in alto">
       <img
         v-show="visible"
-        src="../src/assets/img/homepage/chevron/chevron-up.svg"
+        src="./assets/images/up-arrow.svg"
         alt="Freccia in alto per scorrere la pagina in su"
         @click="scrollUp()"
       />
@@ -63,9 +63,11 @@ export default {
   button {
     border: none;
     background-color: transparent;
+    transition: transform 0.5s ease-in-out;
 
     img {
-      width: 2em;
+      width: 2.5em;
+      
     }
 
     &:hover {

@@ -592,7 +592,7 @@ export default {
           position: relative;
           padding: 8px 6px 4px 6px;
           border: 3px solid black;
-          // transition: background-color 0.5s ease-in-out;
+          
           &::before {
             content: '';
             position: absolute;
