@@ -19,6 +19,17 @@ export default {
     const firstBox = document.querySelector('.first-box');
     const secondBox = document.querySelector('.second-box');
 
+    const observerLow = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.6
+    });
+
     const observerBottom = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -33,7 +44,7 @@ export default {
     if (newsBox) observer.observe(newsBox);
     if (subscriptionTitle) observer.observe(subscriptionTitle);
     if (activitiesTitle) observer.observe(activitiesTitle);
-    if (firstBox) observer.observe(firstBox);
+    if (firstBox) observerLow.observe(firstBox);
     if (secondBox) observerBottom.observe(secondBox);
   }
 }
@@ -79,10 +90,12 @@ export default {
             </div>
           </div>
           <!-- END news list -->
-          
+
           <!-- News button -->
           <div class="button">
-            <button>Leggi tutte le news</button>
+            <router-link :to="{ name: 'News' }">
+              <button>Leggi tutte le news</button>      
+            </router-link>
           </div>
           <!-- END news button -->
          </section>
@@ -637,7 +650,7 @@ export default {
         transform: translateY(-100%);
 
         &.visible {
-          animation: slideInLeft 1s ease-in-out forwards;
+          animation: slideInTop 1s ease-in-out forwards;
         }
       }
 
