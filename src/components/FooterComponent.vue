@@ -49,7 +49,7 @@ export default {
             
               <!-- Text -->
               <div class="logo-text">
-                <h1>Gruppo Insubrico di Ornitologia G.I.O.</h1>
+                <h1>Gruppo Insubrico di Ornitologia G I O</h1>
               </div>
               <!-- END text -->
             </div>
@@ -150,7 +150,7 @@ export default {
       }
 
       a {
-      transition: color 0.5s ease-in-out, text-decoration 0.8s ease-in-out;
+      transition: color 0.3s ease-in-out, text-decoration 0.6s ease-in-out;
 
       &:hover {
         color: bisque;

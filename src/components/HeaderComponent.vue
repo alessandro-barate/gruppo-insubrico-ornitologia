@@ -48,13 +48,7 @@ export default {
   <header>
     <div class="container gradient-color">
       <div class="row">
-        <div class="col d-flex">
-          <!-- Logo section -->
-           <div class="logo-section">
-            <img src="../assets/images/logo.svg" class="logo" alt=""></img>
-          </div>
-          <!-- END logo section -->
-
+        <div class="col">
           <!-- Nav menu -->
           <nav>
             <ul class="nav-menu d-flex">
@@ -82,7 +76,7 @@ export default {
               <li>
                 <a>
                   <router-link :to="{ name: 'Birds' }">
-                  Aviofauna di Varese
+                  Aviofauna
                   </router-link>
                 </a>
               </li>
@@ -142,33 +136,23 @@ export default {
     position: sticky;
   }
 
-
   .container {
     margin-bottom: 0px;
   }
 
-  .logo-section {
-    width: 10%;
-    padding-top: 1rem;
-    padding-left: 2rem;
-    padding-bottom: 1rem;
-
-    .logo {
-      width: 70%;
-    }
-  }
-
   nav {
     width: 80%;
+    margin: 0 auto;
   }
 
   .nav-menu {
     width: 100%;
-    padding-top: 2.5rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
     justify-content: space-evenly;
 
     a {
-      transition: 0.5s ease-in-out;
+      transition: 0.4s ease-in-out;
 
       &:hover {
       color: bisque;

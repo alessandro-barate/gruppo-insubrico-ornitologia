@@ -57,13 +57,21 @@ export default {
         <section class="title-section jumbo-bg d-flex">
           <div class="overlay">
             <div class="title-container">
-              <p class="uppercase">gruppo insubrico</p>
+              <div class="fade-wrapper">
+                <p class="uppercase">gio</p>
+              </div>
             </div>
+
             <div class="title-container title-container-2">
-              <p class="uppercase">di ornitologia</p>
+              <div class="fade-wrapper-2">
+                <p class="uppercase">gruppo insubrico</p>
+              </div>
             </div>
+
             <div class="title-container title-container-3">
-              <p class="uppercase">g.i.o.</p>
+              <div class="fade-wrapper-2">
+                <p class="uppercase">di ornitologia</p>
+              </div>
             </div>
           </div>
         </section>
@@ -273,31 +281,51 @@ export default {
 
 .title-container {
   width: 100%;
-  text-align: start;
-  padding-top: 10rem;
-  padding-left: 10rem;
+  text-align: center;
+  padding-top: 8rem;
 
   p {
-  line-height: 10rem;
-  font-size: 5rem;
-  font-weight: 500;
-  background: linear-gradient(90deg, #0077FF, #5cd20d);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
+    font-size: 3rem;
+  }
+
+  .fade-wrapper {
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
+
+    p {
+      line-height: 10rem;
+      font-size: 12rem;
+      font-weight: 500;
+      background: linear-gradient(90deg, #19d2b9 0%, #feff01 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 3rem;
+    }
+  }
+
+  .fade-wrapper-2 {
+    opacity: 0;
+    animation: fadeIn 4.5s ease-in-out forwards;
+
+    p {
+      font-size: 3.2rem;
+      font-weight: 600;
+      letter-spacing: 1rem;
+      background: linear-gradient(90deg, #000000, #b6b6b6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
 }
 
 .title-container-2 {
-  text-align: end;
-  padding-top: 1rem;
-  padding-right: 10rem;
+  padding-top: 10rem;
 }
 
 .title-container-3 {
-  text-align: start;
   padding-top: 1rem;
-  padding-left: 30rem;
 }
 
 .news-container {
@@ -827,6 +855,15 @@ export default {
 }
 
 // Keyframes
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes slideInLeft {
   from {
     transform: translateX(-100%);
