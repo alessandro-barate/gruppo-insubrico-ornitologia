@@ -587,6 +587,29 @@ export default {
 
         a {
           width: 20%;
+          z-index: 1;
+          border-radius: 26px;
+          position: relative;
+          padding: 8px 6px 4px 6px;
+          border: 3px solid black;
+          // transition: background-color 0.5s ease-in-out;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, #d2420d, #ffbf00);
+            border-radius: 23px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            z-index: -1;
+          }
+
+          &:hover::before {
+            opacity: 1;
+          }
         }
 
         h3 {
