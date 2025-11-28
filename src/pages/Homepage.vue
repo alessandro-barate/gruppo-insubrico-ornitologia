@@ -82,6 +82,12 @@ export default {
                 <p class="uppercase">di ornitologia</p>
               </div>
             </div>
+
+            <div class="logo-section fade-wrapper-3">
+              <div class="logo-container">
+                <img src="../assets/images/gio-logo2.png" alt="">
+              </div>
+            </div>
           </div>
         </section>
         <!-- END jumbo section -->
@@ -315,8 +321,28 @@ export default {
 .title-section {
   position: relative;
   width: 100%;
-  height: 800px;
+  height: 1200px;
   overflow: hidden;
+
+  .logo-section {
+    width: 100%;
+    margin-top: 5rem;
+    padding-bottom: 3rem;
+
+    .logo-container {
+      width: 100%;
+      text-align: center;
+
+      img {
+        width: 20%;
+      }
+    }
+  }
+
+  .fade-wrapper-3 {
+    opacity: 0;
+    animation: fadeIn 6s ease-in-out forwards;
+  }
 }
 
 .title-container {

@@ -41,7 +41,7 @@ export default {
               <div class="logo-container">
                 <img
                   class="footer-logo"
-                  src="../assets/images/logo.svg"
+                  src="../assets/images/gio-logo2.png"
                   alt="Logo del Gruppo Insubrico di Ornitologia"
                   />
               </div>
