@@ -1,53 +1,62 @@
 <script>
 export default {
-  name: 'Homepage',
+  name: "Homepage",
 
   mounted() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.3
-    });
-    const newsBox = document.querySelector('.news-box');
-    const subscriptionTitle = document.querySelector('.subscription-title');
-    const activitiesTitle = document.querySelector('.activities-title');
-    const firstBox = document.querySelector('.first-box');
-    const secondBox = document.querySelector('.second-box');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+    const newsBox = document.querySelector(".news-box");
+    const subscriptionTitle = document.querySelector(".subscription-title");
+    const activitiesTitle = document.querySelector(".activities-title");
+    const firstBox = document.querySelector(".first-box");
+    const secondBox = document.querySelector(".second-box");
 
-    const observerLow = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observerLow.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
+    const observerLow = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observerLow.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
 
-    const observerBottom = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observerBottom.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1
-    });   
+    const observerBottom = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observerBottom.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
 
     if (newsBox) observer.observe(newsBox);
     if (subscriptionTitle) observer.observe(subscriptionTitle);
     if (activitiesTitle) observer.observe(activitiesTitle);
     if (firstBox) observerLow.observe(firstBox);
     if (secondBox) observerBottom.observe(secondBox);
-  }
-}
+  },
+};
 </script>
 <template>
   <div class="container">
@@ -78,7 +87,7 @@ export default {
         <!-- END jumbo section -->
 
         <!-- News overview -->
-         <section>
+        <section>
           <div class="news-container d-flex">
             <div class="sections-title news-box">
               <h2 class="title-1 part-1 uppercase">le ultime</h2>
@@ -87,7 +96,7 @@ export default {
             </div>
             <div class="news-description">
               <p>Le nostre news più recenti</p>
-              <br>
+              <br />
             </div>
           </div>
 
@@ -95,13 +104,13 @@ export default {
           <div class="news-list-container">
             <div class="news-list-box d-flex">
               <div class="single-news">
-                <img src="../assets/images/bird-1.webp" alt="">
+                <img src="../assets/images/bird-1.webp" alt="" />
               </div>
               <div class="single-news">
-                <img src="../assets/images/bird-2.jpg" alt="">
+                <img src="../assets/images/bird-2.jpg" alt="" />
               </div>
               <div class="single-news">
-                <img src="../assets/images/bird-3.jpg" alt="">
+                <img src="../assets/images/bird-3.jpg" alt="" />
               </div>
             </div>
           </div>
@@ -110,11 +119,11 @@ export default {
           <!-- News button -->
           <div class="button">
             <router-link :to="{ name: 'News' }">
-              <button>Leggi tutte le news</button>      
+              <button>Leggi tutte le news</button>
             </router-link>
           </div>
           <!-- END news button -->
-         </section>
+        </section>
         <!-- END news overview -->
 
         <!-- Subscribe section -->
@@ -124,15 +133,16 @@ export default {
               <h2 class="title-1 uppercase">diventa nostro</h2>
               <h2 class="title-2 gradient-color uppercase">socio</h2>
             </div>
-            <hr>
+            <hr />
             <div class="subscription-box gradient-color-subscribe">
               <div class="card-logo">
-                <img src="../assets/images/subscribe-icon.svg" alt="">
+                <img src="../assets/images/subscribe-icon.svg" alt="" />
               </div>
               <div class="subscription-description">
                 <h3 class="uppercase">unisciti al g.i.o.!</h3>
-                <p>Vuoi diventare parte del gruppo o solo sostenerci?
-                  <br>
+                <p>
+                  Vuoi diventare parte del gruppo o solo sostenerci?
+                  <br />
                   Scopri come.
                 </p>
                 <p>Ti aspettiamo!</p>
@@ -151,52 +161,67 @@ export default {
             <!-- Grid section -->
             <div class="activities-box">
               <div class="activities-list d-grid uppercase">
-                <router-link :to="{ name: 'Projects' }" class="activity-card card-1 d-flex">
+                <router-link
+                  :to="{ name: 'Projects' }"
+                  class="activity-card card-1 d-flex"
+                >
                   <div class="card-default d-flex">
                     <span class="gradient-color">progetti</span>
                   </div>
                   <div class="card-hover gradient-color">
-                    <img src="../assets/images/arrow-right.svg" alt="">
+                    <img src="../assets/images/arrow-right.svg" alt="" />
                     <p>progetti</p>
                   </div>
                 </router-link>
 
-                <router-link :to="{ name: 'Birds' }" class="activity-card card-2 d-flex">
+                <router-link
+                  :to="{ name: 'Birds' }"
+                  class="activity-card card-2 d-flex"
+                >
                   <div class="card-default d-flex">
-                    <span class="gradient-color">aviofauna</span>
+                    <span class="gradient-color">avifauna</span>
                   </div>
                   <div class="card-hover gradient-color">
-                    <img src="../assets/images/arrow-right.svg" alt="">
+                    <img src="../assets/images/arrow-right.svg" alt="" />
                     <p>l'aviofauna di varese</p>
                   </div>
                 </router-link>
 
-                <router-link :to="{ name: 'ConferencesCourses' }" class="activity-card card-3 d-flex">
+                <router-link
+                  :to="{ name: 'ConferencesCourses' }"
+                  class="activity-card card-3 d-flex"
+                >
                   <div class="card-default d-flex">
                     <span class="gradient-color">conferenze</span>
                   </div>
                   <div class="card-hover gradient-color">
-                    <img src="../assets/images/arrow-right.svg" alt="">
+                    <img src="../assets/images/arrow-right.svg" alt="" />
                     <p>conferenze</p>
                   </div>
                 </router-link>
 
-                <router-link :to="{ name: 'ConferencesCourses' }" class="activity-card card-4 d-flex">
+                <router-link
+                  :to="{ name: 'ConferencesCourses' }"
+                  class="activity-card card-4 d-flex"
+                >
                   <div class="card-default d-flex">
                     <span class="gradient-color">corsi</span>
                   </div>
                   <div class="card-hover gradient-color">
-                    <img src="../assets/images/arrow-right.svg" alt="">
+                    <img src="../assets/images/arrow-right.svg" alt="" />
                     <p>corsi</p>
                   </div>
                 </router-link>
 
-                <router-link :to="{ name: 'Publications' }" class="activity-card card-5 d-flex">
+                <router-link
+                  :to="{ name: 'Publications' }"
+                  class="activity-card card-5 d-flex"
+                >
                   <div class="card-default d-flex">
                     <span class="gradient-color">pubblicazioni</span>
                   </div>
                   <div class="card-hover gradient-color">
-                    <img src="../assets/images/arrow-right.svg" alt="">
+                    <img src="../assets/images/arrow-right.svg" alt="" />
                     <p>pubblicazioni</p>
                   </div>
                 </router-link>
@@ -204,7 +229,7 @@ export default {
             </div>
             <!-- END grid section -->
 
-            <hr>
+            <hr />
 
             <!-- Activities title and description -->
             <div class="sections-title activities-title">
@@ -226,7 +251,7 @@ export default {
                 <h2 class="text-3">social</h2>
               </div>
 
-              <hr>
+              <hr />
 
               <div class="second-box">
                 <h3 class="text-4">e iscriviti alla</h3>
@@ -235,26 +260,41 @@ export default {
             </div>
             <div class="socials-container d-flex">
               <div class="facebook">
-                <a href="https://www.facebook.com/GruppoInsubricoDiOrnitologia" target="_blank">
-                  <img src="../assets/images/facebook.svg" alt="Facebook logo e link">
+                <a
+                  href="https://www.facebook.com/GruppoInsubricoDiOrnitologia"
+                  target="_blank"
+                >
+                  <img
+                    src="../assets/images/facebook.svg"
+                    alt="Facebook logo e link"
+                  />
                 </a>
                 <h3>Aggiungigi su Facebook</h3>
               </div>
 
-              <hr class="space-1">
+              <hr class="space-1" />
 
               <div class="instagram">
-                <a href="https://www.instagram.com/gruppoinsubricoornitologia/" target="_blank">
-                  <img src="../assets/images/instagram.svg" alt="Instagram logo e link">
+                <a
+                  href="https://www.instagram.com/gruppoinsubricoornitologia/"
+                  target="_blank"
+                >
+                  <img
+                    src="../assets/images/instagram.svg"
+                    alt="Instagram logo e link"
+                  />
                 </a>
                 <h3>Seguici su Instagram</h3>
               </div>
 
-              <hr class="space-2">
+              <hr class="space-2" />
 
               <div class="newsletter">
                 <a href="">
-                  <img src="../assets/images/newsletter.svg" alt="Newsletter e link">
+                  <img
+                    src="../assets/images/newsletter.svg"
+                    alt="Newsletter e link"
+                  />
                 </a>
                 <h3>Iscriviti alla nostra newsletter</h3>
               </div>
@@ -361,7 +401,7 @@ export default {
 
     .title-1,
     .title-2 {
-      background: linear-gradient(90deg, #0077FF, #5cd20d);
+      background: linear-gradient(90deg, #0077ff, #5cd20d);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -413,7 +453,7 @@ export default {
         height: 100%;
         object-fit: cover;
         transition: transform 0.8s ease;
-        
+
         &:hover {
           transform: scale(1.1);
         }
@@ -434,7 +474,7 @@ export default {
     padding: 1rem;
     border-radius: 0.5rem;
     border: none;
-    background: linear-gradient(90deg, #0077FF, #5cd20d);
+    background: linear-gradient(90deg, #0077ff, #5cd20d);
 
     &:hover {
       color: red;
@@ -464,7 +504,7 @@ export default {
       transform: translateY(-100%);
     }
 
-    &.visible{
+    &.visible {
       .title-1 {
         animation: slideInTop 1s ease-in-out forwards;
       }
@@ -508,12 +548,12 @@ export default {
 
     .button {
       padding-bottom: 1rem;
-      
+
       button {
         background: linear-gradient(90deg, #d2420d, #ffbf00);
 
         &:hover {
-        color: rgb(0, 0, 0);
+          color: rgb(0, 0, 0);
         }
       }
     }
@@ -652,7 +692,7 @@ export default {
       transform: translateX(100%);
     }
 
-    &.visible{
+    &.visible {
       .title-1 {
         animation: slideInRight 1s ease-in-out forwards;
       }
@@ -672,7 +712,8 @@ export default {
       90deg,
       rgba(0, 119, 255, 0.85),
       rgba(92, 210, 13, 0.85)
-    ), url(../assets/images/social.jpg);
+    ),
+    url(../assets/images/social.jpg);
   padding-top: 10rem;
   min-height: 875px;
   background-size: cover;
@@ -783,7 +824,7 @@ export default {
           border: 3px solid black;
 
           &::before {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
@@ -811,7 +852,7 @@ export default {
 
 // Effect on ::before and ::after
 .title-section::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -0.0625rem;
   left: 0;
@@ -822,7 +863,7 @@ export default {
 }
 
 .subscription-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -1px;
   left: 0;
@@ -833,7 +874,7 @@ export default {
 }
 
 .subscription-container::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -844,7 +885,7 @@ export default {
 }
 
 .contacts-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -1px;
   left: 0;
@@ -871,7 +912,7 @@ export default {
   }
   to {
     transform: translateX(0);
-      opacity: 1;
+    opacity: 1;
   }
 }
 
@@ -882,7 +923,7 @@ export default {
   }
   to {
     transform: translateY(0);
-      opacity: 1;
+    opacity: 1;
   }
 }
 
@@ -893,7 +934,7 @@ export default {
   }
   to {
     transform: translateX(0);
-      opacity: 1;
+    opacity: 1;
   }
 }
 
@@ -904,7 +945,7 @@ export default {
   }
   to {
     transform: translateY(0);
-      opacity: 1;
+    opacity: 1;
   }
 }
 </style>

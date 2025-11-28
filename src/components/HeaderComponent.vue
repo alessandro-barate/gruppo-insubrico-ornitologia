@@ -2,7 +2,6 @@
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-
 </script>
 
 <script>
@@ -52,18 +51,18 @@ export default {
     // To show the search input field
     openSearchBar(event) {
       event.stopPropagation();
-      const inputField = document.querySelector('.input-field');
-      inputField.classList.add('visible');
+      const inputField = document.querySelector(".input-field");
+      inputField.classList.add("visible");
     },
 
     handleClickOutside(event) {
-      const searchSection = document.querySelector('.search-bar-section');
-      const inputField = document.querySelector('.input-field');
+      const searchSection = document.querySelector(".search-bar-section");
+      const inputField = document.querySelector(".input-field");
 
       if (searchSection && !searchSection.contains(event.target)) {
-        inputField.classList.remove('visible');
+        inputField.classList.remove("visible");
       }
-    }
+    },
   },
 };
 </script>
@@ -78,64 +77,56 @@ export default {
             <ul class="nav-menu d-flex">
               <li>
                 <a>
-                  <router-link :to="{ name: 'Homepage' }">
-                    Home
-                  </router-link>
+                  <router-link :to="{ name: 'Homepage' }"> Home </router-link>
                 </a>
               </li>
               <li>
                 <a>
                   <router-link :to="{ name: 'AboutUs' }">
-                  Chi siamo
+                    Chi siamo
                   </router-link>
                 </a>
               </li>
               <li>
                 <a>
                   <router-link :to="{ name: 'Projects' }">
-                  Progetti
+                    Progetti
                   </router-link>
                 </a>
               </li>
               <li>
                 <a>
-                  <router-link :to="{ name: 'Birds' }">
-                  Aviofauna
-                  </router-link>
+                  <router-link :to="{ name: 'Birds' }"> Avifauna </router-link>
                 </a>
               </li>
               <li>
                 <a>
                   <router-link :to="{ name: 'ConferencesCourses' }">
-                  Conferenze e Corsi
+                    Conferenze e Corsi
                   </router-link>
                 </a>
               </li>
               <li>
                 <a>
-                  <router-link :to="{ name: 'Socials' }">
-                  Socials
-                  </router-link>
+                  <router-link :to="{ name: 'Socials' }"> Social </router-link>
                 </a>
               </li>
               <li>
                 <a>
                   <router-link :to="{ name: 'Publications' }">
-                  Pubblicazioni
+                    Pubblicazioni
                   </router-link>
                 </a>
               </li>
               <li>
                 <a>
-                  <router-link :to="{ name: 'News' }">
-                  News
-                  </router-link>
+                  <router-link :to="{ name: 'News' }"> News </router-link>
                 </a>
               </li>
               <li>
                 <a>
                   <router-link :to="{ name: 'Links' }">
-                  Link utili
+                    Link utili
                   </router-link>
                 </a>
               </li>
@@ -147,13 +138,22 @@ export default {
           <div class="search-bar-section">
             <div class="search-bar-box">
               <button @click="openSearchBar">
-                <img src="../assets/images/magnifier.svg" alt="Icona della ricerca nel sito">
+                <img
+                  src="../assets/images/magnifier.svg"
+                  alt="Icona della ricerca nel sito"
+                />
               </button>
             </div>
             <div class="input-field">
               <form action="">
                 <label for="search-field"></label>
-                <input type="search" id="search-field" name="search-field" placeholder="Cerca nel sito" style="color: #ffffffb3">
+                <input
+                  type="search"
+                  id="search-field"
+                  name="search-field"
+                  placeholder="Cerca nel sito"
+                  style="color: #ffffffb3"
+                />
               </form>
             </div>
           </div>
@@ -165,104 +165,104 @@ export default {
 </template>
 
 <style scoped lang="scss">
-  .sticky-header {
-    top: 0;
-    z-index: 1000;
-    position: sticky;
-  }
+.sticky-header {
+  top: 0;
+  z-index: 1000;
+  position: sticky;
+}
 
-  .container {
-    margin-bottom: 0px;
-    position: relative;
+.container {
+  margin-bottom: 0px;
+  position: relative;
 
-    nav {
-      width: 90%;
-      margin: 0 auto;
+  nav {
+    width: 90%;
+    margin: 0 auto;
 
-      .nav-menu {
-        width: 100%;
-        padding-top: 1.25rem;
-        padding-bottom: 1.25rem;
-        justify-content: space-evenly;
+    .nav-menu {
+      width: 100%;
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+      justify-content: space-evenly;
 
-        a {
-          transition: 0.4s ease-in-out;
+      a {
+        transition: 0.4s ease-in-out;
 
-          &:hover {
+        &:hover {
           color: bisque;
-          }
         }
       }
     }
+  }
 
-    .search-bar-section {
-      width: 10%;
-      position: relative;
+  .search-bar-section {
+    width: 10%;
+    position: relative;
 
-      .search-bar-box {
-        width: 100%;
-        padding-top: 1rem;
-        text-align: start;
+    .search-bar-box {
+      width: 100%;
+      padding-top: 1rem;
+      text-align: start;
 
-        button {
-          border: none;
-          cursor: pointer;
-          padding-top: 0.2rem;
-          background-color: transparent;
+      button {
+        border: none;
+        cursor: pointer;
+        padding-top: 0.2rem;
+        background-color: transparent;
 
-          img {
+        img {
           width: 20%;
           transition: transform 0.5s ease-in-out;
 
-            &:hover {
-              transform: scale(1.1);
-            }
+          &:hover {
+            transform: scale(1.1);
           }
         }
       }
     }
+  }
 
-    .input-field {
-      right: 0;
-      top: 100%;
-      display: none;
-      position: absolute;
-      padding-top: 0.5rem;
-      padding-right: 0.5rem;
+  .input-field {
+    right: 0;
+    top: 100%;
+    display: none;
+    position: absolute;
+    padding-top: 0.5rem;
+    padding-right: 0.5rem;
 
-      &.visible {
-        display: block;
-      }
+    &.visible {
+      display: block;
     }
   }
+}
 
-  input {
-    border: none;
-    padding-top: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 2rem;
-    padding-bottom: 0.5rem;
-    text-align: center;
-    border-radius: 0.4rem;
-    background-color: black;
-  }
+input {
+  border: none;
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  border-radius: 0.4rem;
+  background-color: black;
+}
 
-  // Input font
-  // Per Chrome, Safari, Opera...
-  ::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, 0.7);
-    font-family: "Sora", sans-serif;
-  }
+// Input font
+// Per Chrome, Safari, Opera...
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Sora", sans-serif;
+}
 
-  // Per Firefox
-  ::-moz-input-placeholder {
-    color: white;
-    font-family: "Sora", sans-serif;
-  }
+// Per Firefox
+::-moz-input-placeholder {
+  color: white;
+  font-family: "Sora", sans-serif;
+}
 
-  // Per Internet Explorer
-  ::-ms-input-placeholder {
-    color: rgb(255, 255, 255);
-    font-family: "Sora", sans-serif;
-  }
+// Per Internet Explorer
+::-ms-input-placeholder {
+  color: rgb(255, 255, 255);
+  font-family: "Sora", sans-serif;
+}
 </style>
