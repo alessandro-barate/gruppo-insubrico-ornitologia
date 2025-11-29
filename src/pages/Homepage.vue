@@ -85,7 +85,9 @@ export default {
 
             <div class="logo-section fade-wrapper-3">
               <div class="logo-container">
-                <img src="../assets/images/gio-logo2.png" alt="">
+                <div class="overlay-2">
+                  <img src="../assets/images/gio-logo2.png" alt="">
+                </div>
               </div>
             </div>
           </div>
@@ -98,7 +100,7 @@ export default {
             <div class="sections-title news-box">
               <h2 class="title-1 part-1 uppercase">le ultime</h2>
               <h2 class="title-2 part-2 uppercase">news</h2>
-              <h2 class="title-1 part-3 uppercase">del g.i.o.</h2>
+              <h2 class="title-1 part-3 uppercase">del g i o</h2>
             </div>
             <div class="news-description">
               <p>Le nostre news più recenti</p>
@@ -145,7 +147,7 @@ export default {
                 <img src="../assets/images/subscribe-icon.svg" alt="" />
               </div>
               <div class="subscription-description">
-                <h3 class="uppercase">unisciti al g.i.o.!</h3>
+                <h3 class="uppercase">unisciti al g i o !</h3>
                 <p>
                   Vuoi diventare parte del gruppo o solo sostenerci?
                   <br />
@@ -333,9 +335,18 @@ export default {
       width: 100%;
       text-align: center;
 
-      img {
+      .overlay-2 {
         width: 20%;
+        margin: 0 auto;
+        border-radius: 50%;
+        background-color: white;
+
+        img {
+          width: 100%;
+        }
       }
+
+      
     }
   }
 
