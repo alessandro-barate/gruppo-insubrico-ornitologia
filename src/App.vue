@@ -62,6 +62,7 @@ export default {
 
   button {
     border: none;
+    cursor: pointer;
     background-color: transparent;
     transition: transform 0.5s ease-in-out;
 
