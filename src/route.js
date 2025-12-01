@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { metaDescriptions } from "./store";
+import { siteMeta, metaDescriptions } from "./store";
 
 // Pages
 import AboutUs from "./pages/AboutUs.vue";
@@ -18,57 +18,101 @@ const routes = [
     path: '/',
     name: 'Homepage',
     component: Homepage,
-    meta: { title: 'Homepage' }
+    // meta: { title: 'Homepage' }
   },
   {
     path: '/about-us',
     name: 'AboutUs',
     component: AboutUs,
-    meta: { title: 'Chi siamo' }
+    // meta: { title: 'Chi siamo' }
   },
   {
     path: '/birds',
     name: 'Birds',
     component: Birds,
-    meta: { title: 'Avifauna' }
+    // meta: { title: 'Avifauna' }
   },
   {
     path: '/conferences-courses',
     name: 'ConferencesCourses',
     component: ConferencesCourses,
-    meta: { title: 'Conferenze e Corsi' }
+    // meta: { title: 'Conferenze e Corsi' }
   },
   {
     path: '/courses',
     name: 'Socials',
     component: Socials,
-    meta: { title: 'Social' }
+    // meta: { title: 'Social' }
   },
   {
     path: '/links',
     name: 'Links',
     component: Links,
-    meta: { title: 'Link Utili' }
+    // meta: { title: 'Link Utili' }
   },
   {
     path: '/news',
     name: 'News',
     component: News,
-    meta: { title: 'News' }
+    // meta: { title: 'News' }
   },
   {
     path: '/projects',
     name: 'Projects',
     component: Projects,
-    meta: { title: 'Progetti' }
+    // meta: { title: 'Progetti' }
   },
   {
     path: '/publications',
     name: 'Publications',
     component: Publications,
-    meta: { title: 'Pubblicazioni' }
+    // meta: { title: 'Pubblicazioni' }
   },
 ];
+
+function updateMetaTag(attribute, value, content) {
+  let element = document.querySelector(`meta[${attribute}="${value}"]`);
+
+  if (!element) {
+    element = document.createElement('meta');
+    element.setAttribute(attribute, value);
+    document.head.appendChild(element);
+  }
+
+  element.setAttribute('content', content);
+}
+
+function updateMeta(routeName, fullPath) {
+  const meta = metaDescriptions[routeName] || metaDescriptions.default;
+  const fullTitle = `${siteMeta.siteName} - ${meta.title}`;
+  const fullUrl = `${siteMeta.siteUrl}${fullPath}`;
+  const image = meta.image ? `${siteMeta.siteUrl}${meta.image}` 
+    : siteMeta.defaultImage;
+
+  // Title
+  document.title = fullTitle;
+
+  // Standard meta
+  updateMetaTag('name', 'description', meta.description);
+
+  // Open Graph
+  updateMetaTag('property', 'og:title', fullTitle);
+  updateMetaTag('property', 'og:description', meta.description);
+  updateMetaTag('property', 'og:image', image);
+  updateMetaTag('property', 'og:url', fullUrl);
+  updateMetaTag('property', 'og:type', 'website');
+  updateMetaTag('property', 'og:site_name', siteMeta.siteName);
+
+  // Canonical URL
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement('link');
+    canonical.setAttribute('rel', 'canonical');
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute('href', fullUrl);
+
+}
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -77,22 +121,23 @@ export const router = createRouter({
 
 // Navigation guard to update title and description
 router.beforeEach((to, from, next) => {
+  updateMeta(to.name, to.fullPath);
 
   // Update the page title
-  const pageTitle = to.meta.title || 'Homepage';
-  document.title = `Gruppo Insubrico Ornitologico - ${pageTitle}`;
+  // const pageTitle = to.meta.title || 'Homepage';
+  // document.title = `Gruppo Insubrico Ornitologico - ${pageTitle}`;
 
   // Update the meta description
-  const description = metaDescriptions[to.name] || metaDescriptions.default;
-  let metaDescription = document.querySelector('meta[name="description"]');
+  // const description = metaDescriptions[to.name] || metaDescriptions.default;
+  // let metaDescription = document.querySelector('meta[name="description"]');
 
-  if (!metaDescription) {
-    metaDescription = document.createElement('meta');
-    metaDescription.name = 'description';
-    document.head.appendChild(metaDescription);
-  }
+  // if (!metaDescription) {
+  //   metaDescription = document.createElement('meta');
+  //   metaDescription.name = 'description';
+  //   document.head.appendChild(metaDescription);
+  // }
 
-  metaDescription.content = description;
+  // metaDescription.content = description;
 
   next();
 })
