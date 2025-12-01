@@ -156,7 +156,9 @@ export default {
                 <p>Ti aspettiamo!</p>
               </div>
               <div class="subscription-button button">
-                <button>Diventa socio</button>
+                <router-link :to="{ name: 'AboutUs' }">
+                  <button>Diventa socio</button>
+                </router-link>
               </div>
             </div>
           </div>
@@ -336,13 +338,14 @@ export default {
       text-align: center;
 
       .overlay-2 {
-        width: 20%;
+        width: 35%;
         margin: 0 auto;
         border-radius: 50%;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.9);
 
         img {
-          width: 100%;
+          width: 65%;
+          padding-top: 1rem;
         }
       }
 

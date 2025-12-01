@@ -39,11 +39,13 @@ export default {
             <div class="logo-box d-flex">
               <!-- Logo container -->
               <div class="logo-container">
-                <img
-                  class="footer-logo"
-                  src="../assets/images/gio-logo2.png"
-                  alt="Logo del Gruppo Insubrico di Ornitologia"
-                  />
+                <div class="overlay-2">
+                  <img
+                    class="footer-logo"
+                    src="../assets/images/gio-logo2.png"
+                    alt="Logo del Gruppo Insubrico di Ornitologia"
+                    />
+                </div>
               </div>
               <!-- END container -->
             
@@ -118,6 +120,18 @@ export default {
 
       img {
         width: 100%;
+      }
+
+      .overlay-2 {
+        width: 100%;
+        text-align: center;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 1);
+
+        img {
+          width: 65%;
+          padding-top: 1rem;
+        }
       }
     }
 

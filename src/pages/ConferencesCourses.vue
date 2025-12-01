@@ -1,6 +1,6 @@
 <script></script>
 <template>
     <div>
-        <h1>CONFERENZE</h1>
+        <h1>CONFERENZE E CORSI</h1>
     </div>
 </template>
