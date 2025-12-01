@@ -68,24 +68,24 @@ export default {
 </template>
 
 <style scoped>
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  transition: transform 0.5s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
 #cookies-button {
   left: 2%;
   bottom: 6%;
   position: fixed;
 
-  button {
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
-    transition: transform 0.5s ease-in-out;
-
-    img {
-      width: 2em;
-    }
-
-    &:hover {
-      transform: scale(1.2);
-    }
+  img {
+    width: 2em;
   }
 }
 
@@ -94,20 +94,9 @@ export default {
   bottom: 6%;
   position: fixed;
 
-  button {
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
-    transition: transform 0.5s ease-in-out;
-
-    img {
-      width: 2.5em;
-    }
-
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
+  img {
+    width: 2.5em;
+  }  
 }
 
 /* Media queries */
