@@ -40,21 +40,55 @@ export default {
 <template>
   <HeaderComponent></HeaderComponent>
   <router-view></router-view>
-  <div id="up-button">
-    <button aria-label="Torna in alto">
-      <img
-        v-show="visible"
-        src="./assets/images/up-arrow.svg"
-        alt="Freccia in alto per scorrere la pagina in su"
-        @click="scrollUp()"
-      />
-    </button>
+  <div class="buttons-container d-flex">
+    <!-- Cookies button -->
+    <div id="cookies-button">
+      <button>
+        <img src="./assets/images/cookies-icon.svg" alt="Collegamento all'informativa dei cookie">
+      </button>
+    </div>
+    <!-- END cookies button -->
+
+    <!-- Up button -->
+    <div id="up-button">
+      <button aria-label="Torna in alto">
+        <img
+          v-show="visible"
+          src="./assets/images/up-arrow.svg"
+          alt="Freccia in alto per scorrere la pagina in su"
+          @click="scrollUp()"
+        />
+      </button>
+    </div>
+    <!-- END up button -->
   </div>
+  
   <CookieBanner />
   <FooterComponent></FooterComponent>
 </template>
 
 <style scoped>
+#cookies-button {
+  left: 2%;
+  bottom: 6%;
+  position: fixed;
+
+  button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: transform 0.5s ease-in-out;
+
+    img {
+      width: 2em;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
 #up-button {
   right: 2%;
   bottom: 6%;
@@ -68,7 +102,6 @@ export default {
 
     img {
       width: 2.5em;
-      
     }
 
     &:hover {
