@@ -146,7 +146,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vh;
+  width: 100vw;
   height: 100vh;
   z-index: 9998;
 }
@@ -237,6 +237,7 @@ export default {
     left: 0;
     bottom: 0;
     position: fixed;
+    transform: translateX(0);
 
     .cookie-banner.overlay {
       width: 100%;
