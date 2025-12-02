@@ -77,3 +77,7 @@ export const metaDescriptions = {
     image: null,
   }
 };
+
+export const cookies = {
+  text: 'Non collezioniamo cookie.'
+};

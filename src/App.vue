@@ -10,8 +10,10 @@ export default {
   data() {
     return {
       visible: false,
+      showPanel: false,
     };
   },
+
   components: {
     HeaderComponent,
     FooterComponent,
@@ -25,9 +27,19 @@ export default {
     scrollUp() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     },
+
+    showCookies() {
+      this.showPanel = true;
+      console.log(this.showPanel);
+    }
   },
 
   created() {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    window.scrollTo(0, 0);
     window.addEventListener("scroll", this.windowScroll);
   },
 
@@ -43,7 +55,7 @@ export default {
   <div class="buttons-container d-flex">
     <!-- Cookies button -->
     <div id="cookies-button">
-      <button>
+      <button @click="showCookies">
         <img src="./assets/images/cookies-icon.svg" alt="Collegamento all'informativa dei cookie">
       </button>
     </div>
@@ -79,24 +91,26 @@ button {
   }
 }
 
-#cookies-button {
-  left: 2%;
+#cookies-button,
+#up-button {
   bottom: 6%;
   position: fixed;
+}
 
-  img {
+#cookies-button {
+  left: 2%;
+
+    img {
     width: 2em;
   }
 }
 
 #up-button {
   right: 2%;
-  bottom: 6%;
-  position: fixed;
 
   img {
-    width: 2.5em;
-  }  
+    width: 2.5em; 
+  }
 }
 
 /* Media queries */
