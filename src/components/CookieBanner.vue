@@ -136,10 +136,15 @@ export default {
   }
 }
 
-.fade-scale-enter-from,
-.fade-scale-leave-to {
+.fade-scale-leave-to,
+.fade-scale-enter-from {
   opacity: 0;
   transform: scale(0.95);
+
+  .cookie-zoomed-container {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.95);
+  }
 }
 
 .cookie-overlay {
