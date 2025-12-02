@@ -65,11 +65,21 @@ export default {
         <!-- Jumbo section -->
         <section class="title-section jumbo-bg d-flex">
           <div class="overlay">
-            <div class="title-container">
+            <!-- <div class="title-container">
               <div class="fade-wrapper">
                 <p class="uppercase">gio</p>
               </div>
+            </div> -->
+
+            <!-- Logo container -->
+            <div class="logo-section fade-wrapper-3">
+              <div class="logo-container">
+                <div class="overlay-2">
+                  <img src="../assets/images/gio-logo2.png" alt="" />
+                </div>
+              </div>
             </div>
+            <!-- END logo container -->
 
             <div class="title-container title-container-2">
               <div class="fade-wrapper-2">
@@ -80,14 +90,6 @@ export default {
             <div class="title-container title-container-3">
               <div class="fade-wrapper-2">
                 <p class="uppercase">di ornitologia</p>
-              </div>
-            </div>
-
-            <div class="logo-section fade-wrapper-3">
-              <div class="logo-container">
-                <div class="overlay-2">
-                  <img src="../assets/images/gio-logo2.png" alt="" />
-                </div>
               </div>
             </div>
           </div>
@@ -104,7 +106,7 @@ export default {
             </div>
             <div class="news-description">
               <p>Le nostre news più recenti</p>
-              <br />
+              <hr />
             </div>
           </div>
 
@@ -327,7 +329,7 @@ export default {
   .title-section {
     position: relative;
     width: 100%;
-    height: 1200px;
+    height: 900px;
     overflow: hidden;
 
     .logo-section {
@@ -340,13 +342,13 @@ export default {
         text-align: center;
 
         .overlay-2 {
-          width: 35%;
+          width: 25%;
           margin: 0 auto;
           border-radius: 50%;
           background-color: rgba(255, 255, 255, 0.9);
 
           img {
-            width: 65%;
+            width: 100%;
             padding-top: 1rem;
           }
         }
@@ -362,7 +364,7 @@ export default {
   .title-container {
     width: 100%;
     text-align: center;
-    padding-top: 8rem;
+    padding-top: 1rem;
 
     p {
       font-size: 3rem;
@@ -398,10 +400,6 @@ export default {
         color: transparent;
       }
     }
-  }
-
-  .title-container-2 {
-    padding-top: 10rem;
   }
 
   .title-container-3 {
@@ -470,6 +468,14 @@ export default {
     p {
       font-size: 1.7rem;
       padding-top: 6rem;
+    }
+
+    hr {
+      width: 20%;
+      border: none;
+      margin-left: 8rem;
+      margin-top: 4rem;
+      border-bottom: 2px solid rgb(141, 141, 141);
     }
   }
 }
@@ -788,8 +794,9 @@ export default {
 
       hr {
         width: 250px;
+        border: none;
         margin-left: 25rem;
-        border-left: 2px solid rgb(141, 141, 141);
+        border-bottom: 2px solid white;
       }
 
       .first-box {
