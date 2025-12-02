@@ -86,7 +86,7 @@ export default {
             <div class="logo-section fade-wrapper-3">
               <div class="logo-container">
                 <div class="overlay-2">
-                  <img src="../assets/images/gio-logo2.png" alt="">
+                  <img src="../assets/images/gio-logo2.png" alt="" />
                 </div>
               </div>
             </div>
@@ -318,96 +318,99 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.jumbo-bg {
-  background: url(../assets/images/jumbo-home.webp) center/cover no-repeat;
-}
+// Jumbo section
+.col {
+  .jumbo-bg {
+    background: url(../assets/images/jumbo-home.webp) center/cover no-repeat;
+  }
 
-.title-section {
-  position: relative;
-  width: 100%;
-  height: 1200px;
-  overflow: hidden;
-
-  .logo-section {
+  .title-section {
+    position: relative;
     width: 100%;
-    margin-top: 5rem;
-    padding-bottom: 3rem;
+    height: 1200px;
+    overflow: hidden;
 
-    .logo-container {
+    .logo-section {
       width: 100%;
-      text-align: center;
+      margin-top: 5rem;
+      padding-bottom: 3rem;
 
-      .overlay-2 {
-        width: 35%;
-        margin: 0 auto;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.9);
+      .logo-container {
+        width: 100%;
+        text-align: center;
 
-        img {
-          width: 65%;
-          padding-top: 1rem;
+        .overlay-2 {
+          width: 35%;
+          margin: 0 auto;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.9);
+
+          img {
+            width: 65%;
+            padding-top: 1rem;
+          }
         }
       }
+    }
 
-      
+    .fade-wrapper-3 {
+      opacity: 0;
+      animation: fadeIn 6s ease-in-out forwards;
     }
   }
 
-  .fade-wrapper-3 {
-    opacity: 0;
-    animation: fadeIn 6s ease-in-out forwards;
-  }
-}
-
-.title-container {
-  width: 100%;
-  text-align: center;
-  padding-top: 8rem;
-
-  p {
-    font-size: 3rem;
-  }
-
-  .fade-wrapper {
-    opacity: 0;
-    animation: fadeIn 3s ease-in-out forwards;
+  .title-container {
+    width: 100%;
+    text-align: center;
+    padding-top: 8rem;
 
     p {
-      line-height: 10rem;
-      font-size: 12rem;
-      font-weight: 500;
-      background: linear-gradient(90deg, #19d2b9 0%, #feff01 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      letter-spacing: 3rem;
+      font-size: 3rem;
+    }
+
+    .fade-wrapper {
+      opacity: 0;
+      animation: fadeIn 3s ease-in-out forwards;
+
+      p {
+        line-height: 10rem;
+        font-size: 12rem;
+        font-weight: 500;
+        background: linear-gradient(90deg, #19d2b9 0%, #feff01 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        letter-spacing: 3rem;
+      }
+    }
+
+    .fade-wrapper-2 {
+      opacity: 0;
+      animation: fadeIn 4.5s ease-in-out forwards;
+
+      p {
+        font-size: 3.2rem;
+        font-weight: 600;
+        letter-spacing: 1rem;
+        background: linear-gradient(90deg, #1f1f1f, #b6b6b6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
     }
   }
 
-  .fade-wrapper-2 {
-    opacity: 0;
-    animation: fadeIn 4.5s ease-in-out forwards;
+  .title-container-2 {
+    padding-top: 10rem;
+  }
 
-    p {
-      font-size: 3.2rem;
-      font-weight: 600;
-      letter-spacing: 1rem;
-      background: linear-gradient(90deg, #1f1f1f, #b6b6b6);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
+  .title-container-3 {
+    padding-top: 1rem;
   }
 }
+// END jumbo section
 
-.title-container-2 {
-  padding-top: 10rem;
-}
-
-.title-container-3 {
-  padding-top: 1rem;
-}
-
+// News section
 .news-container {
   width: 100%;
 
@@ -417,8 +420,8 @@ export default {
     .part-1,
     .part-2,
     .part-3 {
-      overflow: hidden; /* Nasconde l'elemento fino a quando non entra nella pagina */
-      white-space: nowrap; /* Impedisce al testo di andare a capo */
+      overflow: hidden;
+      white-space: nowrap;
       width: 100%;
       text-align: left;
       opacity: 0;
@@ -522,6 +525,7 @@ export default {
   }
 }
 
+// Subscription section
 .subscription-container {
   padding-top: 10rem;
   padding-bottom: 14rem;
@@ -607,7 +611,9 @@ export default {
     border-bottom: 2px solid rgb(141, 141, 141);
   }
 }
+// END subscription section
 
+// Activities section
 .activities-container {
   width: 90%;
   margin: 0 auto;
@@ -744,7 +750,9 @@ export default {
     }
   }
 }
+// END activities section
 
+// Contacts section
 .contacts-container {
   width: 100%;
   position: relative;
@@ -889,6 +897,7 @@ export default {
     }
   }
 }
+// END contacts section
 
 // Effect on ::before and ::after
 .title-section::after {

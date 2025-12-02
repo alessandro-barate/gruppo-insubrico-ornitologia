@@ -35,9 +35,15 @@ export default {
         <div class="col">
           <div class="main-container">
             <!-- Logo box -->
-            <div class="logo-box d-flex">
+            <div class="logo-box">
+              <!-- Text -->
+              <div class="logo-text">
+                <h1>Gruppo Insubrico di Ornitologia G I O</h1>
+              </div>
+              <!-- END text -->
+
               <!-- Logo container -->
-              <div class="logo-container">
+              <div class="logo-container d-flex">
                 <div class="overlay-2">
                   <img
                     class="footer-logo"
@@ -47,12 +53,6 @@ export default {
                 </div>
               </div>
               <!-- END container -->
-
-              <!-- Text -->
-              <div class="logo-text">
-                <h1>Gruppo Insubrico di Ornitologia G I O</h1>
-              </div>
-              <!-- END text -->
             </div>
             <!-- END logo box -->
 
@@ -99,7 +99,6 @@ export default {
                     />
                   </a>
                 </div>
-                <!-- <p>Guarda sulla mappa</p> -->
               </div>
             </div>
             <!-- END details section -->
@@ -132,7 +131,8 @@ export default {
     padding: 2rem;
 
     .logo-container {
-      width: 20%;
+      width: 100%;
+      justify-content: center;
     }
 
     img {
@@ -140,21 +140,22 @@ export default {
     }
 
     .overlay-2 {
-      width: 100%;
+      width: 20%;
       text-align: center;
       border-radius: 50%;
-      background-color: rgba(255, 255, 255, 1);
+      background-color: rgba(255, 255, 255, 0.9);
 
       img {
-        width: 65%;
+        width: 100%;
         padding-top: 1rem;
       }
     }
   }
 
   .logo-text {
-    width: 80%;
+    width: 100%;
     padding: 3rem;
+    text-align: center;
   }
 
   .details-container {
