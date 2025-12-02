@@ -71,20 +71,16 @@ export default {
               <div class="details-column">
                 <h3 class="uppercase">il gruppo</h3>
                 <p>
-                  <a
-                    href="../assets/documents/atto-costitutivo.pdf"
-                    target="_blank"
+                  <a href="/documents/atto-costitutivo.pdf" target="_blank"
                     >Atto Costitutivo</a
                   >
                 </p>
                 <p>
-                  <a href="../assets/documents/statuto.pdf" target="_blank"
-                    >Statuto</a
-                  >
+                  <a href="/documents/statuto.pdf" target="_blank">Statuto</a>
                 </p>
                 <p>
                   <a
-                    href="../assets/documents/iscrizione-registro-volontario.pdf"
+                    href="/documents/iscrizione-registro-volontariato.pdf"
                     target="_blank"
                     >Iscrizione Registro Volontariato</a
                   >
