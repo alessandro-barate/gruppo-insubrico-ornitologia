@@ -1,8 +1,8 @@
 <script>
 // Imports
-import HeaderComponent from './components/HeaderComponent.vue';
-import FooterComponent from './components/FooterComponent.vue';
-import CookieBanner from './components/CookieBanner.vue';
+import HeaderComponent from "./components/HeaderComponent.vue";
+import FooterComponent from "./components/FooterComponent.vue";
+import CookieBanner from "./components/CookieBanner.vue";
 
 export default {
   name: "App",
@@ -31,12 +31,16 @@ export default {
     showCookies() {
       this.showPanel = true;
       console.log(this.showPanel);
-    }
+    },
+
+    closeCookiePanel() {
+      this.showPanel = false;
+    },
   },
 
   created() {
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
     }
 
     window.scrollTo(0, 0);
@@ -56,7 +60,10 @@ export default {
     <!-- Cookies button -->
     <div id="cookies-button">
       <button @click="showCookies">
-        <img src="./assets/images/cookies-icon.svg" alt="Collegamento all'informativa dei cookie">
+        <img
+          src="./assets/images/cookies-icon.svg"
+          alt="Collegamento all'informativa dei cookie"
+        />
       </button>
     </div>
     <!-- END cookies button -->
@@ -74,8 +81,8 @@ export default {
     </div>
     <!-- END up button -->
   </div>
-  
-  <CookieBanner />
+
+  <CookieBanner :forceShow="showPanel" @close="closeCookiePanel" />
   <FooterComponent></FooterComponent>
 </template>
 
@@ -100,7 +107,7 @@ button {
 #cookies-button {
   left: 2%;
 
-    img {
+  img {
     width: 2em;
   }
 }
@@ -109,7 +116,7 @@ button {
   right: 2%;
 
   img {
-    width: 2.5em; 
+    width: 2.5em;
   }
 }
 

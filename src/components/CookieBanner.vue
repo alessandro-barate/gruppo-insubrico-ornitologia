@@ -4,6 +4,13 @@ import { cookies } from "../store";
 export default {
   name: "CookieBanner",
 
+  props: {
+    forceShow: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
   data() {
     return {
       cookies,
@@ -14,6 +21,13 @@ export default {
 
   created() {
     this.checkCookieConsent();
+  },
+
+  computed: {
+    shouldShowBanner() {
+      // Shows the banner if forced from the outside or if the internal logic needs to
+      return this.forceShow || this.showCookieBanner;
+    },
   },
 
   methods: {
@@ -65,6 +79,8 @@ export default {
       this.setConsentExpiry();
       // Hide the banner
       this.showCookieBanner = false;
+      // Emit close event to close also the banner if forced by the button
+      this.$emit("close");
     },
   },
 };
@@ -73,8 +89,7 @@ export default {
 <template>
   <!-- Cookie panel -->
   <Transition name="fade-scale">
-    <div class="cookies-overlay" v-if="showCookieBanner">
-
+    <div class="cookies-overlay" v-if="shouldShowBanner">
       <!-- Black-overlay -->
       <div class="overlay-background"></div>
       <!-- END black-overlay -->
@@ -82,18 +97,17 @@ export default {
       <!-- Centered banner -->
       <div class="cookie-zoomed-container">
         <div class="cookie-banner overlay gradient-color-subscribe-cookie">
-
           <!-- Cookie banner title -->
           <div class="cookie-banner-title">
             <h3>Cookies</h3>
           </div>
           <!-- END cookie banner title -->
 
-          <hr>
+          <hr />
 
           <!-- Cookie banner description -->
           <div class="cookie-banner-description">
-            <p>{{cookies.text}}</p>
+            <p>{{ cookies.text }}</p>
           </div>
           <!-- END cookie banner description -->
 
@@ -115,7 +129,7 @@ export default {
   .overlay-background {
     opacity: 0;
   }
-  
+
   .cookie-zoomed-container {
     opacity: 0;
     transform: translateX(-50%) scale(0.95);
