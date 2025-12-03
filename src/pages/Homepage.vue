@@ -511,14 +511,15 @@ export default {
 
   button {
     color: white;
+    font-weight: 500;
     font-size: 1rem;
     padding: 1rem;
     border-radius: 0.5rem;
     border: none;
-    background: linear-gradient(90deg, #0077ff, #5cd20d);
+    background: linear-gradient(90deg, #0077ff, #00e1ff);
 
     &:hover {
-      color: red;
+      color: rgb(0, 0, 0);
     }
   }
 }
