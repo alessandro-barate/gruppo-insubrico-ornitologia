@@ -6,8 +6,20 @@ h1 {
   font-size: 3rem;
 }
 
-h2, h3 {
+h2,
+h3 {
   font-weight: 500;
+}
+
+/************
+FONTS COLOR
+************/
+.news-container .sections-title .title-1,
+.news-container .sections-title .title-2 {
+  background: linear-gradient(90deg, #002fff, #00e1ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /**********

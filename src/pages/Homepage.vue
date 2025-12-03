@@ -440,14 +440,6 @@ export default {
       }
     }
 
-    .title-1,
-    .title-2 {
-      background: linear-gradient(90deg, #0077ff, #5cd20d);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
     .title-1 {
       font-size: 3rem;
       padding-top: 2rem;
@@ -765,7 +757,7 @@ export default {
   background-image: linear-gradient(
       90deg,
       rgba(0, 119, 255, 0.85),
-      rgba(92, 210, 13, 0.85)
+      rgba(233, 233, 233, 0.85)
     ),
     url(../assets/images/social.jpg);
   padding-top: 10rem;
