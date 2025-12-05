@@ -15,16 +15,10 @@ DISPLAY
 /************
 BACKGROUND
 ************/
-.gradient-color {
-  background-image: linear-gradient(90deg, #0077ff, #e1e7dd);
-}
-
-.gradient-color-subscribe {
-  background-image: linear-gradient(90deg, #0077ff, #e9e9e9);
-}
-
+.gradient-color,
+.gradient-color-subscribe,
 .gradient-color-subscribe-cookie {
-  background-image: linear-gradient(90deg, #0077ffe2, #5cd20de2);
+  background-image: linear-gradient(90deg, #0077ff, #e1e7dd);
 }
 
 .transparent {

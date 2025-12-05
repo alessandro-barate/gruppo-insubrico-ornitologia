@@ -593,7 +593,8 @@ export default {
       padding-bottom: 1rem;
 
       button {
-        background: linear-gradient(90deg, #d2420d, #ffbf00);
+        // background: linear-gradient(90deg, #d2420d, #ffbf00);
+        background: linear-gradient(90deg, #e9e9e9, #0077ff);
 
         &:hover {
           color: rgb(0, 0, 0);

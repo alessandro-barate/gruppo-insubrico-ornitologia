@@ -30,7 +30,6 @@ export default {
 
     showCookies() {
       this.showPanel = true;
-      console.log(this.showPanel);
     },
 
     closeCookiePanel() {
@@ -64,6 +63,7 @@ export default {
           src="./assets/images/cookies-icon.svg"
           alt="Collegamento all'informativa dei cookie"
         />
+        <p>Cookies</p>
       </button>
     </div>
     <!-- END cookies button -->
@@ -94,18 +94,18 @@ button {
   transition: transform 0.5s ease-in-out;
 
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
 
 #cookies-button,
 #up-button {
-  bottom: 6%;
   position: fixed;
 }
 
 #cookies-button {
   left: 2%;
+  bottom: 6%;
 
   img {
     width: 2em;
@@ -114,6 +114,7 @@ button {
 
 #up-button {
   right: 2%;
+  bottom: 7%;
 
   img {
     width: 2.5em;
