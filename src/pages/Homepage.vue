@@ -65,12 +65,6 @@ export default {
         <!-- Jumbo section -->
         <section class="title-section jumbo-bg d-flex">
           <div class="overlay">
-            <!-- <div class="title-container">
-              <div class="fade-wrapper">
-                <p class="uppercase">gio</p>
-              </div>
-            </div> -->
-
             <!-- Logo container -->
             <div class="logo-section fade-wrapper-3">
               <div class="logo-container">
@@ -81,6 +75,7 @@ export default {
             </div>
             <!-- END logo container -->
 
+            <!-- Organization's name -->
             <div class="title-container title-container-2">
               <div class="fade-wrapper-2">
                 <p class="uppercase">gruppo insubrico</p>
@@ -92,6 +87,7 @@ export default {
                 <p class="uppercase">di ornitologia</p>
               </div>
             </div>
+            <!-- END organization's name -->
           </div>
         </section>
         <!-- END jumbo section -->
@@ -100,9 +96,9 @@ export default {
         <section>
           <div class="news-container d-flex">
             <div class="sections-title news-box">
-              <h2 class="title-1 part-1 uppercase">le ultime</h2>
-              <h2 class="title-2 part-2 uppercase">news</h2>
-              <h2 class="title-1 part-3 uppercase">del g i o</h2>
+              <h2 class="title-1 title-color part-1 uppercase">le ultime</h2>
+              <h2 class="title-2 title-color part-2 uppercase">news</h2>
+              <h2 class="title-1 title-color part-3 uppercase">del g i o</h2>
             </div>
             <div class="news-description">
               <p>Le nostre news più recenti</p>
@@ -140,8 +136,10 @@ export default {
         <section>
           <div class="subscription-container news-container">
             <div class="sections-title subscription-title">
-              <h2 class="title-1 uppercase">diventa nostro</h2>
-              <h2 class="title-2 gradient-color uppercase">socio</h2>
+              <h2 class="title-1 title-color uppercase">diventa nostro</h2>
+              <h2 class="title-2 title-color gradient-color uppercase">
+                socio
+              </h2>
             </div>
             <hr />
             <div class="subscription-box gradient-color-subscribe">
@@ -245,8 +243,8 @@ export default {
 
             <!-- Activities title and description -->
             <div class="sections-title activities-title">
-              <h2 class="title-1 uppercase">scopri le nostre</h2>
-              <h2 class="title-2 gradient-color uppercase">attività</h2>
+              <h2 class="title-1 title-color uppercase">scopri le nostre</h2>
+              <h2 class="title-2 title-color uppercase">attività</h2>
             </div>
             <!-- END activities title and description -->
           </div>
@@ -368,22 +366,6 @@ export default {
 
     p {
       font-size: 3rem;
-    }
-
-    .fade-wrapper {
-      opacity: 0;
-      animation: fadeIn 3s ease-in-out forwards;
-
-      p {
-        line-height: 10rem;
-        font-size: 12rem;
-        font-weight: 500;
-        background: linear-gradient(90deg, #19d2b9 0%, #feff01 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        letter-spacing: 3rem;
-      }
     }
 
     .fade-wrapper-2 {
@@ -593,8 +575,8 @@ export default {
       padding-bottom: 1rem;
 
       button {
-        // background: linear-gradient(90deg, #d2420d, #ffbf00);
-        background: linear-gradient(90deg, #e9e9e9, #0077ff);
+        background: linear-gradient(90deg, #d2420d, #ffbf00);
+        // background: linear-gradient(90deg, #e9e9e9, #0077ff);
 
         &:hover {
           color: rgb(0, 0, 0);
@@ -943,59 +925,5 @@ export default {
   height: 150px;
   background: #ffffff;
   clip-path: polygon(0 0, 100% 0, 0 100%);
-}
-
-// Keyframes
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInTop {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInBottom {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 </style>

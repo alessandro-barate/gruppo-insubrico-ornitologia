@@ -105,19 +105,23 @@ button {
 
 #cookies-button {
   left: 2%;
-  bottom: 6%;
+  bottom: 2rem;
 
   img {
     width: 2em;
+  }
+
+  p {
+    font-size: 0.7rem;
   }
 }
 
 #up-button {
   right: 2%;
-  bottom: 7%;
+  bottom: 2.9rem;
 
   img {
-    width: 2.5em;
+    width: 2.08em;
   }
 }
 
