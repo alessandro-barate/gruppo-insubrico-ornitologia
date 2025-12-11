@@ -201,6 +201,19 @@ export default {
             justify-content: center;
             padding: 0.4rem;
 
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: rgba(0, 0, 0, 0.3);
+              border-radius: 1rem;
+              z-index: 1;
+              pointer-events: none;
+            }
+
             .test-static {
               color: yellow;
               font-size: 2rem;
