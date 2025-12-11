@@ -144,14 +144,54 @@ export const links = {
   },
   birdwatching: {
     1: {
-      title: "1",
-      href: "",
+      title: "EBN Italia",
+      href: "https://www.ebnitalia.it",
+    },
+    2: {
+      title: "Birdin' Lombardia",
+      href: "https://www.birdinlombardia.it",
+    },
+    3: {
+      title: "Cuneo Birding",
+      href: "http://www.cuneobirding.it",
+    },
+    4: {
+      title: "Liguria Birding",
+      href: "https://www.liguriabirding.net",
     },
   },
   nature: {
     1: {
-      title: "2",
-      href: "",
+      title: "Lega Italiana Protezione Uccelli",
+      href: "https://www.lipu.it",
+    },
+    2: {
+      title: "World Wildlife Fund",
+      href: "https://www.wwf.it",
+    },
+    3: {
+      title: "BirdLife International",
+      href: "https://www.birdlife.org",
+    },
+    4: {
+      title: "RSPB - UK",
+      href: "https://www.rspb.org.uk",
+    },
+    5: {
+      title: "NABU - Germania",
+      href: "https://www.nabu.de",
+    },
+    6: {
+      title: "Ligue pour la Protection des Oiseaux",
+      href: "https://www.lpo.fr",
+    },
+    7: {
+      title: "Lega Abolizione Caccia",
+      href: "https://www.abolizionecaccia.it",
+    },
+    8: {
+      title: "Viaggiatori per natura",
+      href: "https://www.animal-trip.com",
     },
   },
 };
