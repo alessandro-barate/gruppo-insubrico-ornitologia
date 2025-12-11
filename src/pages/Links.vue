@@ -219,14 +219,16 @@ export default {
               z-index: 2;
               letter-spacing: 2px;
               transform: translateZ(30px);
-              padding: 0.3rem 1rem;
+              padding: 0.4rem 1rem;
               border-radius: 0.5rem;
               cursor: pointer;
+              text-underline-offset: 0.2rem;
 
               .link-inside {
                 color: white;
-                text-decoration: none;
+                text-decoration: underline;
                 display: block;
+                transition: all 0.5s ease-in-out;
 
                 &:hover {
                   color: rgb(0, 0, 0);
