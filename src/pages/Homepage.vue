@@ -193,7 +193,7 @@ export default {
                   </div>
                   <div class="card-hover gradient-color">
                     <img src="../assets/images/arrow-right.svg" alt="" />
-                    <p>l'aviofauna di varese</p>
+                    <p>l'avifauna di varese</p>
                   </div>
                 </router-link>
 
@@ -517,7 +517,7 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-image: url(../assets/images/parallax-image.jpg);
+  background-image: url(../assets/images/parallax-image.webp);
 
   .sections-title {
     margin-bottom: 2rem;
@@ -702,10 +702,10 @@ export default {
         background-image: url(../assets/images/grid-3.webp);
       }
       .card-4 {
-        background-image: url(../assets/images/grid-4.jpg);
+        background-image: url(../assets/images/grid-4.webp);
       }
       .card-5 {
-        background-image: url(../assets/images/grid-5.jpg);
+        background-image: url(../assets/images/grid-5.webp);
       }
     }
   }

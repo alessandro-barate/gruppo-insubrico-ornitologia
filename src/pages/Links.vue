@@ -42,7 +42,10 @@ export default {
               v-for="(category, categoryKey) in links"
               :key="categoryKey"
             >
-              <div class="column-front d-flex">
+              <div
+                class="column-front d-flex gradient-color"
+                :class="`bg-${categoryKey}`"
+              >
                 <p>{{ getCategoryName(categoryKey) }}</p>
               </div>
               <div class="column-back">
@@ -107,6 +110,7 @@ export default {
           border-radius: 1rem;
           transition: transform 2s;
           transform-style: preserve-3d;
+          border: 0.13rem solid rgba(0, 0, 0, 0.8);
 
           &:hover {
             transform: rotateY(180deg);
@@ -122,18 +126,50 @@ export default {
 
           .column-front {
             height: 100%;
-            justify-content: center;
             align-items: center;
-            background-color: aqua;
+            justify-content: center;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: rgba(0, 0, 0, 0.4);
+              border-radius: 1rem;
+            }
+
+            &.bg-ornithology,
+            &.bg-birdwatching,
+            &.bg-nature {
+              background-size: cover;
+              background-position: center;
+            }
+
+            &.bg-ornithology {
+              background-image: url(../assets/images/poiana.webp);
+            }
+
+            &.bg-birdwatching {
+              background-image: url(../assets/images/birdwatching.webp);
+            }
+
+            &.bg-nature {
+              background-image: url(../assets/images/nature.webp);
+            }
 
             p {
+              color: white;
               font-size: 2rem;
+              position: relative;
+              z-index: 1;
             }
           }
 
           .column-back {
             height: 100%;
-            background-color: red;
+            opacity: 0.8;
             transform: rotateY(180deg);
 
             .list-element {
