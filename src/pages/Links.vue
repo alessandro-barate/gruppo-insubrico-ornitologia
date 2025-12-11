@@ -42,24 +42,29 @@ export default {
               v-for="(category, categoryKey) in links"
               :key="categoryKey"
             >
-              <div
-                class="column-front d-flex gradient-color"
-                :class="`bg-${categoryKey}`"
-              >
-                <p>{{ getCategoryName(categoryKey) }}</p>
-              </div>
-              <div class="column-back">
-                <div class="list-container">
-                  <ul>
-                    <li
-                      class="list-element"
-                      v-for="(link, index) in category"
-                      :key="index"
-                    >
-                      <a :href="link.href" target="_blank">{{ link.title }}</a>
-                    </li>
-                  </ul>
+              <div class="column-inner">
+                <!-- Front card -->
+                <div
+                  class="column-front gradient-color"
+                  :class="`bg-${categoryKey}`"
+                >
+                  <p class="front-text">{{ getCategoryName(categoryKey) }}</p>
                 </div>
+                <!-- END front card -->
+
+                <!-- Back card -->
+                <div class="column-back gradient-color d-flex">
+                  <p
+                    class="back-link"
+                    v-for="(link, index) in category"
+                    :key="index"
+                  >
+                    <a :href="link.href" target="_blank" class="link-inside">{{
+                      link.title
+                    }}</a>
+                  </p>
+                </div>
+                <!-- END back card -->
               </div>
             </div>
           </div>
@@ -101,36 +106,47 @@ export default {
         margin: 0 auto;
         display: grid;
         text-align: center;
-        perspective: 1000px;
+        perspective: 2000px;
         grid-template-columns: 1fr 1fr 1fr;
 
         .column {
-          height: 40rem;
+          height: 45rem;
           position: relative;
           border-radius: 1rem;
-          transition: transform 2s;
-          transform-style: preserve-3d;
-          border: 0.13rem solid rgba(0, 0, 0, 0.8);
+          perspective: 3000px;
 
-          &:hover {
+          &:hover .column-inner {
             transform: rotateY(180deg);
           }
 
-          .column-front,
-          .column-back {
+          .column-inner {
             width: 100%;
-            border-radius: 1rem;
-            position: absolute;
-            backface-visibility: hidden;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
           }
 
           .column-front {
+            width: 100%;
             height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+            border: 0.13rem solid rgba(0, 0, 0, 0.8);
+            transform-style: preserve-3d;
+            display: flex;
             align-items: center;
             justify-content: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
 
             &::before {
               content: "";
+              z-index: 1;
               position: absolute;
               top: 0;
               left: 0;
@@ -163,18 +179,59 @@ export default {
               color: white;
               font-size: 2rem;
               position: relative;
-              z-index: 1;
+              z-index: 2;
+              letter-spacing: 2px;
+              transform: translateZ(30px);
             }
           }
 
           .column-back {
+            width: 100%;
             height: 100%;
-            opacity: 0.8;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+            border: 0.13rem solid rgba(0, 0, 0, 0.8);
+            transform-style: preserve-3d;
             transform: rotateY(180deg);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.4rem;
 
-            .list-element {
-              margin-top: 1rem;
-              margin-bottom: 1rem;
+            .test-static {
+              color: yellow;
+              font-size: 2rem;
+              position: relative;
+              z-index: 2;
+              letter-spacing: 2px;
+              transform: translateZ(30px);
+              margin: 1rem 0;
+              font-weight: bold;
+            }
+
+            .back-link {
+              color: white;
+              font-size: 1rem;
+              position: relative;
+              z-index: 2;
+              letter-spacing: 2px;
+              transform: translateZ(30px);
+              padding: 0.3rem 1rem;
+              border-radius: 0.5rem;
+              cursor: pointer;
+
+              .link-inside {
+                color: white;
+                text-decoration: none;
+                display: block;
+
+                &:hover {
+                  color: rgb(0, 0, 0);
+                }
+              }
             }
           }
         }
