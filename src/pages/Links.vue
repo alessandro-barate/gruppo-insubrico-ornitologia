@@ -42,7 +42,7 @@ export default {
               v-for="(category, categoryKey) in links"
               :key="categoryKey"
             >
-              <div class="column-front">
+              <div class="column-front d-flex">
                 <p>{{ getCategoryName(categoryKey) }}</p>
               </div>
               <div class="column-back">
@@ -93,7 +93,7 @@ export default {
       padding-top: 7rem;
 
       .grid-table {
-        gap: 1rem;
+        gap: 5rem;
         width: 85%;
         margin: 0 auto;
         display: grid;
@@ -122,7 +122,13 @@ export default {
 
           .column-front {
             height: 100%;
+            justify-content: center;
+            align-items: center;
             background-color: aqua;
+
+            p {
+              font-size: 2rem;
+            }
           }
 
           .column-back {
