@@ -1,11 +1,11 @@
 export function usePageTransition(options = {}) {
   const defaultOptions = {
     duration: 200,
-    fadeOutDuration: 200,
-    fadeInDuration: 200,
+    fadeOutDuration: 400,
+    fadeInDuration: 400,
     // scrollDelay: 100,
     selector: "#app",
-    minOpacity: 0.05,
+    minOpacity: 0.07,
     ...options,
   };
 

@@ -19,55 +19,46 @@ const routes = [
     path: "/",
     name: "Homepage",
     component: Homepage,
-    // meta: { title: 'Homepage' }
   },
   {
     path: "/about-us",
     name: "AboutUs",
     component: AboutUs,
-    // meta: { title: 'Chi siamo' }
   },
   {
     path: "/birds",
     name: "Birds",
     component: Birds,
-    // meta: { title: 'Avifauna' }
   },
   {
     path: "/conferences-courses",
     name: "ConferencesCourses",
     component: ConferencesCourses,
-    // meta: { title: 'Conferenze e Corsi' }
   },
   {
     path: "/courses",
     name: "Socials",
     component: Socials,
-    // meta: { title: 'Social' }
   },
   {
     path: "/links",
     name: "Links",
     component: Links,
-    // meta: { title: 'Link Utili' }
   },
   {
     path: "/news",
     name: "News",
     component: News,
-    // meta: { title: 'News' }
   },
   {
     path: "/projects",
     name: "Projects",
     component: Projects,
-    // meta: { title: 'Progetti' }
   },
   {
     path: "/publications",
     name: "Publications",
     component: Publications,
-    // meta: { title: 'Pubblicazioni' }
   },
 ];
 
@@ -124,9 +115,9 @@ export const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   if (from.name) {
     const { animatePageChange } = usePageTransition({
-      fadeOutDuration: 200,
+      fadeOutDuration: 400,
       fadeInDuration: 400,
-      scrollDelay: 150,
+      // scrollDelay: 150,
     });
     await animatePageChange();
   }
