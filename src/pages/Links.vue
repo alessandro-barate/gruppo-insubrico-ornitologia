@@ -124,7 +124,7 @@ export default {
             height: 100%;
             position: relative;
             transform-style: preserve-3d;
-            transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
           }
 
           .column-front {
@@ -152,7 +152,7 @@ export default {
               left: 0;
               right: 0;
               bottom: 0;
-              background: rgba(0, 0, 0, 0.4);
+              background: rgba(0, 0, 0, 0.3);
               border-radius: 1rem;
             }
 
@@ -208,21 +208,10 @@ export default {
               left: 0;
               right: 0;
               bottom: 0;
-              background: rgba(0, 0, 0, 0.3);
+              background: rgba(0, 0, 0, 0.2);
               border-radius: 1rem;
               z-index: 1;
               pointer-events: none;
-            }
-
-            .test-static {
-              color: yellow;
-              font-size: 2rem;
-              position: relative;
-              z-index: 2;
-              letter-spacing: 2px;
-              transform: translateZ(30px);
-              margin: 1rem 0;
-              font-weight: bold;
             }
 
             .back-link {

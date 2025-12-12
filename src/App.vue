@@ -53,37 +53,39 @@ export default {
 </script>
 
 <template>
-  <HeaderComponent></HeaderComponent>
-  <router-view></router-view>
-  <div class="buttons-container d-flex">
-    <!-- Cookies button -->
-    <div id="cookies-button">
-      <button @click="showCookies">
-        <img
-          src="./assets/images/cookies-icon.svg"
-          alt="Collegamento all'informativa dei cookie"
-        />
-        <p>Cookies</p>
-      </button>
-    </div>
-    <!-- END cookies button -->
+  <div id="app">
+    <HeaderComponent></HeaderComponent>
+    <router-view></router-view>
+    <div class="buttons-container d-flex">
+      <!-- Cookies button -->
+      <div id="cookies-button">
+        <button @click="showCookies">
+          <img
+            src="./assets/images/cookies-icon.svg"
+            alt="Collegamento all'informativa dei cookie"
+          />
+          <p>Cookies</p>
+        </button>
+      </div>
+      <!-- END cookies button -->
 
-    <!-- Up button -->
-    <div id="up-button">
-      <button aria-label="Torna in alto">
-        <img
-          v-show="visible"
-          src="./assets/images/up-arrow.svg"
-          alt="Freccia in alto per scorrere la pagina in su"
-          @click="scrollUp()"
-        />
-      </button>
+      <!-- Up button -->
+      <div id="up-button">
+        <button aria-label="Torna in alto">
+          <img
+            v-show="visible"
+            src="./assets/images/up-arrow.svg"
+            alt="Freccia in alto per scorrere la pagina in su"
+            @click="scrollUp()"
+          />
+        </button>
+      </div>
+      <!-- END up button -->
     </div>
-    <!-- END up button -->
+
+    <CookieBanner :forceShow="showPanel" @close="closeCookiePanel" />
+    <FooterComponent></FooterComponent>
   </div>
-
-  <CookieBanner :forceShow="showPanel" @close="closeCookiePanel" />
-  <FooterComponent></FooterComponent>
 </template>
 
 <style scoped>
