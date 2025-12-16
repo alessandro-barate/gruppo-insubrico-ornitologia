@@ -1,4 +1,15 @@
-<script></script>
+<script setup>
+import { ref } from "vue";
+
+// Stato per controllare se il panel è aperto o chiuso
+const isPanelOpen = ref(false);
+
+// Funzione per toggleare il panel
+const togglePanel = () => {
+  isPanelOpen.value = !isPanelOpen.value;
+};
+</script>
+
 <template>
   <div class="container">
     <div class="row">
@@ -24,9 +35,9 @@
               presso il Civico Museo Insubrico di Storia naturale di Induno
               Olona, grazie all'ospitalità offerta dal Curatore Gianluca Danini.
               <br />
-              Scopo principale dell'associazione è quello d' promuovere
-              l'indagine ornitologica a'livello provinciale ed insubrico,
-              unitamente ad attività di divulgazione con l'organizzazione di '
+              Scopo principale dell'associazione è quello di promuovere
+              l'indagine ornitologica a livello provinciale ed insubrico,
+              unitamente ad attività di divulgazione con l'organizzazione di
               conferenze, corsi e convegni, collaborando anche con enti pubblici
               e privati.
             </p>
@@ -35,32 +46,48 @@
             <hr />
 
             <!-- Second paragraph -->
-            <p class="second-paragraph d-flex">
-              Nel dicembre 2009 il GIO, per volontà di 9 soci fondatori, si
-              costituisce come Onlus presso il Registro di Varese, spostandosi
-              da Induno Olona a Clivio, nell'edificio che diverrà la'sede del
-              nuovo Civico Museo Insubrico di Storia Naturale di Clivio e Induno
-              Olona.
-              <br />
-              Per il periodo 2010-2012 viene eletto il primo Consiglio Direttivo
-              con Fabio Saporetti (Presidente), Monica Carabella
-              (Vice-Presidente) e 3 Consiglieri: Paolo Casali (poi sostituito da
-              Andrea Vidolini), Silvio Colaone e Walter Guenzani.
-            </p>
+            <div class="second-paragraph-container d-flex">
+              <p class="second-paragraph">
+                Nel dicembre 2009 il GIO, per volontà di 9 soci fondatori, si
+                costituisce come Onlus presso il Registro di Varese, spostandosi
+                da Induno Olona a Clivio, nell'edificio che diverrà la'sede del
+                nuovo Civico Museo Insubrico di Storia Naturale di Clivio e
+                Induno Olona.
+                <br />
+                Per il periodo 2010-2012 viene eletto il primo Consiglio
+                Direttivo con Fabio Saporetti (Presidente), Monica Carabella
+                (Vice-Presidente) e 3 Consiglieri: Paolo Casali (poi sostituito
+                da Andrea Vidolini), Silvio Colaone e Walter Guenzani.
+              </p>
+            </div>
             <!-- END Second paragraph -->
           </article>
           <!-- END article section -->
 
           <!-- Button-container -->
-          <div class="button-container">
-            <button>
-              <img src="" alt="" />
-            </button>
+          <div
+            class="button-container d-flex"
+            :class="{ 'panel-open': isPanelOpen }"
+          >
+            <div class="half-circle">
+              <button @click="togglePanel" class="toggle-btn">
+                <div class="toggle-icon">
+                  <span
+                    class="bar bar1"
+                    :class="{ active: isPanelOpen }"
+                  ></span>
+                  <span
+                    class="bar bar2"
+                    :class="{ active: isPanelOpen }"
+                  ></span>
+                </div>
+              </button>
+            </div>
           </div>
           <!-- END button-container -->
 
           <!-- List container -->
-          <div class="right-container">
+          <div class="right-container" :class="{ active: isPanelOpen }">
             <div class="list-container">
               <h2>Dal 2025 il direttivo è così composto</h2>
               <div class="list">
@@ -164,7 +191,7 @@
               </div>
             </div>
             <div class="subscribe-image">
-              <img src="../assets/images/gruppo-gio-2023.jpg" alt="" />
+              <img src="" alt="" />
             </div>
           </div>
 
@@ -174,13 +201,13 @@
             <p>
               Chiunque condivida gli scopi della nostra associazione e abbia un
               po' di tempo libero da dedicare a questa particolare forma di
-              “volontariato di ricerca”, o voglia comunque sostenere il GIO, può
+              "volontariato di ricerca", o voglia comunque sostenere il GIO, può
               iscriversi pagando una quota annuale di 20 euro (10 euro per
               minorenni e studenti).
               <br />
-              La quota di iscrizione comprende l'assicurazione “responsabilità
-              civile” obbligatoria per le onlus. All'iscrizione il GIO rilascia
-              una tessera, con il “bollino” di validità dell'anno in corso, a
+              La quota di iscrizione comprende l'assicurazione "responsabilità
+              civile" obbligatoria per le onlus. All'iscrizione il GIO rilascia
+              una tessera, con il "bollino" di validità dell'anno in corso, a
               cui si aggiungeranno i successivi bollini annuali adesivi.
             </p>
 
@@ -189,7 +216,7 @@
               Ci riuniamo il secondo lunedì di ogni mese (escluso agosto, di
               solito) in un locale presso il Comune di Casciago (VA), dove ci
               aggiorniamo sui progetti in corso, proponiamo e organizziamo
-              iniziative con un “ordine del giorno” che viene mandato dal
+              iniziative con un "ordine del giorno" che viene mandato dal
               Presidente tempestivamente per mail a tutti i soci, che possono
               proporre ulteriori argomenti o apportare modifiche.
               <br />
@@ -253,30 +280,186 @@
 .article-container {
   width: 95%;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden; // Nasconde il panel quando è fuori dal contenitore
 
   .paragraphs-container {
-    width: 50%;
-    background-color: red;
+    width: 95%;
+    transition: width 0.4s ease;
 
     .first-paragraph {
-      width: 80%;
-      padding: 1rem 0 2rem 2rem;
+      width: 70%;
+      padding: 1rem 0 2.3rem 2rem;
     }
 
-    .second-paragraph {
-      width: 80%;
+    .second-paragraph-container {
+      width: 100%;
+      justify-content: end;
+      padding: 4rem 2rem 1rem 0rem;
+
+      .second-paragraph {
+        width: 70%;
+      }
+    }
+
+    hr {
+      position: relative;
+      width: 30%;
+      left: 15rem;
+      border: none;
+      border-top: 2px solid rgb(141, 141, 141);
     }
   }
 
   .button-container {
-    width: 5%;
-    background-color: blue;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    align-items: center;
+    background-color: transparent;
+    transition: right 1s ease;
+    z-index: 100;
+
+    &.panel-open {
+      right: 400px;
+    }
+
+    .half-circle {
+      width: 80px;
+      height: 6rem;
+      border-radius: 50% 0 0 50%;
+      background-color: #2b2b9e;
+    }
+
+    .toggle-btn {
+      font-size: 2rem;
+      height: 6rem;
+      width: 100%;
+      border: none;
+      border-radius: 50% 0 0 50%;
+      background-color: #2b2b9e;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      .toggle-icon {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.5s ease-in-out;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+
+      .bar {
+        position: absolute;
+        width: 3px;
+        height: 45px;
+        background-color: white;
+        transition: all 1s ease;
+      }
+
+      .bar1 {
+        left: 8px;
+
+        &.active {
+          left: 50%;
+          transform: translateX(-50%) rotate(45deg);
+        }
+      }
+
+      .bar2 {
+        right: 8px;
+
+        &.active {
+          right: 50%;
+          transform: translateX(50%) rotate(-45deg);
+        }
+      }
+    }
   }
 
   .right-container {
-    width: 45%;
-    background-color: greenyellow;
+    position: absolute;
+    right: -380px;
+    top: 0;
+    width: 400px;
+    height: 100%;
+    border-top-left-radius: 1.3rem;
+    border-bottom-left-radius: 1.3rem;
+    background-color: #2b2b9e;
+    padding: 3rem 2rem;
+    overflow-y: auto;
+    transition: right 1s ease;
+    z-index: 99;
+    color: white;
+
+    &.active {
+      right: 0;
+    }
+
+    .list-container {
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        font-weight: 300;
+      }
+
+      .list {
+        margin-bottom: 2rem;
+
+        h4 {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+          font-weight: 600;
+          color: #f0f0f0;
+        }
+
+        ul {
+          list-style: none;
+          padding-left: 0;
+
+          li {
+            padding: 0.3rem 0;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
   }
 }
 // END description section
+
+// Stile per lo scrollbar del panel (opzionale ma consigliato)
+.right-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.right-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.right-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
 </style>
