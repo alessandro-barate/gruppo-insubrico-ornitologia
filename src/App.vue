@@ -120,6 +120,7 @@ button {
 
 #up-button {
   right: 2%;
+  z-index: 999;
   bottom: 2.9rem;
 
   img {

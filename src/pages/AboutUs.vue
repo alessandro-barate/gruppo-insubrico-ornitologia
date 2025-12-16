@@ -61,7 +61,14 @@ const togglePanel = () => {
               </p>
             </div>
             <!-- END Second paragraph -->
+
+            <!-- Team image -->
+            <div class="team-image">
+              <img src="../assets/images/gruppo-gio-2023.jpg" alt="" />
+            </div>
+            <!-- END team image -->
           </article>
+
           <!-- END article section -->
 
           <!-- Button-container -->
@@ -87,7 +94,10 @@ const togglePanel = () => {
           <!-- END button-container -->
 
           <!-- List container -->
-          <div class="right-container" :class="{ active: isPanelOpen }">
+          <div
+            class="right-container gradient-color"
+            :class="{ active: isPanelOpen }"
+          >
             <div class="list-container">
               <h2>Dal 2025 il direttivo è così composto</h2>
               <div class="list">
@@ -281,7 +291,7 @@ const togglePanel = () => {
   width: 95%;
   margin: 0 auto;
   position: relative;
-  overflow: hidden; // Nasconde il panel quando è fuori dal contenitore
+  overflow: hidden;
 
   .paragraphs-container {
     width: 95%;
@@ -309,6 +319,15 @@ const togglePanel = () => {
       border: none;
       border-top: 2px solid rgb(141, 141, 141);
     }
+
+    .team-image {
+      width: 100%;
+      text-align: center;
+
+      img {
+        width: 70%;
+      }
+    }
   }
 
   .button-container {
@@ -330,7 +349,6 @@ const togglePanel = () => {
       width: 80px;
       height: 6rem;
       border-radius: 50% 0 0 50%;
-      background-color: #2b2b9e;
     }
 
     .toggle-btn {
@@ -339,12 +357,12 @@ const togglePanel = () => {
       width: 100%;
       border: none;
       border-radius: 50% 0 0 50%;
-      background-color: #2b2b9e;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
+      background-color: #0077ff;
 
       .toggle-icon {
         position: relative;
@@ -356,7 +374,7 @@ const togglePanel = () => {
         transition: transform 0.5s ease-in-out;
 
         &:hover {
-          transform: scale(1.2);
+          transform: scale(1.1);
         }
       }
 
@@ -364,7 +382,7 @@ const togglePanel = () => {
         position: absolute;
         width: 3px;
         height: 45px;
-        background-color: white;
+        background-color: rgb(0, 0, 0);
         transition: all 1s ease;
       }
 
@@ -396,12 +414,11 @@ const togglePanel = () => {
     height: 100%;
     border-top-left-radius: 1.3rem;
     border-bottom-left-radius: 1.3rem;
-    background-color: #2b2b9e;
-    padding: 3rem 2rem;
+    padding: 2rem 2rem;
     overflow-y: auto;
     transition: right 1s ease;
     z-index: 99;
-    color: white;
+    color: rgb(0, 0, 0);
 
     &.active {
       right: 0;
@@ -421,7 +438,6 @@ const togglePanel = () => {
           font-size: 1.2rem;
           margin-bottom: 0.5rem;
           font-weight: 600;
-          color: #f0f0f0;
         }
 
         ul {
@@ -431,8 +447,8 @@ const togglePanel = () => {
           li {
             padding: 0.3rem 0;
             font-size: 1rem;
-            color: rgba(255, 255, 255, 0.9);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(0, 0, 0, 0.9);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.6);
 
             &:last-child {
               border-bottom: none;
