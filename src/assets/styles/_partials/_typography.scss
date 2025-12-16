@@ -7,6 +7,13 @@ h1 {
   font-weight: 500;
 }
 
+#about-us,
+#social,
+#news,
+#links {
+  font-size: 5rem;
+}
+
 h2,
 h3 {
   font-weight: 500;
@@ -15,7 +22,9 @@ h3 {
 /************
 FONTS COLOR
 ************/
-.title-color {
+.title-color,
+#about-us,
+#links {
   background: linear-gradient(90deg, #002fff, #00e1ff);
   -webkit-background-clip: text;
   background-clip: text;

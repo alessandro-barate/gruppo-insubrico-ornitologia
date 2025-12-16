@@ -29,7 +29,7 @@ export default {
         <!-- Title -->
         <section>
           <div class="title-container">
-            <h1 class="title-color uppercase">link utili</h1>
+            <h1 id="links" class="uppercase">link utili</h1>
           </div>
         </section>
         <!-- END title -->
@@ -89,12 +89,8 @@ export default {
 
     .title-container {
       width: 100%;
-      padding-top: 6rem;
+      padding-top: 10rem;
       text-align: center;
-
-      h1 {
-        font-size: 5rem;
-      }
     }
 
     .grid-container {

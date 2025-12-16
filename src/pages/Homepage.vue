@@ -881,49 +881,4 @@ export default {
   }
 }
 // END contacts section
-
-// Effect on ::before and ::after
-.title-section::after {
-  content: "";
-  position: absolute;
-  bottom: -0.0625rem;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: #ffffff;
-  clip-path: polygon(0 100%, 100% 0, 100% 100%);
-}
-
-.subscription-container::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: #ffffff;
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-}
-
-.subscription-container::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: #ffffff;
-  clip-path: polygon(0 100%, 100% 0, 100% 100%);
-}
-
-.contacts-container::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: #ffffff;
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-}
 </style>
