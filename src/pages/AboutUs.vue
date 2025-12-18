@@ -61,12 +61,6 @@ const togglePanel = () => {
               </p>
             </div>
             <!-- END Second paragraph -->
-
-            <!-- Team image -->
-            <div class="team-image">
-              <img src="../assets/images/gruppo-gio-2023.jpg" alt="" />
-            </div>
-            <!-- END team image -->
           </article>
 
           <!-- END article section -->
@@ -156,19 +150,18 @@ const togglePanel = () => {
         </section>
         <!-- END articles section -->
 
-        <!-- Jumbo image section -->
-        <section>
-          <div class="jumbo-container">
-            <div class="jumbo-image">
-              <img src="" alt="" />
+        <!-- Team image section -->
+        <section class="team-container">
+          <!-- Team image -->
+            <div class="team-image">
+              <img src="../assets/images/gruppo-gio-2023.jpg" alt="" />
             </div>
-            <div class="jumbo-text"></div>
-          </div>
+            <!-- END team image -->
         </section>
-        <!-- Jumbo image section -->
+        <!-- END team image section -->
 
         <!-- Subscribe section -->
-        <section class="subscribe-section bg-blue">
+        <section class="subscribe-section gradient-color-subscribe">
           <div class="subscribe-container d-flex">
             <div class="subscribe-box">
               <div class="subscribe-text">
@@ -305,6 +298,7 @@ const togglePanel = () => {
     .second-paragraph-container {
       width: 100%;
       justify-content: end;
+      margin-bottom: 4rem;
       padding: 4rem 2rem 1rem 0rem;
 
       .second-paragraph {
@@ -460,6 +454,41 @@ const togglePanel = () => {
   }
 }
 // END description section
+
+// Team image section
+.team-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+
+  .team-image {
+    width: 100%;
+
+    img {
+      width: 60%;
+    }
+  }
+}
+// END team image section
+
+// Subscribe section
+.subscribe-section {
+  margin-top: 3rem;
+  position: relative;
+  padding-top: 12rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: #ffffff;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+}
+// END subscribe section
 
 // Stile per lo scrollbar del panel (opzionale ma consigliato)
 .right-container::-webkit-scrollbar {
