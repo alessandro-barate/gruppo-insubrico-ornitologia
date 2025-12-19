@@ -43,7 +43,7 @@ const togglePanel = () => {
             </p>
             <!-- END first paragraph -->
 
-            <hr />
+            <hr class="first-line" />
 
             <!-- Second paragraph -->
             <div class="second-paragraph-container d-flex">
@@ -60,6 +60,8 @@ const togglePanel = () => {
                 da Andrea Vidolini), Silvio Colaone e Walter Guenzani.
               </p>
             </div>
+
+            <hr class="second-line" />
             <!-- END Second paragraph -->
           </article>
 
@@ -153,33 +155,33 @@ const togglePanel = () => {
         <!-- Team image section -->
         <section class="team-container">
           <!-- Team image -->
-            <div class="team-image">
-              <img src="../assets/images/gruppo-gio-2023.jpg" alt="" />
-            </div>
-            <!-- END team image -->
+          <div class="team-image">
+            <img src="../assets/images/gruppo-gio-2023.jpg" alt="" />
+          </div>
+          <!-- END team image -->
         </section>
         <!-- END team image section -->
 
         <!-- Subscribe section -->
         <section class="subscribe-section gradient-color-subscribe">
-          <div class="subscribe-container d-flex">
+          <div class="subscribe-container">
             <div class="subscribe-box">
               <div class="subscribe-text">
                 <div class="subscribe-title">
                   <h2>Diventare socio del GIO</h2>
                 </div>
-                <p>
+                <p class="bottom-paragraph">
                   Associarsi al Gruppo Insubrico di Ornitologia significa
                   sentirsi parte attiva di un gruppo di amici realmente
                   appassionati di avifauna, sotto i variegati aspetti che
-                  spaziano dal birdwatching all'ornitologia vera e prop'ia.
+                  spaziano dal birdwatching all'ornitologia vera e propria.
                   <br />
                   <br />
                   Punto centrale e irrinunciabile dello spirito
                   dell'associazione è quello di promuovere la conoscenza e la
                   conservazione della fauna e degli habitat, che rientrano negli
                   aspetti più generali del rispetto della vita che ci circonda e
-                  del miglioramento della qualità dell'ambiente in cui viviamo'
+                  del miglioramento della qualità dell'ambiente in cui viviamo.
                   <br />
                   <br />
                   Se siete curiosi e avete voglia di scoprire, studiare,
@@ -187,14 +189,22 @@ const togglePanel = () => {
                   alla didattica dell'ornitologia, il GIO è l'associazione che
                   fa per voi!
                 </p>
+              </div>
+              <div class="details-container">
+                <div class="selection-bar">
+                  <button class="selector uppercase">
+                    <span>iscrizione annuale</span>
+                  </button>
 
-                <div class="subscribe-text-image">
-                  <img src="../assets/images/tessera-socio.jpg" alt="" />
+                  <button class="selector uppercase">
+                    <span>riunioni mensili</span>
+                  </button>
+
+                  <button class="selector uppercase">
+                    <span>comunicazioni tra soci</span>
+                  </button>
                 </div>
               </div>
-            </div>
-            <div class="subscribe-image">
-              <img src="" alt="" />
             </div>
           </div>
 
@@ -254,6 +264,11 @@ const togglePanel = () => {
 </template>
 
 <style scoped lang="scss">
+.first-paragraph,
+.second-paragraph,
+.bottom-paragraph {
+  line-height: 1.65rem;
+}
 // Jumbo section
 .col {
   .title-section {
@@ -299,19 +314,28 @@ const togglePanel = () => {
       width: 100%;
       justify-content: end;
       margin-bottom: 4rem;
-      padding: 4rem 2rem 1rem 0rem;
+      padding: 4rem 2rem 0rem 0rem;
 
       .second-paragraph {
         width: 70%;
       }
     }
 
-    hr {
+    .first-line,
+    .second-line {
       position: relative;
-      width: 30%;
-      left: 15rem;
       border: none;
       border-top: 2px solid rgb(141, 141, 141);
+    }
+
+    .first-line {
+      width: 30%;
+      left: 15rem;
+    }
+
+    .second-line {
+      width: 10%;
+      left: 60rem;
     }
 
     .team-image {
@@ -487,24 +511,64 @@ const togglePanel = () => {
     background: #ffffff;
     clip-path: polygon(0 0, 100% 0, 0 100%);
   }
+
+  .subscribe-container {
+    width: 70%;
+    margin: 0 auto;
+
+    .subscribe-title {
+      text-align: center;
+      padding-bottom: 2rem;
+
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .details-container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 3rem;
+
+    .selection-bar {
+      display: flex;
+      justify-content: center;
+
+      .selector {
+        padding: 1rem 2rem;
+        margin-left: 0.5rem;
+        border: none;
+        border-radius: 0.3rem;
+        transition: all 0.5s;
+        background: linear-gradient(90deg, #0077ff, #00e1ff);
+
+        &:hover {
+          background: beige;
+        }
+      }
+    }
+  }
 }
 // END subscribe section
 
 // Stile per lo scrollbar del panel (opzionale ma consigliato)
-.right-container::-webkit-scrollbar {
-  width: 8px;
-}
+.article-container {
+  .right-container::-webkit-scrollbar {
+    width: 8px;
+  }
 
-.right-container::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-}
+  .right-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
 
-.right-container::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
+  .right-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
 
-  &:hover {
-    background: rgba(255, 255, 255, 0.5);
+    &:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
   }
 }
 </style>
