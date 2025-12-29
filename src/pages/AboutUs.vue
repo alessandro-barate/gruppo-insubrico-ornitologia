@@ -1,12 +1,19 @@
 <script setup>
 import { ref } from "vue";
 
-// Stato per controllare se il panel è aperto o chiuso
+const activeSection = ref("");
+
+// State to check if the panel is open or close
 const isPanelOpen = ref(false);
 
-// Funzione per toggleare il panel
+// Panel's toggle
 const togglePanel = () => {
   isPanelOpen.value = !isPanelOpen.value;
+};
+
+// Display or hide the choices
+const display = (section) => {
+  activeSection.value = section;
 };
 </script>
 
@@ -163,7 +170,7 @@ const togglePanel = () => {
         <!-- END team image section -->
 
         <!-- Subscribe section -->
-        <section class="subscribe-section gradient-color-subscribe">
+        <section class="subscribe-section">
           <div class="subscribe-container">
             <div class="subscribe-box">
               <div class="subscribe-text">
@@ -192,15 +199,27 @@ const togglePanel = () => {
               </div>
               <div class="details-container">
                 <div class="selection-bar">
-                  <button class="selector uppercase">
+                  <button
+                    class="selector uppercase"
+                    :class="{ highlight: activeSection === 'year' }"
+                    @click="display('year')"
+                  >
                     <span>iscrizione annuale</span>
                   </button>
 
-                  <button class="selector uppercase">
+                  <button
+                    class="selector uppercase"
+                    :class="{ highlight: activeSection === 'month' }"
+                    @click="display('month')"
+                  >
                     <span>riunioni mensili</span>
                   </button>
 
-                  <button class="selector uppercase">
+                  <button
+                    class="selector uppercase"
+                    :class="{ highlight: activeSection === 'members' }"
+                    @click="display('members')"
+                  >
                     <span>comunicazioni tra soci</span>
                   </button>
                 </div>
@@ -210,50 +229,81 @@ const togglePanel = () => {
 
           <!-- Bottom paragraph -->
           <div class="subscribe-text-bottom">
-            <h3>ISCRIZIONE ANNUALE</h3>
-            <p>
-              Chiunque condivida gli scopi della nostra associazione e abbia un
-              po' di tempo libero da dedicare a questa particolare forma di
-              "volontariato di ricerca", o voglia comunque sostenere il GIO, può
-              iscriversi pagando una quota annuale di 20 euro (10 euro per
-              minorenni e studenti).
-              <br />
-              La quota di iscrizione comprende l'assicurazione "responsabilità
-              civile" obbligatoria per le onlus. All'iscrizione il GIO rilascia
-              una tessera, con il "bollino" di validità dell'anno in corso, a
-              cui si aggiungeranno i successivi bollini annuali adesivi.
-            </p>
+            <!-- Yearly subscription -->
+            <transition name="fade">
+              <div
+                class="choice-bottom-paragraph"
+                v-show="activeSection === 'year'"
+              >
+                <h3>ISCRIZIONE ANNUALE</h3>
+                <p>
+                  Chiunque condivida gli scopi della nostra associazione e abbia
+                  un po' di tempo libero da dedicare a questa particolare forma
+                  di "volontariato di ricerca", o voglia comunque sostenere il
+                  GIO, può iscriversi pagando una quota annuale di 20 euro (10
+                  euro per minorenni e studenti).
+                  <br />
+                  La quota di iscrizione comprende l'assicurazione
+                  "responsabilità civile" obbligatoria per le onlus.
+                  All'iscrizione il GIO rilascia una tessera, con il "bollino"
+                  di validità dell'anno in corso, a cui si aggiungeranno i
+                  successivi bollini annuali adesivi.
+                </p>
+              </div>
+            </transition>
+            <!-- END yearly subscription -->
 
-            <h3>RIUNIONI MENSILI</h3>
-            <p>
-              Ci riuniamo il secondo lunedì di ogni mese (escluso agosto, di
-              solito) in un locale presso il Comune di Casciago (VA), dove ci
-              aggiorniamo sui progetti in corso, proponiamo e organizziamo
-              iniziative con un "ordine del giorno" che viene mandato dal
-              Presidente tempestivamente per mail a tutti i soci, che possono
-              proporre ulteriori argomenti o apportare modifiche.
-              <br />
-              Gli incontri ufficiali (come l'assemblea annuale) vengono invece
-              tenuti presso la nostra sede al Civico Museo Insubrico di Storia
-              Naturale a Clivio (VA).
-              <br />
-              Le riunioni mensili sono incontri informali in cui ci si confronta
-              anche su osservazioni ornitologiche, viaggi naturalistici,
-              commenti e visione di pubblicazioni e fotografie ecc.
-            </p>
+            <!-- Monthly meetings -->
+            <transition name="fade">
+              <div
+                class="choice-bottom-paragraph"
+                v-show="activeSection === 'month'"
+              >
+                <h3>RIUNIONI MENSILI</h3>
+                <p>
+                  Ci riuniamo il secondo lunedì di ogni mese (escluso agosto, di
+                  solito) in un locale presso il Comune di Casciago (VA), dove
+                  ci aggiorniamo sui progetti in corso, proponiamo e
+                  organizziamo iniziative con un "ordine del giorno" che viene
+                  mandato dal Presidente tempestivamente per mail a tutti i
+                  soci, che possono proporre ulteriori argomenti o apportare
+                  modifiche.
+                  <br />
+                  Gli incontri ufficiali (come l'assemblea annuale) vengono
+                  invece tenuti presso la nostra sede al Civico Museo Insubrico
+                  di Storia Naturale a Clivio (VA).
+                  <br />
+                  Le riunioni mensili sono incontri informali in cui ci si
+                  confronta anche su osservazioni ornitologiche, viaggi
+                  naturalistici, commenti e visione di pubblicazioni e
+                  fotografie ecc.
+                </p>
+              </div>
+            </transition>
+            <!-- END Monthly meetings -->
 
-            <h3>COMUNICAZIONI TRA I SOCI</h3>
-            <p>
-              Tutti i soci sono compresi nella mailing-list del GIO, attraverso
-              cui si viene informati dell'intera attività del gruppo. Alcuni
-              argomenti, di solito quelli più formali e amministrativi, vengono
-              trattati dal Consiglio Direttivo, che ne informa quindi il resto
-              dei soci in occasione delle riunioni mensili.
-              <br />
-              Abbiamo anche un Tesoriere e un Vice-tesoriere che si occupano
-              delle questioni finanziarie (entrate e uscite, rendiconto
-              economico, rimborsi spese, acquisti vari).
-            </p>
+            <!-- Members communications -->
+            <transition name="fade">
+              <div
+                class="choice-bottom-paragraph"
+                v-show="activeSection === 'members'"
+              >
+                <h3>COMUNICAZIONI TRA I SOCI</h3>
+                <p>
+                  Tutti i soci sono compresi nella mailing-list del GIO,
+                  attraverso cui si viene informati dell'intera attività del
+                  gruppo. Alcuni argomenti, di solito quelli più formali e
+                  amministrativi, vengono trattati dal Consiglio Direttivo, che
+                  ne informa quindi il resto dei soci in occasione delle
+                  riunioni mensili.
+                  <br />
+                  Abbiamo anche un Tesoriere e un Vice-tesoriere che si occupano
+                  delle questioni finanziarie (entrate e uscite, rendiconto
+                  economico, rimborsi spese, acquisti vari).
+                </p>
+              </div>
+            </transition>
+            <!-- END members communications -->
           </div>
           <!-- END bottom paragraph -->
         </section>
@@ -497,9 +547,17 @@ const togglePanel = () => {
 
 // Subscribe section
 .subscribe-section {
+  height: 120vh;
   margin-top: 3rem;
   position: relative;
   padding-top: 12rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  background-image: linear-gradient(90deg, #0077ffd9, #e9e9e9d9),
+    url(../assets/images/gruppo-angera.webp);
 
   &::after {
     content: "";
@@ -516,6 +574,10 @@ const togglePanel = () => {
     width: 70%;
     margin: 0 auto;
 
+    .bottom-paragraph {
+      font-size: 1.2rem;
+    }
+
     .subscribe-title {
       text-align: center;
       padding-bottom: 2rem;
@@ -529,7 +591,7 @@ const togglePanel = () => {
   .details-container {
     width: 80%;
     margin: 0 auto;
-    padding-top: 3rem;
+    padding-top: 5rem;
 
     .selection-bar {
       display: flex;
@@ -540,8 +602,12 @@ const togglePanel = () => {
         margin-left: 0.5rem;
         border: none;
         border-radius: 0.3rem;
-        transition: all 0.5s;
-        background: linear-gradient(90deg, #0077ff, #00e1ff);
+        transition: all 1s;
+        background: linear-gradient(90deg, #d2420d, #ffbf00);
+
+        &.highlight {
+          background: rgb(241, 241, 135) !important;
+        }
 
         &:hover {
           background: beige;
@@ -549,10 +615,32 @@ const togglePanel = () => {
       }
     }
   }
+
+  .subscribe-text-bottom {
+    width: 100%;
+    text-align: center;
+
+    .choice-bottom-paragraph {
+      width: 60%;
+      margin: 0 auto;
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+
+      h3 {
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.15rem;
+      }
+    }
+  }
 }
 // END subscribe section
 
-// Stile per lo scrollbar del panel (opzionale ma consigliato)
+// Scrollbar del panel
 .article-container {
   .right-container::-webkit-scrollbar {
     width: 8px;
@@ -570,5 +658,16 @@ const togglePanel = () => {
       background: rgba(255, 255, 255, 0.5);
     }
   }
+}
+
+// Fade transition
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
