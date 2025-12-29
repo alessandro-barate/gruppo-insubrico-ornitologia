@@ -197,6 +197,10 @@ const display = (section) => {
                   fa per voi!
                 </p>
               </div>
+
+              <hr class="third-line" />
+
+              <!-- Buttons container -->
               <div class="details-container">
                 <div class="selection-bar">
                   <button
@@ -224,13 +228,13 @@ const display = (section) => {
                   </button>
                 </div>
               </div>
+              <!-- END buttons container -->
             </div>
           </div>
 
           <!-- Bottom paragraph -->
           <div class="subscribe-text-bottom">
             <!-- Yearly subscription -->
-
             <div
               class="choice-bottom-paragraph"
               :class="{ show: activeSection === 'year' }"
@@ -250,11 +254,9 @@ const display = (section) => {
                 adesivi.
               </p>
             </div>
-
             <!-- END yearly subscription -->
 
             <!-- Monthly meetings -->
-
             <div
               class="choice-bottom-paragraph"
               :class="{ show: activeSection === 'month' }"
@@ -278,11 +280,9 @@ const display = (section) => {
                 ecc.
               </p>
             </div>
-
             <!-- END Monthly meetings -->
 
             <!-- Members communications -->
-
             <div
               class="choice-bottom-paragraph"
               :class="{ show: activeSection === 'members' }"
@@ -301,7 +301,6 @@ const display = (section) => {
                 economico, rimborsi spese, acquisti vari).
               </p>
             </div>
-
             <!-- END members communications -->
           </div>
           <!-- END bottom paragraph -->
@@ -317,6 +316,13 @@ const display = (section) => {
 .second-paragraph,
 .bottom-paragraph {
   line-height: 1.65rem;
+}
+
+.first-line,
+.second-line,
+.third-line {
+  position: relative;
+  border: none;
 }
 // Jumbo section
 .col {
@@ -372,8 +378,6 @@ const display = (section) => {
 
     .first-line,
     .second-line {
-      position: relative;
-      border: none;
       border-top: 2px solid rgb(141, 141, 141);
     }
 
@@ -532,7 +536,7 @@ const display = (section) => {
 .team-container {
   width: 100%;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
 
   .team-image {
     width: 100%;
@@ -546,7 +550,7 @@ const display = (section) => {
 
 // Subscribe section
 .subscribe-section {
-  height: 120vh;
+  height: 132vh;
   margin-top: 3rem;
   position: relative;
   padding-top: 12rem;
@@ -587,6 +591,13 @@ const display = (section) => {
     }
   }
 
+  .third-line {
+    left: 40%;
+    width: 50%;
+    margin-top: 3rem;
+    border-top: 2px solid rgb(0, 0, 0);
+  }
+
   .details-container {
     width: 80%;
     margin: 0 auto;
@@ -619,17 +630,18 @@ const display = (section) => {
     width: 100%;
     text-align: center;
     position: relative;
-    min-height: 400px; // Altezza minima per contenere i paragrafi
+    margin: 0 auto;
 
     .choice-bottom-paragraph {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      width: 60%;
-      padding-top: 2rem;
-      padding-bottom: 4rem;
+      width: 70%;
+      margin-top: 2rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      border-left: 2px solid black;
 
-      // Animazione smooth slide down con fade
       opacity: 0;
       max-height: 0;
       overflow: hidden;
