@@ -3,13 +3,12 @@ import { siteMeta, metaDescriptions } from "./store";
 
 // Pages
 import AboutUs from "./pages/AboutUs.vue";
-import Birds from "./pages/Birds.vue";
-import ConferencesCourses from "./pages/ConferencesCourses.vue";
 import Homepage from "./pages/Homepage.vue";
 import Links from "./pages/Links.vue";
 import News from "./pages/News.vue";
 import Projects from "./pages/Projects.vue";
 import Publications from "./pages/Publications.vue";
+import ScientificOutreach from "./pages/ScientificOutreach.vue";
 import Socials from "./pages/Socials.vue";
 import { usePageTransition } from "./composables/usePageTransition";
 
@@ -26,17 +25,12 @@ const routes = [
     component: AboutUs,
   },
   {
-    path: "/birds",
-    name: "Birds",
-    component: Birds,
+    path: "/scientific-outreach",
+    name: "ScientificOutreach",
+    component: ScientificOutreach,
   },
   {
-    path: "/conferences-courses",
-    name: "ConferencesCourses",
-    component: ConferencesCourses,
-  },
-  {
-    path: "/courses",
+    path: "/socials",
     name: "Socials",
     component: Socials,
   },

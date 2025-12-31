@@ -550,7 +550,7 @@ const display = (section) => {
 
 // Subscribe section
 .subscribe-section {
-  height: 132vh;
+  height: 140vh;
   margin-top: 3rem;
   position: relative;
   padding-top: 12rem;

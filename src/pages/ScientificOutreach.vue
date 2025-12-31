@@ -1,6 +1,6 @@
 <script></script>
 <template>
     <div>
-        <h1>UCCELLI</h1>
+        <h1>DIVULGAZIONE</h1>
     </div>
 </template>

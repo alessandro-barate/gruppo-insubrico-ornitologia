@@ -23,13 +23,8 @@ export const metaDescriptions = {
       "Scopri chi siamo, la nostra storia e la missione del Gruppo Insubrico Ornitologico.",
     image: null,
   },
-  Birds: {
-    title: "Uccelli",
-    description: "Esplora le specie di uccelli presenti nel nostro territorio.",
-    image: "", // Immagine specifica per questa pagina
-  },
-  ConferencesCourses: {
-    title: "Conferenze e Corsi",
+  ScientificOutreach: {
+    title: "Divulgazione",
     description:
       "Conferenze, corsi e eventi organizzati dal Gruppo Insubrico Ornitologico.",
     image: null,

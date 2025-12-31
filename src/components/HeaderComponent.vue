@@ -96,13 +96,8 @@ export default {
               </li>
               <li>
                 <a>
-                  <router-link :to="{ name: 'Birds' }"> Avifauna </router-link>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <router-link :to="{ name: 'ConferencesCourses' }">
-                    Conferenze e Corsi
+                  <router-link :to="{ name: 'ScientificOutreach' }">
+                    Divulgazione
                   </router-link>
                 </a>
               </li>

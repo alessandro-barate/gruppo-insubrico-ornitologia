@@ -69,7 +69,7 @@ export default {
             <div class="logo-section fade-wrapper-3">
               <div class="logo-container">
                 <div class="overlay-2">
-                  <img src="../assets/images/gio-logo2.png" alt="" />
+                  <img src="../assets/images/gio-logo.webp" alt="Logo del Gruppo Insubrico di Ornitologia" />
                 </div>
               </div>
             </div>
@@ -185,41 +185,15 @@ export default {
                 </router-link>
 
                 <router-link
-                  :to="{ name: 'Birds' }"
-                  class="activity-card card-2 d-flex"
-                >
-                  <div class="card-default d-flex">
-                    <span class="gradient-color">avifauna</span>
-                  </div>
-                  <div class="card-hover gradient-color">
-                    <img src="../assets/images/arrow-right.svg" alt="" />
-                    <p>l'avifauna di varese</p>
-                  </div>
-                </router-link>
-
-                <router-link
-                  :to="{ name: 'ConferencesCourses' }"
+                  :to="{ name: 'ScientificOutreach' }"
                   class="activity-card card-3 d-flex"
                 >
                   <div class="card-default d-flex">
-                    <span class="gradient-color">conferenze</span>
+                    <span class="gradient-color">divulgazione</span>
                   </div>
                   <div class="card-hover gradient-color">
                     <img src="../assets/images/arrow-right.svg" alt="" />
-                    <p>conferenze</p>
-                  </div>
-                </router-link>
-
-                <router-link
-                  :to="{ name: 'ConferencesCourses' }"
-                  class="activity-card card-4 d-flex"
-                >
-                  <div class="card-default d-flex">
-                    <span class="gradient-color">corsi</span>
-                  </div>
-                  <div class="card-hover gradient-color">
-                    <img src="../assets/images/arrow-right.svg" alt="" />
-                    <p>corsi</p>
+                    <p>divulgazione</p>
                   </div>
                 </router-link>
 
@@ -342,8 +316,6 @@ export default {
         .overlay-2 {
           width: 25%;
           margin: 0 auto;
-          border-radius: 50%;
-          background-color: rgba(255, 255, 255, 0.9);
 
           img {
             width: 100%;
@@ -602,10 +574,11 @@ export default {
   padding-top: 5rem;
   padding-bottom: 5rem;
   position: relative;
+  align-items: center;
 
   hr {
-    height: 150px;
-    align-self: center;
+    height: 210px;
+    align-self: flex-end;
     border: none;
     border-left: 2px solid rgb(141, 141, 141);
   }

@@ -47,7 +47,7 @@ export default {
                 <div class="overlay-2">
                   <img
                     class="footer-logo"
-                    src="../assets/images/gio-logo2.png"
+                    src="../assets/images/gio-logo.webp"
                     alt="Logo del Gruppo Insubrico di Ornitologia"
                   />
                 </div>
@@ -63,9 +63,7 @@ export default {
                 <p>
                   <a href="" @click.prevent="openMail">Scrivici una mail</a>
                 </p>
-                <p>
-                  <a href="tel:+39">Numero di telefono </a>
-                </p>
+                <p>ODV - RUNTS 89826 del 07.11.2022</p>
                 <p>Codice Fiscale</p>
               </div>
               <div class="details-column">
@@ -141,9 +139,6 @@ export default {
 
     .overlay-2 {
       width: 20%;
-      text-align: center;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.9);
 
       img {
         width: 100%;
