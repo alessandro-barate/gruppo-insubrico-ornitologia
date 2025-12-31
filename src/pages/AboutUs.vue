@@ -634,6 +634,7 @@ const display = (section) => {
 
     .choice-bottom-paragraph {
       position: absolute;
+      line-height: 1.65rem;
       left: 50%;
       transform: translateX(-50%);
       width: 70%;
