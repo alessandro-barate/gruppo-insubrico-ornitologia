@@ -301,20 +301,20 @@ export default {
   .title-section {
     position: relative;
     width: 100%;
-    height: 900px;
+    height: clamp(400px, 70vh, 900px);
     overflow: hidden;
 
     .logo-section {
       width: 100%;
-      margin-top: 5rem;
-      padding-bottom: 3rem;
+      margin-top: clamp(2rem, 5vw, 5rem);
+      padding-bottom: clamp(1.5rem, 3vw, 3rem);
 
       .logo-container {
         width: 100%;
         text-align: center;
 
         .overlay-2 {
-          width: 25%;
+          width: clamp(40%, 25vw, 25%);
           margin: 0 auto;
 
           img {
@@ -337,7 +337,7 @@ export default {
     padding-top: 1rem;
 
     p {
-      font-size: 3rem;
+      font-size: clamp(1.5rem, 4vw, 3rem);
     }
 
     .fade-wrapper-2 {
@@ -345,9 +345,9 @@ export default {
       animation: fadeIn 4.5s ease-in-out forwards;
 
       p {
-        font-size: 3.2rem;
+        font-size: clamp(1.5rem, 4vw, 3.2rem);
         font-weight: 600;
-        letter-spacing: 1rem;
+        letter-spacing: clamp(0.3rem, 2vw, 1rem);
         background: linear-gradient(90deg, #1f1f1f, #b6b6b6);
         -webkit-background-clip: text;
         background-clip: text;
@@ -365,6 +365,7 @@ export default {
 // News section
 .news-container {
   width: 100%;
+  flex-wrap: wrap;
 
   .sections-title {
     width: 50%;
@@ -395,15 +396,15 @@ export default {
     }
 
     .title-1 {
-      font-size: 3rem;
+      font-size: clamp(1.5rem, 4vw, 3rem);
       padding-top: 2rem;
-      padding-left: 6rem;
+      padding-left: clamp(1rem, 6vw, 6rem);
     }
 
     .title-2 {
-      font-size: 6rem;
-      padding-top: 3rem;
-      padding-left: 12rem;
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      padding-top: clamp(1rem, 3vw, 3rem);
+      padding-left: clamp(2rem, 10vw, 12rem);
     }
   }
 
@@ -412,15 +413,15 @@ export default {
     text-align: center;
 
     p {
-      font-size: 1.7rem;
-      padding-top: 6rem;
+      font-size: clamp(1rem, 2vw, 1.7rem);
+      padding-top: clamp(2rem, 6vw, 6rem);
     }
 
     hr {
       width: 20%;
       border: none;
-      margin-left: 8rem;
-      margin-top: 4rem;
+      margin-left: clamp(2rem, 8vw, 8rem);
+      margin-top: clamp(1.5rem, 4vw, 4rem);
       border-bottom: 2px solid rgb(141, 141, 141);
     }
   }
@@ -434,11 +435,11 @@ export default {
   .news-list-box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    padding: 20px;
+    gap: clamp(12px, 2vw, 24px);
+    padding: clamp(10px, 2vw, 20px);
 
     .single-news {
-      height: 18.75rem;
+      aspect-ratio: 4 / 3;
       object-fit: cover;
       overflow: hidden;
       border-radius: 1rem;
@@ -460,14 +461,14 @@ export default {
 .button {
   width: 100%;
   text-align: center;
-  padding-top: 4rem;
-  padding-bottom: 3rem;
+  padding-top: clamp(2rem, 4vw, 4rem);
+  padding-bottom: clamp(1.5rem, 3vw, 3rem);
 
   button {
     color: white;
     font-weight: 500;
-    font-size: 1rem;
-    padding: 1rem;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    padding: clamp(0.75rem, 2vw, 1rem);
     border-radius: 0.5rem;
     border: none;
     background: linear-gradient(90deg, #0077ff, #00e1ff);
@@ -480,11 +481,11 @@ export default {
 
 // Subscription section
 .subscription-container {
-  padding-top: 10rem;
-  padding-bottom: 14rem;
+  padding-top: clamp(4rem, 10vw, 10rem);
+  padding-bottom: clamp(6rem, 14vw, 14rem);
   width: 100%;
   position: relative;
-  min-height: 1000px;
+  min-height: clamp(500px, 80vh, 1000px);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -514,29 +515,27 @@ export default {
 
   .subscription-box {
     margin: 0 auto;
-    width: 70%;
-    padding-left: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    width: clamp(85%, 70vw, 70%);
+    padding: clamp(0.75rem, 2vw, 1rem);
     border-radius: 0.5rem;
 
     .card-logo {
       width: 100%;
-      margin-bottom: 2rem;
+      margin-bottom: clamp(1rem, 2vw, 2rem);
 
       img {
-        width: 5%;
+        width: clamp(8%, 5vw, 5%);
       }
     }
 
     h3 {
-      font-size: 3rem;
+      font-size: clamp(1.5rem, 4vw, 3rem);
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: clamp(1rem, 2vw, 1.5rem);
       margin-top: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: clamp(1rem, 2vw, 2rem);
     }
 
     .subscription-button {
@@ -548,7 +547,6 @@ export default {
 
       button {
         background: linear-gradient(90deg, #d2420d, #ffbf00);
-        // background: linear-gradient(90deg, #e9e9e9, #0077ff);
 
         &:hover {
           color: rgb(0, 0, 0);
@@ -560,7 +558,7 @@ export default {
   hr {
     width: 10%;
     border: none;
-    margin-left: 10rem;
+    margin-left: clamp(2rem, 10vw, 10rem);
     margin-bottom: 2rem;
     border-bottom: 2px solid rgb(141, 141, 141);
   }
@@ -571,13 +569,14 @@ export default {
 .activities-container {
   width: 90%;
   margin: 0 auto;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: clamp(2rem, 5vw, 5rem);
+  padding-bottom: clamp(2rem, 5vw, 5rem);
   position: relative;
   align-items: center;
+  flex-wrap: wrap;
 
   hr {
-    height: 210px;
+    height: clamp(100px, 20vw, 210px);
     align-self: flex-end;
     border: none;
     border-left: 2px solid rgb(141, 141, 141);
@@ -587,14 +586,17 @@ export default {
     width: 55%;
 
     .activities-list {
-      grid-template-rows: repeat(2, 1);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(0.5rem, 2vw, 1rem);
 
       .activity-card {
         border-radius: 0.5rem;
         position: relative;
-        height: 13rem;
+        aspect-ratio: 1 / 1;
         overflow: hidden;
         cursor: pointer;
+        container-type: inline-size;
 
         .card-default {
           position: absolute;
@@ -613,9 +615,10 @@ export default {
           span {
             font-weight: bold;
             width: 100%;
-            padding: 0.5rem;
+            padding: 5%;
             display: inline-block;
             opacity: 0.8;
+            font-size: 12cqw;
           }
         }
 
@@ -635,13 +638,14 @@ export default {
 
           img {
             width: 17%;
-            margin-bottom: 1rem;
+            margin-bottom: 5%;
           }
 
           p {
             color: black;
             font-weight: 500;
-            padding: 0.5rem;
+            padding: 5%;
+            font-size: 12cqw;
           }
         }
 
@@ -684,7 +688,7 @@ export default {
   }
 
   .activities-title {
-    margin-top: 4rem;
+    margin-top: clamp(1rem, 4vw, 4rem);
     overflow: hidden;
 
     .title-1,
@@ -717,8 +721,8 @@ export default {
       rgba(233, 233, 233, 0.85)
     ),
     url(../assets/images/social.jpg);
-  padding-top: 10rem;
-  min-height: 875px;
+  padding-top: clamp(4rem, 10vw, 10rem);
+  min-height: clamp(500px, 80vh, 875px);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -726,25 +730,26 @@ export default {
 
   .contacts-box {
     width: 95%;
-    padding: 2rem;
+    padding: clamp(1rem, 2vw, 2rem);
     margin: 0 auto;
+    flex-wrap: wrap;
 
     .contacts-text {
       width: 60%;
       color: white;
 
       h2 {
-        font-size: 6rem;
+        font-size: clamp(2.5rem, 8vw, 6rem);
       }
 
       h3 {
-        font-size: 3rem;
+        font-size: clamp(1.2rem, 4vw, 3rem);
       }
 
       hr {
-        width: 250px;
+        width: clamp(100px, 20vw, 250px);
         border: none;
-        margin-left: 25rem;
+        margin-left: clamp(5rem, 25vw, 25rem);
         border-bottom: 2px solid white;
       }
 
@@ -773,23 +778,23 @@ export default {
       }
 
       .text-2 {
-        margin-left: 1rem;
-        margin-bottom: 2rem;
+        margin-left: clamp(0.5rem, 1vw, 1rem);
+        margin-bottom: clamp(1rem, 2vw, 2rem);
       }
 
       .text-3 {
-        margin-left: 7rem;
-        margin-bottom: 3rem;
+        margin-left: clamp(2rem, 7vw, 7rem);
+        margin-bottom: clamp(1.5rem, 3vw, 3rem);
       }
 
       .text-4 {
-        margin-top: 2rem;
-        margin-left: 3rem;
-        margin-bottom: 2rem;
+        margin-top: clamp(1rem, 2vw, 2rem);
+        margin-left: clamp(1rem, 3vw, 3rem);
+        margin-bottom: clamp(1rem, 2vw, 2rem);
       }
 
       .text-5 {
-        margin-left: 4rem;
+        margin-left: clamp(1.5rem, 4vw, 4rem);
       }
     }
 
@@ -799,15 +804,15 @@ export default {
 
       .space-1 {
         border: none;
-        width: 150px;
-        margin-left: 19rem;
+        width: clamp(80px, 15vw, 150px);
+        margin-left: clamp(5rem, 19vw, 19rem);
         border-bottom: 2px solid black;
       }
 
       .space-2 {
         border: none;
-        width: 250px;
-        margin-left: 6rem;
+        width: clamp(120px, 20vw, 250px);
+        margin-left: clamp(2rem, 6vw, 6rem);
         border-bottom: 2px solid black;
       }
 
@@ -815,12 +820,13 @@ export default {
       .instagram,
       .newsletter {
         display: flex;
-        padding-left: 3rem;
+        padding-left: clamp(1rem, 3vw, 3rem);
         align-items: center;
         height: calc(100% / 3);
 
         a {
-          width: 20%;
+          width: clamp(50px, 20%, 80px);
+          min-width: 50px;
           z-index: 1;
           border-radius: 26px;
           position: relative;
@@ -847,11 +853,178 @@ export default {
         }
 
         h3 {
-          padding-left: 4rem;
+          padding-left: clamp(1rem, 4vw, 4rem);
+          font-size: clamp(0.9rem, 2vw, 1.5rem);
         }
       }
     }
   }
 }
 // END contacts section
+
+// ==========================================
+// MEDIA QUERIES - TABLET
+// ==========================================
+@media (max-width: 992px) {
+  // News section - tablet
+  .news-container {
+    flex-direction: column;
+    align-items: center;
+
+    .sections-title {
+      width: 100%;
+      text-align: center;
+
+      .title-1 {
+        padding-left: 0;
+        text-align: center;
+      }
+
+      .title-2 {
+        padding-left: 0;
+        text-align: center;
+      }
+    }
+
+    .news-description {
+      width: 100%;
+      
+      hr {
+        margin: 2rem auto;
+      }
+    }
+  }
+
+  // Activities section - tablet
+  .activities-container {
+    flex-direction: column-reverse;
+
+    hr {
+      display: none;
+    }
+
+    .activities-box {
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    .activities-title {
+      width: 100%;
+      text-align: center;
+
+      .title-1,
+      .title-2 {
+        text-align: center;
+      }
+    }
+  }
+
+  // Contacts section - tablet
+  .contacts-container {
+    .contacts-box {
+      flex-direction: column;
+
+      .contacts-text {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3rem;
+
+        hr {
+          margin: 1.5rem auto;
+        }
+
+        .text-2,
+        .text-3,
+        .text-4,
+        .text-5 {
+          margin-left: 0;
+        }
+      }
+
+      .socials-container {
+        width: 100%;
+        align-items: center;
+
+        .space-1,
+        .space-2 {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .facebook,
+        .instagram,
+        .newsletter {
+          justify-content: center;
+          padding-left: 0;
+          padding: 1rem 0;
+
+          h3 {
+            padding-left: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ==========================================
+// MEDIA QUERIES - MOBILE
+// ==========================================
+@media (max-width: 576px) {
+  // News list - mobile: 1 colonna
+  .news-list-container {
+    .news-list-box {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+
+      .single-news {
+        aspect-ratio: 16 / 9;
+      }
+    }
+  }
+
+  // Activities - mobile: cards in colonna
+  .activities-container {
+    .activities-box {
+      .activities-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+
+        .activity-card {
+          aspect-ratio: 16 / 9;
+        }
+      }
+    }
+  }
+
+  // Subscription - mobile
+  .subscription-container {
+    background-attachment: scroll; // Fix per iOS
+
+    .subscription-box {
+      width: 95%;
+    }
+  }
+
+  // Contacts - mobile
+  .contacts-container {
+    background-attachment: scroll; // Fix per iOS
+
+    .contacts-box {
+      .socials-container {
+        .facebook,
+        .instagram,
+        .newsletter {
+          flex-direction: column;
+          text-align: center;
+
+          h3 {
+            padding-left: 0;
+            padding-top: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

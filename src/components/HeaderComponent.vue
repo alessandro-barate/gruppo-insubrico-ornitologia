@@ -41,11 +41,13 @@ export default {
 
     // To make the nav list appear when the hamburger menu is clicked
     toggleNavbarHamburger() {
-      const hamburger = document.querySelector(".hamburger");
+      const hamburger = document.querySelector(".hamburger-menu");
       const navMenu = document.querySelector(".nav-menu");
+      const bar2 = document.getElementById("bar-2");
 
       hamburger.classList.toggle("active");
       navMenu.classList.toggle("active");
+      bar2.classList.toggle("bar-active");
     },
 
     // To show the search input field
@@ -73,8 +75,15 @@ export default {
       <div class="row">
         <div class="col d-flex">
           <!-- Nav menu -->
-          <nav>
-            <ul class="nav-menu d-flex">
+          <nav class="d-flex">
+            <div class="hamburger-menu-container d-flex">
+              <div @click="toggleNavbarHamburger()" class="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar" id="bar-2"></span>
+                <span class="bar"></span>
+              </div>
+            </div>
+            <ul class="nav-menu">
               <li>
                 <a>
                   <router-link :to="{ name: 'Homepage' }"> Home </router-link>
@@ -168,65 +177,94 @@ export default {
 
 .container {
   margin-bottom: 0px;
-  position: relative;
 
-  nav {
-    width: 90%;
-    margin: 0 auto;
+  .col {
+    nav {
+      width: 90%;
+      height: 60px;
+      margin: 0 auto;
 
-    .nav-menu {
-      width: 100%;
-      padding-top: 1.25rem;
-      padding-bottom: 1.25rem;
-      justify-content: space-evenly;
+      .hamburger-menu-container {
+        width: 10%;
+        justify-content: center;
+        background-color: red;
+        align-items: center;
 
-      a {
-        transition: 0.4s ease-in-out;
+        .hamburger-menu {
+          transition: all 2s ease-in-out;
 
-        &:hover {
-          color: bisque;
+          .bar {
+            display: block;
+            width: 35px;
+            height: 2px;
+            margin: 8px auto;
+            border-radius: 30%;
+            background-color: rgb(0, 0, 0);
+          }
+
+          .bar-active {
+            left: 20%;
+            position: relative;
+            transform: translateX(10px);
+          }
         }
       }
-    }
-  }
 
-  .search-bar-section {
-    width: 10%;
-    position: relative;
+      .nav-menu {
+        width: 90%;
+        display: none;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        justify-content: space-evenly;
 
-    .search-bar-box {
-      width: 100%;
-      padding-top: 1rem;
-      text-align: start;
-
-      button {
-        border: none;
-        cursor: pointer;
-        padding-top: 0.2rem;
-        background-color: transparent;
-
-        img {
-          width: 20%;
-          transition: transform 0.5s ease-in-out;
+        a {
+          transition: 0.4s ease-in-out;
 
           &:hover {
-            transform: scale(1.1);
+            color: bisque;
           }
         }
       }
     }
-  }
 
-  .input-field {
-    right: 0;
-    top: 100%;
-    display: none;
-    position: absolute;
-    padding-top: 0.5rem;
-    padding-right: 0.5rem;
+    .search-bar-section {
+      width: 10%;
+      position: relative;
 
-    &.visible {
-      display: block;
+      .search-bar-box {
+        width: 100%;
+        padding-top: 1rem;
+        text-align: start;
+
+        button {
+          border: none;
+          cursor: pointer;
+          padding-top: 0.2rem;
+          background-color: transparent;
+
+          img {
+            width: 20%;
+            transition: transform 0.5s ease-in-out;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+
+    .input-field {
+      right: 0;
+      top: 100%;
+      display: none;
+      position: absolute;
+      padding-top: 0.5rem;
+      padding-right: 0.5rem;
+
+      &.visible {
+        display: block;
+      }
     }
   }
 }
@@ -243,21 +281,25 @@ input {
 }
 
 // Input font
-// Per Chrome, Safari, Opera...
+// For Chrome, Safari, Opera...
 ::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.7);
   font-family: "Sora", sans-serif;
 }
 
-// Per Firefox
+// For Firefox
 ::-moz-input-placeholder {
   color: white;
   font-family: "Sora", sans-serif;
 }
 
-// Per Internet Explorer
+// For Internet Explorer
 ::-ms-input-placeholder {
   color: rgb(255, 255, 255);
   font-family: "Sora", sans-serif;
 }
+
+// ==========================================
+// MEDIA QUERIES - TABLET
+// ==========================================
 </style>
