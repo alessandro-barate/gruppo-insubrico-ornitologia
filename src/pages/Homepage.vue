@@ -301,7 +301,7 @@ export default {
   .title-section {
     position: relative;
     width: 100%;
-    height: clamp(400px, 70vh, 900px);
+    height: 160vh;
     overflow: hidden;
 
     .logo-section {
@@ -613,12 +613,12 @@ export default {
           transition: opacity 0.5s ease-in-out;
 
           span {
-            font-weight: bold;
+            font-weight: 500;
             width: 100%;
             padding: 5%;
             display: inline-block;
             opacity: 0.8;
-            font-size: 12cqw;
+            font-size: 9cqw;
           }
         }
 
@@ -645,7 +645,7 @@ export default {
             color: black;
             font-weight: 500;
             padding: 5%;
-            font-size: 12cqw;
+            font-size: 10cqw;
           }
         }
 
@@ -866,6 +866,13 @@ export default {
 // MEDIA QUERIES - TABLET
 // ==========================================
 @media (max-width: 992px) {
+  // Jumbo section
+  .col {
+    .title-section {
+    height: 110vh;
+    }
+  }
+
   // News section - tablet
   .news-container {
     flex-direction: column;
