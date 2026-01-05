@@ -135,7 +135,7 @@ export default {
               </ul>
               <!-- END right list -->
                <div class="close-button-container">
-                <button>
+                <button @click="closeMenu()">
                   <img src="../assets/images/header-menu/close-button.svg" alt="">
                 </button>
                </div>
@@ -282,9 +282,16 @@ export default {
 
         .close-button-container {
           padding-top: 2rem;
+
           button {
             border: none;
+            cursor: pointer;
             background-color: transparent;
+            transition: transform 0.5s ease-in-out;
+
+            &:hover {
+              transform: scale(1.1);
+            }
 
             img {
               width: 90%;
