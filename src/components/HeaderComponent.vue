@@ -41,13 +41,20 @@ export default {
 
     // To make the nav list appear when the hamburger menu is clicked
     toggleNavbarHamburger() {
-      const hamburger = document.querySelector(".hamburger-menu");
-      const navMenu = document.querySelector(".nav-menu");
+      const listPage = document.querySelector(".list-page");
       const bar2 = document.getElementById("bar-2");
 
-      hamburger.classList.toggle("active");
-      navMenu.classList.toggle("active");
+      listPage.classList.toggle("visible");
       bar2.classList.toggle("bar-active");
+    },
+
+    // To close menu when a link is clicked
+    closeMenu() {
+      const listPage = document.querySelector(".list-page");
+      const bar2 = document.getElementById("bar-2");
+
+      listPage.classList.remove("visible");
+      bar2.classList.remove("bar-active");
     },
 
     // To show the search input field
@@ -83,58 +90,51 @@ export default {
                 <span class="bar"></span>
               </div>
             </div>
-            <ul class="nav-menu">
-              <li>
-                <a>
-                  <router-link :to="{ name: 'Homepage' }"> Home </router-link>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <router-link :to="{ name: 'AboutUs' }">
+            <div class="list-page">
+              <!-- Left list -->
+              <ul class="nav-menu">
+                <li>    
+                  <router-link :to="{ name: 'Homepage' }" @click="closeMenu()"> Home </router-link>
+                </li>
+                <li>    
+                  <router-link :to="{ name: 'AboutUs' }" @click="closeMenu()">
                     Chi siamo
                   </router-link>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <router-link :to="{ name: 'Projects' }">
+                </li>
+                <li>    
+                  <router-link :to="{ name: 'Projects' }" @click="closeMenu()">
                     Progetti
                   </router-link>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <router-link :to="{ name: 'ScientificOutreach' }">
+                </li>
+                <li>
+                  <router-link :to="{ name: 'ScientificOutreach' }" @click="closeMenu()">
                     Divulgazione
                   </router-link>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <router-link :to="{ name: 'Socials' }"> Social </router-link>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <router-link :to="{ name: 'Publications' }">
+                </li>
+              </ul>
+              <!-- END left list -->
+
+              <!-- Right list -->
+              <ul class="nav-menu">
+                <li>
+                  <router-link :to="{ name: 'Socials' }" @click="closeMenu()">Social </router-link>
+                </li>
+                <li>
+                  <router-link :to="{ name: 'Publications' }" @click="closeMenu()">
                     Pubblicazioni
                   </router-link>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <router-link :to="{ name: 'News' }"> News </router-link>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <router-link :to="{ name: 'Links' }">
+                </li>
+                <li>
+                  <router-link :to="{ name: 'News' }" @click="closeMenu()"> News</router-link>
+                </li>
+                <li>
+                  <router-link :to="{ name: 'Links' }" @click="closeMenu()">
                     Link utili
                   </router-link>
-                </a>
-              </li>
-            </ul>
+                </li>
+              </ul>
+              <!-- END right list -->
+            </div>
           </nav>
           <!-- END Nav menu -->
 
@@ -186,42 +186,80 @@ export default {
 
       .hamburger-menu-container {
         width: 10%;
-        justify-content: center;
-        background-color: red;
+        position: relative;
         align-items: center;
+        justify-content: center;
+
+        &::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 7%;
+          height: 70%;
+          width: 2px;
+          background-color: black;
+        }
 
         .hamburger-menu {
-          transition: all 2s ease-in-out;
+          cursor: pointer;
 
           .bar {
             display: block;
             width: 35px;
-            height: 2px;
+            height: 3px;
             margin: 8px auto;
             border-radius: 30%;
             background-color: rgb(0, 0, 0);
+            transition: transform 0.6s ease-in-out;
           }
 
           .bar-active {
-            left: 20%;
+            left: 0;
             position: relative;
             transform: translateX(10px);
           }
         }
       }
 
-      .nav-menu {
-        width: 90%;
-        display: none;
+      .list-page {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        position: absolute;
+        top: 3.76rem;
+        z-index: 1;
+        background-color: rgb(34, 133, 238);
         padding-top: 1.25rem;
         padding-bottom: 1.25rem;
         justify-content: space-evenly;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out, transform 0.6s ease-in-out;
 
-        a {
-          transition: 0.4s ease-in-out;
+        &.visible {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
 
-          &:hover {
-            color: bisque;
+        .nav-menu {
+          font-size: 5vw;
+          font-weight: 600;
+
+          li {
+            padding-top: 1rem;
+            margin-bottom: 2rem;
+
+            a {
+              transition: 0.4s ease-in-out;
+              color: black;
+
+              &:hover {
+                color: transparent;
+                -webkit-text-stroke: 2px black;
+                paint-order: stroke fill;
+              }
+            }
           }
         }
       }
@@ -235,6 +273,17 @@ export default {
         width: 100%;
         padding-top: 1rem;
         text-align: start;
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -20%;
+          height: 90%;
+          width: 2px;
+          background-color: black;
+        }
 
         button {
           border: none;
