@@ -134,6 +134,11 @@ export default {
                 </li>
               </ul>
               <!-- END right list -->
+               <div class="close-button-container">
+                <button>
+                  <img src="../assets/images/header-menu/close-button.svg" alt="">
+                </button>
+               </div>
             </div>
           </nav>
           <!-- END Nav menu -->
@@ -222,13 +227,15 @@ export default {
       }
 
       .list-page {
-        width: 100%;
+        width: 100vw;
         height: 100vh;
         display: flex;
         position: absolute;
         top: 3.76rem;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 1;
-        background-color: rgb(34, 133, 238);
+        background: url(../assets/images/header-menu/cesena-desktop.webp) no-repeat center / cover;
         padding-top: 1.25rem;
         padding-bottom: 1.25rem;
         justify-content: space-evenly;
@@ -236,10 +243,20 @@ export default {
         visibility: hidden;
         transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out, transform 0.6s ease-in-out;
 
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.65);
+          z-index: -1;
+        }
+
         &.visible {
           opacity: 1;
           visibility: visible;
-          transform: translateY(0);
         }
 
         .nav-menu {
@@ -252,13 +269,25 @@ export default {
 
             a {
               transition: 0.4s ease-in-out;
-              color: black;
+              color: beige;
 
               &:hover {
                 color: transparent;
                 -webkit-text-stroke: 2px black;
                 paint-order: stroke fill;
               }
+            }
+          }
+        }
+
+        .close-button-container {
+          padding-top: 2rem;
+          button {
+            border: none;
+            background-color: transparent;
+
+            img {
+              width: 90%;
             }
           }
         }
