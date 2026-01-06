@@ -77,8 +77,10 @@ export default {
         listPage.classList.remove("closing");
         listPage.style.visibility = "hidden";
         
-        // Naviga alla pagina dopo che l'animazione è finita
-        this.$router.push({ name: routeName });
+        // Naviga alla pagina dopo che l'animazione è finita (solo se routeName è definito)
+        if (routeName) {
+          this.$router.push({ name: routeName });
+        }
       }, 500);
       
       bar2.classList.remove("bar-active");
@@ -167,11 +169,14 @@ export default {
                 </li>
               </ul>
               <!-- END right list -->
-               <div class="close-button-container">
+
+              <!-- Close button -->
+              <div class="close-button-container">
                 <button @click="closeMenu()">
                   <img src="../assets/images/header-menu/close-button.svg" alt="">
                 </button>
-               </div>
+              </div>
+              <!-- END close button -->
             </div>
           </nav>
           <!-- END Nav menu -->
@@ -207,29 +212,6 @@ export default {
 </template>
 
 <style scoped lang="scss">
-// Animazione entrata dall'alto
-@keyframes slideInFromTop {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-// Animazione uscita verso il basso
-@keyframes slideOutToBottom {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-}
 
 .sticky-header {
   top: 0;
@@ -294,7 +276,7 @@ export default {
         top: 3.76rem;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 1;
+        z-index: 110;
         background: url(../assets/images/header-menu/cesena-desktop.webp) no-repeat center / cover;
         padding-top: 1.25rem;
         padding-bottom: 1.25rem;
@@ -314,7 +296,6 @@ export default {
           z-index: -1;
         }
 
-        // Stato aperto
         &.visible {
           opacity: 1;
           visibility: visible;
@@ -323,16 +304,21 @@ export default {
             opacity: 0;
             animation: slideInFromTop 0.5s ease-out forwards;
             
-            // Delay progressivo per ogni link
             @for $i from 1 through 4 {
               &:nth-child(#{$i}) {
                 animation-delay: #{$i * 0.1}s;
               }
             }
           }
+
+          // Animazione entrata per il bottone X
+          .close-button-container {
+            opacity: 0;
+            animation: slideInFromTop 0.5s ease-out forwards;
+            animation-delay: 0.5s; // Appare dopo i link
+          }
         }
 
-        // Stato chiusura
         &.closing {
           opacity: 1;
           visibility: visible;
@@ -341,12 +327,18 @@ export default {
             opacity: 1;
             animation: slideOutToBottom 0.4s ease-in forwards;
             
-            // Delay progressivo inverso per uscita
             @for $i from 1 through 4 {
               &:nth-child(#{$i}) {
                 animation-delay: #{(4 - $i) * 0.08}s;
               }
             }
+          }
+
+          // Animazione uscita per il bottone X
+          .close-button-container {
+            opacity: 1;
+            animation: slideOutToBottom 0.4s ease-in forwards;
+            animation-delay: 0s; // Esce per primo
           }
         }
 
@@ -357,7 +349,7 @@ export default {
           li {
             padding-top: 1rem;
             margin-bottom: 2rem;
-            opacity: 0; // Nascosto di default
+            opacity: 0;
 
             a {
               position: relative;
@@ -371,7 +363,6 @@ export default {
                 color: transparent;
               }
 
-              // Pseudo-elemento per la sottolineatura animata (parte dal centro)
               &::after {
                 content: '';
                 position: absolute;
@@ -394,8 +385,10 @@ export default {
         // Close button
         .close-button-container {
           padding-top: 2rem;
+          opacity: 0; // Nascosto di default
 
           button {
+            text-align: end;
             border: none;
             cursor: pointer;
             background-color: transparent;
@@ -406,7 +399,7 @@ export default {
             }
 
             img {
-              width: 90%;
+              width: 60%;
             }
           }
         }
