@@ -189,6 +189,7 @@ export default {
       height: 60px;
       margin: 0 auto;
 
+      // Hamburger menu
       .hamburger-menu-container {
         width: 10%;
         position: relative;
@@ -225,7 +226,9 @@ export default {
           }
         }
       }
+      // END hamburger menu
 
+      // List menu
       .list-page {
         width: 100vw;
         height: 100vh;
@@ -262,24 +265,44 @@ export default {
         .nav-menu {
           font-size: 5vw;
           font-weight: 600;
+          animation: slideInTop 1s ease-in-out;
 
           li {
             padding-top: 1rem;
             margin-bottom: 2rem;
 
             a {
-              transition: 0.4s ease-in-out;
+              position: relative;
               color: beige;
+              -webkit-text-stroke: 2px beige;
+              text-decoration: none;
+              transition: color 0.3s ease-in-out;
 
               &:hover {
                 color: transparent;
-                -webkit-text-stroke: 2px black;
-                paint-order: stroke fill;
+              }
+
+              // Pseudo-elemento per la sottolineatura animata (parte dal centro)
+              &::after {
+                content: '';
+                position: absolute;
+                bottom: -0.4rem;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 2px;
+                background-color: beige;
+                transition: width 0.4s ease-in-out 0.15s;
+              }
+
+              &:hover::after {
+                width: 100%;
               }
             }
           }
         }
 
+        // Close button
         .close-button-container {
           padding-top: 2rem;
 
@@ -298,9 +321,12 @@ export default {
             }
           }
         }
+        // END close button
       }
+      // END list menu
     }
 
+    // Search bar
     .search-bar-section {
       width: 10%;
       position: relative;
@@ -337,51 +363,51 @@ export default {
           }
         }
       }
-    }
 
-    .input-field {
-      right: 0;
-      top: 100%;
-      display: none;
-      position: absolute;
-      padding-top: 0.5rem;
-      padding-right: 0.5rem;
+      .input-field {
+        right: 0;
+        top: 100%;
+        display: none;
+        position: absolute;
+        padding-top: 0.5rem;
+        padding-right: 0.5rem;
 
-      &.visible {
-        display: block;
+        &.visible {
+          display: block;
+        }
+      }
+
+      input {
+        border: none;
+        padding-top: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 2rem;
+        padding-bottom: 0.5rem;
+        text-align: center;
+        border-radius: 0.4rem;
+        background-color: black;
+      }
+
+      // Input font
+      // For Chrome, Safari, Opera...
+      ::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.7);
+        font-family: "Sora", sans-serif;
+      }
+
+      // For Firefox
+      ::-moz-input-placeholder {
+        color: white;
+        font-family: "Sora", sans-serif;
+      }
+
+      // For Internet Explorer
+      ::-ms-input-placeholder {
+        color: rgb(255, 255, 255);
+        font-family: "Sora", sans-serif;
       }
     }
   }
-}
-
-input {
-  border: none;
-  padding-top: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 2rem;
-  padding-bottom: 0.5rem;
-  text-align: center;
-  border-radius: 0.4rem;
-  background-color: black;
-}
-
-// Input font
-// For Chrome, Safari, Opera...
-::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.7);
-  font-family: "Sora", sans-serif;
-}
-
-// For Firefox
-::-moz-input-placeholder {
-  color: white;
-  font-family: "Sora", sans-serif;
-}
-
-// For Internet Explorer
-::-ms-input-placeholder {
-  color: rgb(255, 255, 255);
-  font-family: "Sora", sans-serif;
 }
 
 // ==========================================
