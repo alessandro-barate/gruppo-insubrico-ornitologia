@@ -16,6 +16,7 @@ export default {
         threshold: 0.3,
       }
     );
+
     const newsBox = document.querySelector(".news-box");
     const subscriptionTitle = document.querySelector(".subscription-title");
     const activitiesTitle = document.querySelector(".activities-title");
@@ -93,7 +94,7 @@ export default {
         <!-- END jumbo section -->
 
         <!-- News overview -->
-        <section>
+        <section class="news-section">
           <div class="news-container d-flex">
             <div class="sections-title news-box">
               <h2 class="title-1 title-color part-1 uppercase">le ultime</h2>
@@ -292,6 +293,25 @@ export default {
 </template>
 
 <style scoped lang="scss">
+// Buttons
+.button {
+  width: 100%;
+  text-align: center;
+  padding-top: clamp(2rem, 4vw, 4rem);
+  padding-bottom: clamp(1.5rem, 3vw, 3rem);
+
+  button {
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    padding: clamp(0.75rem, 2vw, 1rem);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+}
+// END buttons
+
 // Jumbo section
 .col {
   .jumbo-bg {
@@ -363,114 +383,106 @@ export default {
 // END jumbo section
 
 // News section
-.news-container {
-  width: 100%;
-  flex-wrap: wrap;
+.news-section {
+  .news-container {
+    width: 100%;
+    flex-wrap: wrap;
 
-  .sections-title {
-    width: 50%;
+    .sections-title {
+      width: 50%;
 
-    .part-1,
-    .part-2,
-    .part-3 {
-      overflow: hidden;
-      white-space: nowrap;
-      width: 100%;
-      text-align: left;
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-
-    &.visible {
-      .part-1 {
-        animation: slideInLeft 1s ease-in-out forwards;
-      }
-
-      .part-2 {
-        animation: slideInLeft 1s ease-in-out 0.3s forwards;
-      }
-
+      .part-1,
+      .part-2,
       .part-3 {
-        animation: slideInLeft 1s ease-in-out 0.6s forwards;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+        text-align: left;
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+
+      &.visible {
+        .part-1 {
+          animation: slideInLeft 1s ease-in-out forwards;
+        }
+
+        .part-2 {
+          animation: slideInLeft 1s ease-in-out 0.3s forwards;
+        }
+
+        .part-3 {
+          animation: slideInLeft 1s ease-in-out 0.6s forwards;
+        }
+      }
+
+      .title-1 {
+        font-size: clamp(1.5rem, 4vw, 3rem);
+        padding-top: 2rem;
+        padding-left: clamp(1rem, 6vw, 6rem);
+      }
+
+      .title-2 {
+        font-size: clamp(2.5rem, 8vw, 6rem);
+        padding-top: clamp(1rem, 3vw, 3rem);
+        padding-left: clamp(2rem, 10vw, 12rem);
       }
     }
 
-    .title-1 {
-      font-size: clamp(1.5rem, 4vw, 3rem);
-      padding-top: 2rem;
-      padding-left: clamp(1rem, 6vw, 6rem);
-    }
+    .news-description {
+      width: 50%;
+      text-align: center;
 
-    .title-2 {
-      font-size: clamp(2.5rem, 8vw, 6rem);
-      padding-top: clamp(1rem, 3vw, 3rem);
-      padding-left: clamp(2rem, 10vw, 12rem);
-    }
-  }
+      p {
+        font-size: clamp(1rem, 2vw, 1.7rem);
+        padding-top: clamp(2rem, 6vw, 6rem);
+      }
 
-  .news-description {
-    width: 50%;
-    text-align: center;
-
-    p {
-      font-size: clamp(1rem, 2vw, 1.7rem);
-      padding-top: clamp(2rem, 6vw, 6rem);
-    }
-
-    hr {
-      width: 20%;
-      border: none;
-      margin-left: clamp(2rem, 8vw, 8rem);
-      margin-top: clamp(1.5rem, 4vw, 4rem);
-      border-bottom: 2px solid rgb(141, 141, 141);
+      hr {
+        width: 20%;
+        border: none;
+        margin-left: clamp(2rem, 8vw, 8rem);
+        margin-top: clamp(1.5rem, 4vw, 4rem);
+        border-bottom: 2px solid rgb(141, 141, 141);
+      }
     }
   }
-}
 
-.news-list-container {
-  width: 95%;
-  margin: 0 auto;
-  margin-top: 2rem;
+  .news-list-container {
+    // Variable for card dimension
+    --news-card-size: clamp(200px, 25vw, 300px);
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 2rem;
 
-  .news-list-box {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(12px, 2vw, 24px);
-    padding: clamp(10px, 2vw, 20px);
+    .news-list-box {
+      display: grid;
+      grid-template-columns: repeat(3, var(--news-card-size));
+      justify-content: center;
+      gap: clamp(12px, 2vw, 24px);
+      padding: clamp(10px, 2vw, 20px);
 
-    .single-news {
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      overflow: hidden;
-      border-radius: 1rem;
-
-      img {
+      .single-news {
+        aspect-ratio: 1 / 1;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.8s ease;
+        overflow: hidden;
+        border-radius: 1rem;
 
-        &:hover {
-          transform: scale(1.1);
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.8s ease;
+
+          &:hover {
+            transform: scale(1.1);
+          }
         }
       }
     }
   }
-}
-
-.button {
-  width: 100%;
-  text-align: center;
-  padding-top: clamp(2rem, 4vw, 4rem);
-  padding-bottom: clamp(1.5rem, 3vw, 3rem);
 
   button {
-    color: white;
-    font-weight: 500;
-    font-size: clamp(0.875rem, 2vw, 1rem);
-    padding: clamp(0.75rem, 2vw, 1rem);
-    border-radius: 0.5rem;
-    border: none;
     background: linear-gradient(90deg, #0077ff, #00e1ff);
 
     &:hover {
@@ -478,6 +490,7 @@ export default {
     }
   }
 }
+// END news section
 
 // Subscription section
 .subscription-container {
@@ -510,6 +523,18 @@ export default {
       .title-2 {
         animation: slideInTop 1s ease-in-out 0.3s forwards;
       }
+    }
+
+    .title-1 {
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      padding-top: 2rem;
+      padding-left: clamp(1rem, 6vw, 6rem);
+    }
+
+    .title-2 {
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      padding-top: clamp(1rem, 3vw, 3rem);
+      padding-left: clamp(2rem, 10vw, 12rem);
     }
   }
 
@@ -706,6 +731,18 @@ export default {
         margin-bottom: 2rem;
         animation: slideInRight 1s ease-in-out 0.3s forwards;
       }
+    }
+
+    .title-1 {
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      padding-top: 2rem;
+      padding-left: clamp(1rem, 6vw, 6rem);
+    }
+
+    .title-2 {
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      padding-top: clamp(1rem, 3vw, 3rem);
+      padding-left: clamp(2rem, 10vw, 12rem);
     }
   }
 }
@@ -980,12 +1017,16 @@ export default {
 @media (max-width: 576px) {
   // News list - mobile: 1 colonna
   .news-list-container {
+    // Dimensione card su mobile - modifica qui per cambiarla
+    --news-card-size: min(300px, 80vw);
+    
     .news-list-box {
-      grid-template-columns: 1fr;
+      grid-template-columns: var(--news-card-size);
       gap: 1rem;
 
       .single-news {
-        aspect-ratio: 16 / 9;
+        // Mantiene il formato quadrato anche su mobile
+        aspect-ratio: 1 / 1;
       }
     }
   }

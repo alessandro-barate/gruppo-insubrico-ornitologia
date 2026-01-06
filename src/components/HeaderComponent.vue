@@ -235,16 +235,6 @@ export default {
         align-items: center;
         justify-content: center;
 
-        &::after {
-          content: '';
-          position: absolute;
-          right: 0;
-          top: 7%;
-          height: 70%;
-          width: 2px;
-          background-color: black;
-        }
-
         .hamburger-menu {
           cursor: pointer;
 
@@ -338,7 +328,7 @@ export default {
           .close-button-container {
             opacity: 1;
             animation: slideOutToBottom 0.4s ease-in forwards;
-            animation-delay: 0s; // Esce per primo
+            animation-delay: 0s;
           }
         }
 
@@ -385,7 +375,7 @@ export default {
         // Close button
         .close-button-container {
           padding-top: 2rem;
-          opacity: 0; // Nascosto di default
+          opacity: 0;
 
           button {
             text-align: end;
@@ -418,16 +408,6 @@ export default {
         padding-top: 1rem;
         text-align: start;
         position: relative;
-
-        &::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: -20%;
-          height: 90%;
-          width: 2px;
-          background-color: black;
-        }
 
         button {
           border: none;
