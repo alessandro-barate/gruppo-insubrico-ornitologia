@@ -44,7 +44,22 @@ export default {
       const listPage = document.querySelector(".list-page");
       const bar2 = document.getElementById("bar-2");
 
-      listPage.classList.toggle("visible");
+      if (listPage.classList.contains("visible")) {
+        // On closing: add closing class for the end animation
+        listPage.classList.add("closing");
+        listPage.classList.remove("visible");
+        
+        // Remove closing and hide the menù together
+        setTimeout(() => {
+          listPage.classList.remove("closing");
+          listPage.style.visibility = "hidden";
+        }, 500);
+      } else {
+        // On opening: reset the inline style and add visible
+        listPage.style.visibility = "";
+        listPage.classList.add("visible");
+      }
+      
       bar2.classList.toggle("bar-active");
     },
 
@@ -53,7 +68,16 @@ export default {
       const listPage = document.querySelector(".list-page");
       const bar2 = document.getElementById("bar-2");
 
+      // Add closing class for the end animation
+      listPage.classList.add("closing");
       listPage.classList.remove("visible");
+      
+      // Remove closing and hide the menù together
+      setTimeout(() => {
+        listPage.classList.remove("closing");
+        listPage.style.visibility = "hidden";
+      }, 500);
+      
       bar2.classList.remove("bar-active");
     },
 
@@ -174,6 +198,30 @@ export default {
 </template>
 
 <style scoped lang="scss">
+// Animazione entrata dall'alto
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Animazione uscita verso il basso
+@keyframes slideOutToBottom {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
 .sticky-header {
   top: 0;
   z-index: 1000;
@@ -244,7 +292,7 @@ export default {
         justify-content: space-evenly;
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out, transform 0.6s ease-in-out;
+        transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
 
         &::before {
           content: '';
@@ -257,19 +305,50 @@ export default {
           z-index: -1;
         }
 
+        // Stato aperto
         &.visible {
           opacity: 1;
           visibility: visible;
+
+          .nav-menu li {
+            opacity: 0;
+            animation: slideInFromTop 0.5s ease-out forwards;
+            
+            // Delay progressivo per ogni link
+            @for $i from 1 through 4 {
+              &:nth-child(#{$i}) {
+                animation-delay: #{$i * 0.1}s;
+              }
+            }
+          }
+        }
+
+        // Stato chiusura
+        &.closing {
+          opacity: 1;
+          visibility: visible;
+
+          .nav-menu li {
+            opacity: 1;
+            animation: slideOutToBottom 0.4s ease-in forwards;
+            
+            // Delay progressivo inverso per uscita
+            @for $i from 1 through 4 {
+              &:nth-child(#{$i}) {
+                animation-delay: #{(4 - $i) * 0.08}s;
+              }
+            }
+          }
         }
 
         .nav-menu {
           font-size: 5vw;
           font-weight: 600;
-          animation: slideInTop 1s ease-in-out;
 
           li {
             padding-top: 1rem;
             margin-bottom: 2rem;
+            opacity: 0; // Nascosto di default
 
             a {
               position: relative;
