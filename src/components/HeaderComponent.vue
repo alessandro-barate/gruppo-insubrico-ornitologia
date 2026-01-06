@@ -45,17 +45,17 @@ export default {
       const bar2 = document.getElementById("bar-2");
 
       if (listPage.classList.contains("visible")) {
-        // On closing: add closing class for the end animation
+        // Chiusura: aggiungi classe closing per animazione uscita
         listPage.classList.add("closing");
         listPage.classList.remove("visible");
         
-        // Remove closing and hide the menù together
+        // Rimuovi closing E nascondi il menu insieme
         setTimeout(() => {
           listPage.classList.remove("closing");
           listPage.style.visibility = "hidden";
         }, 500);
       } else {
-        // On opening: reset the inline style and add visible
+        // Apertura: resetta lo style inline e aggiungi visible
         listPage.style.visibility = "";
         listPage.classList.add("visible");
       }
@@ -64,18 +64,21 @@ export default {
     },
 
     // To close menu when a link is clicked
-    closeMenu() {
+    closeMenu(routeName) {
       const listPage = document.querySelector(".list-page");
       const bar2 = document.getElementById("bar-2");
 
-      // Add closing class for the end animation
+      // Aggiungi classe closing per animazione uscita
       listPage.classList.add("closing");
       listPage.classList.remove("visible");
       
-      // Remove closing and hide the menù together
+      // Rimuovi closing E nascondi il menu, poi naviga
       setTimeout(() => {
         listPage.classList.remove("closing");
         listPage.style.visibility = "hidden";
+        
+        // Naviga alla pagina dopo che l'animazione è finita
+        this.$router.push({ name: routeName });
       }, 500);
       
       bar2.classList.remove("bar-active");
@@ -118,21 +121,23 @@ export default {
               <!-- Left list -->
               <ul class="nav-menu">
                 <li>    
-                  <router-link :to="{ name: 'Homepage' }" @click="closeMenu()"> Home </router-link>
-                </li>
-                <li>    
-                  <router-link :to="{ name: 'AboutUs' }" @click="closeMenu()">
-                    Chi siamo
+                  <router-link :to="{ name: 'Homepage' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('Homepage')"> Home </a>
                   </router-link>
                 </li>
                 <li>    
-                  <router-link :to="{ name: 'Projects' }" @click="closeMenu()">
-                    Progetti
+                  <router-link :to="{ name: 'AboutUs' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('AboutUs')"> Chi siamo </a>
+                  </router-link>
+                </li>
+                <li>    
+                  <router-link :to="{ name: 'Projects' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('Projects')"> Progetti </a>
                   </router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'ScientificOutreach' }" @click="closeMenu()">
-                    Divulgazione
+                  <router-link :to="{ name: 'ScientificOutreach' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('ScientificOutreach')"> Divulgazione </a>
                   </router-link>
                 </li>
               </ul>
@@ -141,19 +146,23 @@ export default {
               <!-- Right list -->
               <ul class="nav-menu">
                 <li>
-                  <router-link :to="{ name: 'Socials' }" @click="closeMenu()">Social </router-link>
-                </li>
-                <li>
-                  <router-link :to="{ name: 'Publications' }" @click="closeMenu()">
-                    Pubblicazioni
+                  <router-link :to="{ name: 'Socials' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('Socials')"> Social </a>
                   </router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'News' }" @click="closeMenu()"> News</router-link>
+                  <router-link :to="{ name: 'Publications' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('Publications')"> Pubblicazioni </a>
+                  </router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'Links' }" @click="closeMenu()">
-                    Link utili
+                  <router-link :to="{ name: 'News' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('News')"> News </a>
+                  </router-link>
+                </li>
+                <li>
+                  <router-link :to="{ name: 'Links' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('Links')"> Link utili </a>
                   </router-link>
                 </li>
               </ul>
@@ -355,6 +364,7 @@ export default {
               color: beige;
               -webkit-text-stroke: 2px beige;
               text-decoration: none;
+              cursor: pointer;
               transition: color 0.3s ease-in-out;
 
               &:hover {
