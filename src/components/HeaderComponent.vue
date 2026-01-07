@@ -112,6 +112,7 @@ export default {
         <div class="col d-flex">
           <!-- Nav menu -->
           <nav class="d-flex">
+            <!-- Hamburger menu -->
             <div class="hamburger-menu-container d-flex">
               <div @click="toggleNavbarHamburger()" class="hamburger-menu">
                 <span class="bar"></span>
@@ -119,6 +120,9 @@ export default {
                 <span class="bar"></span>
               </div>
             </div>
+            <!-- END hamburger menu -->
+
+            <!-- List page -->
             <div class="list-page">
               <!-- Left list -->
               <ul class="nav-menu">
@@ -178,33 +182,34 @@ export default {
               </div>
               <!-- END close button -->
             </div>
+            <!-- END list page -->
+
+            <!-- Search bar section -->
+            <div class="search-bar-section">
+              <div class="search-bar-box d-flex">
+                <button @click="openSearchBar">
+                  <img
+                    src="../assets/images/magnifier.svg"
+                    alt="Icona della ricerca nel sito"
+                  />
+                </button>
+              </div>
+              <div class="input-field">
+                <form action="">
+                  <label for="search-field"></label>
+                  <input
+                    type="search"
+                    id="search-field"
+                    name="search-field"
+                    placeholder="Cerca nel sito"
+                    style="color: #ffffffb3"
+                  />
+                </form>
+              </div>
+            </div>
+            <!-- Search bar section -->
           </nav>
           <!-- END Nav menu -->
-
-          <!-- Search bar section -->
-          <div class="search-bar-section">
-            <div class="search-bar-box">
-              <button @click="openSearchBar">
-                <img
-                  src="../assets/images/magnifier.svg"
-                  alt="Icona della ricerca nel sito"
-                />
-              </button>
-            </div>
-            <div class="input-field">
-              <form action="">
-                <label for="search-field"></label>
-                <input
-                  type="search"
-                  id="search-field"
-                  name="search-field"
-                  placeholder="Cerca nel sito"
-                  style="color: #ffffffb3"
-                />
-              </form>
-            </div>
-          </div>
-          <!-- Search bar section -->
         </div>
       </div>
     </div>
@@ -213,16 +218,20 @@ export default {
 
 <style scoped lang="scss">
 
+// Sticky header
 .sticky-header {
   top: 0;
   z-index: 1000;
   position: sticky;
 }
+// END sticky header
 
 .container {
   margin-bottom: 0px;
 
   .col {
+    width: 100%;
+
     nav {
       width: 90%;
       height: 60px;
@@ -230,10 +239,9 @@ export default {
 
       // Hamburger menu
       .hamburger-menu-container {
-        width: 10%;
+        width: 50%;
         position: relative;
         align-items: center;
-        justify-content: center;
 
         .hamburger-menu {
           cursor: pointer;
@@ -396,77 +404,79 @@ export default {
         // END close button
       }
       // END list menu
-    }
 
-    // Search bar
-    .search-bar-section {
-      width: 10%;
-      position: relative;
-
-      .search-bar-box {
-        width: 100%;
-        padding-top: 1rem;
-        text-align: start;
+      // Search bar
+      .search-bar-section {
+        width: 50%;
         position: relative;
+        justify-content: end;
 
-        button {
-          border: none;
-          cursor: pointer;
-          padding-top: 0.2rem;
-          background-color: transparent;
+        .search-bar-box {
+          width: 100%;
+          padding-top: 1rem;
+          position: relative;
+          justify-content: end;
 
-          img {
-            width: 20%;
-            transition: transform 0.5s ease-in-out;
+          button {
+            border: none;
+            cursor: pointer;
+            text-align: end;
+            padding-top: 0.2rem;
+            background-color: transparent;
 
-            &:hover {
-              transform: scale(1.1);
+            img {
+              width: 20%;
+              transition: transform 0.5s ease-in-out;
+
+              &:hover {
+                transform: scale(1.1);
+              }
             }
           }
         }
-      }
 
-      .input-field {
-        right: 0;
-        top: 100%;
-        display: none;
-        position: absolute;
-        padding-top: 0.5rem;
-        padding-right: 0.5rem;
+        .input-field {
+          right: 0;
+          top: 100%;
+          display: none;
+          position: absolute;
+          padding-top: 0.5rem;
+          padding-right: 0.5rem;
 
-        &.visible {
-          display: block;
+          &.visible {
+            display: block;
+          }
         }
-      }
 
-      input {
-        border: none;
-        padding-top: 0.5rem;
-        padding-left: 1rem;
-        padding-right: 2rem;
-        padding-bottom: 0.5rem;
-        text-align: center;
-        border-radius: 0.4rem;
-        background-color: black;
-      }
+        input {
+          border: none;
+          padding-top: 0.5rem;
+          padding-left: 1rem;
+          padding-right: 2rem;
+          padding-bottom: 0.5rem;
+          text-align: center;
+          border-radius: 0.4rem;
+          background-color: black;
+        }
 
-      // Input font
-      // For Chrome, Safari, Opera...
-      ::-webkit-input-placeholder {
-        color: rgba(255, 255, 255, 0.7);
-        font-family: "Sora", sans-serif;
-      }
+        // Input font
+        // For Chrome, Safari, Opera...
+        ::-webkit-input-placeholder {
+          color: rgba(255, 255, 255, 0.7);
+          font-family: "Sora", sans-serif;
+        }
 
-      // For Firefox
-      ::-moz-input-placeholder {
-        color: white;
-        font-family: "Sora", sans-serif;
-      }
+        // For Firefox
+        ::-moz-input-placeholder {
+          color: white;
+          font-family: "Sora", sans-serif;
+        }
 
-      // For Internet Explorer
-      ::-ms-input-placeholder {
-        color: rgb(255, 255, 255);
-        font-family: "Sora", sans-serif;
+        // For Internet Explorer
+        ::-ms-input-placeholder {
+          color: rgb(255, 255, 255);
+          font-family: "Sora", sans-serif;
+        }
       }
     }
   }
@@ -475,4 +485,24 @@ export default {
 // ==========================================
 // MEDIA QUERIES - TABLET
 // ==========================================
+
+// ==========================================
+// MEDIA QUERIES - MOBILE
+// ==========================================
+@media (max-width: 576px) {
+  .container {
+    .col {
+      nav {
+        .hamburger-menu-container {
+          .hamburger-menu {
+            .bar {
+              width: 30px;
+              height: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </style>

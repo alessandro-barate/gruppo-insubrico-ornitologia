@@ -906,11 +906,12 @@ export default {
   // Jumbo section
   .col {
     .title-section {
-    height: 110vh;
+      height: 110vh;
     }
   }
+  // END jumbo section
 
-  // News section - tablet
+  // News section
   .news-container {
     flex-direction: column;
     align-items: center;
@@ -938,8 +939,9 @@ export default {
       }
     }
   }
+  // END news section
 
-  // Activities section - tablet
+  // Activities section
   .activities-container {
     flex-direction: column-reverse;
 
@@ -962,8 +964,9 @@ export default {
       }
     }
   }
+  // END activities section
 
-  // Contacts section - tablet
+  // Contacts section
   .contacts-container {
     .contacts-box {
       flex-direction: column;
@@ -1009,15 +1012,14 @@ export default {
       }
     }
   }
+  // END contacts section
 }
 
 // ==========================================
 // MEDIA QUERIES - MOBILE
 // ==========================================
 @media (max-width: 576px) {
-  // News list - mobile: 1 colonna
   .news-list-container {
-    // Dimensione card su mobile - modifica qui per cambiarla
     --news-card-size: min(300px, 80vw);
     
     .news-list-box {
@@ -1025,7 +1027,6 @@ export default {
       gap: 1rem;
 
       .single-news {
-        // Mantiene il formato quadrato anche su mobile
         aspect-ratio: 1 / 1;
       }
     }
