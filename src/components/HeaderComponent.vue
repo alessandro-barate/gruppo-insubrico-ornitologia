@@ -684,6 +684,11 @@ export default {
       .close-button-container {
         top: 1.5rem;
         right: 2rem;
+
+        button img {
+          width: 35px;
+          height: 35px;
+        }
       }
 
       .nav-menu {
@@ -752,8 +757,8 @@ export default {
             right: 1.5rem;
 
             button img {
-              width: 20px;
-              height: 20px;
+              width: 30px;
+              height: 30px;
             }
           }
 
@@ -765,10 +770,6 @@ export default {
             li {
               margin-bottom: 0.25rem;
               margin-left: 0 !important;
-
-              &::before {
-                display: none;
-              }
 
               a {
                 font-size: clamp(1.8rem, 10vw, 2.5rem);
@@ -803,13 +804,29 @@ export default {
 // MEDIA QUERIES - TABLET
 // ==========================================
 @media (max-width: 992px) {
-  .company-name {
-    display: none;
+  .container {
+    .col {
+      nav {
+        .list-page {
+          .nav-menu {
+            justify-content: unset;
+            margin-top: 5rem;
+
+            li {
+              a {
+                font-size: clamp(1.4rem, 6vw, 2.5rem);
+              }
+            }
+          }
+
+          .menu-footer {
+            .company-name {
+              display: none;
+            }
+          }
+        }
+      }
+    }
   }
 }
-
-
-// ==========================================
-// MEDIA QUERIES - MOBILE
-// ==========================================
 </style>
