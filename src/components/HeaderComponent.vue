@@ -285,7 +285,7 @@ export default {
       }
       // END hamburger menu
 
-      // List menu - KM27 Style
+      // List menu
       .list-page {
         width: 100vw;
         height: 100vh;
@@ -311,7 +311,7 @@ export default {
           z-index: -1;
         }
 
-        // Logo in alto a sinistra
+        // Logo
         .menu-logo {
           position: absolute;
           top: 2rem;
@@ -381,7 +381,7 @@ export default {
             margin-bottom: 0.15rem;
             opacity: 0;
 
-            // Numero indice - sempre vicino al testo
+            // Index number
             &::before {
               content: attr(data-index);
               position: absolute;
@@ -411,7 +411,6 @@ export default {
               text-decoration: none;
               color: transparent;
               -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-              font-style: italic;
               letter-spacing: -0.02em;
               transition: all 0.3s ease-out;
               cursor: pointer;
@@ -492,7 +491,7 @@ export default {
           }
         }
 
-        // Stato visibile
+        // Visible state
         &.visible {
           opacity: 1;
           visibility: visible;
@@ -527,7 +526,7 @@ export default {
           }
         }
 
-        // Stato chiusura
+        // Closing state
         &.closing {
           opacity: 1;
           visibility: visible;
