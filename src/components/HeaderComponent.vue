@@ -194,8 +194,10 @@ export default {
                   <span>Gruppo Insubrico di Ornitologia</span>
                 </div>
                 <div class="social-links">
-                  <a href="#" target="_blank" rel="noopener">Instagram</a>
-                  <a href="#" target="_blank" rel="noopener">Facebook</a>
+                  <a href="https://www.instagram.com/gruppoinsubricoornitologia/"
+                  target="_blank">Instagram</a>
+                  <a href="https://www.facebook.com/GruppoInsubricoDiOrnitologia"
+                  target="_blank">Facebook</a>
                   <a href="#" @click.prevent="">Change</a>
                 </div>
               </div>
