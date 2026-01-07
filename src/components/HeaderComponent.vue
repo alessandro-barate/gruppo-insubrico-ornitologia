@@ -124,63 +124,81 @@ export default {
 
             <!-- List page -->
             <div class="list-page">
-              <!-- Left list -->
-              <ul class="nav-menu">
-                <li>    
-                  <router-link :to="{ name: 'Homepage' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('Homepage')"> Home </a>
-                  </router-link>
-                </li>
-                <li>    
-                  <router-link :to="{ name: 'AboutUs' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('AboutUs')"> Chi siamo </a>
-                  </router-link>
-                </li>
-                <li>    
-                  <router-link :to="{ name: 'Projects' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('Projects')"> Progetti </a>
-                  </router-link>
-                </li>
-                <li>
-                  <router-link :to="{ name: 'ScientificOutreach' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('ScientificOutreach')"> Divulgazione </a>
-                  </router-link>
-                </li>
-              </ul>
-              <!-- END left list -->
+              <!-- Logo top left -->
+              <div class="menu-logo">
+                <span>G I O</span>
+              </div>
 
-              <!-- Right list -->
-              <ul class="nav-menu">
-                <li>
-                  <router-link :to="{ name: 'Socials' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('Socials')"> Social </a>
-                  </router-link>
-                </li>
-                <li>
-                  <router-link :to="{ name: 'Publications' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('Publications')"> Pubblicazioni </a>
-                  </router-link>
-                </li>
-                <li>
-                  <router-link :to="{ name: 'News' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('News')"> News </a>
-                  </router-link>
-                </li>
-                <li>
-                  <router-link :to="{ name: 'Links' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('Links')"> Link utili </a>
-                  </router-link>
-                </li>
-              </ul>
-              <!-- END right list -->
-
-              <!-- Close button -->
+              <!-- Close button top right -->
               <div class="close-button-container">
                 <button @click="closeMenu()">
                   <img src="../assets/images/header-menu/close-button.svg" alt="">
                 </button>
               </div>
-              <!-- END close button -->
+
+              <!-- Main navigation links -->
+              <ul class="nav-menu">
+                <li data-index="01">    
+                  <router-link :to="{ name: 'Homepage' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('Homepage')">Home</a>
+                  </router-link>
+                </li>
+                <li data-index="02">    
+                  <router-link :to="{ name: 'AboutUs' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('AboutUs')">Chi siamo</a>
+                  </router-link>
+                </li>
+                <li data-index="03">    
+                  <router-link :to="{ name: 'Projects' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('Projects')">Progetti</a>
+                  </router-link>
+                </li>
+                <li data-index="04">
+                  <router-link :to="{ name: 'ScientificOutreach' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('ScientificOutreach')">Divulgazione</a>
+                  </router-link>
+                </li>
+                <li data-index="05">
+                  <router-link :to="{ name: 'Socials' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('Socials')">Social</a>
+                  </router-link>
+                </li>
+                <li data-index="06">
+                  <router-link :to="{ name: 'Publications' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('Publications')">Pubblicazioni</a>
+                  </router-link>
+                </li>
+                <li data-index="07">
+                  <router-link :to="{ name: 'News' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('News')">News</a>
+                  </router-link>
+                </li>
+                <li data-index="08">
+                  <router-link :to="{ name: 'Links' }" custom v-slot="{ href }">
+                    <a :href="href" @click.prevent="closeMenu('Links')">Link utili</a>
+                  </router-link>
+                </li>
+              </ul>
+
+              <!-- Footer bar -->
+              <div class="menu-footer">
+                <div class="newsletter-section">
+                  <form action="">
+                    <input type="email" placeholder="Iscriviti alla Newsletter">
+                    <button type="submit" aria-label="Invia">
+                      <span>→</span>
+                    </button>
+                  </form>
+                </div>
+                <div class="company-name">
+                  <span>Gruppo Insubrico di Ornitologia</span>
+                </div>
+                <div class="social-links">
+                  <a href="#" target="_blank" rel="noopener">Instagram</a>
+                  <a href="#" target="_blank" rel="noopener">Facebook</a>
+                  <a href="#" @click.prevent="">Change</a>
+                </div>
+              </div>
             </div>
             <!-- END list page -->
 
@@ -265,23 +283,20 @@ export default {
       }
       // END hamburger menu
 
-      // List menu
+      // List menu - KM27 Style
       .list-page {
         width: 100vw;
         height: 100vh;
         display: flex;
-        position: absolute;
-        top: 3.76rem;
-        left: 50%;
-        transform: translateX(-50%);
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
         z-index: 110;
         background: url(../assets/images/header-menu/cesena-desktop.webp) no-repeat center / cover;
-        padding-top: 1.25rem;
-        padding-bottom: 1.25rem;
-        justify-content: space-evenly;
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+        transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
 
         &::before {
           content: '';
@@ -290,118 +305,249 @@ export default {
           left: 0;
           width: 100%;
           height: 100%;
-          background-color: rgba(0, 0, 0, 0.65);
+          background-color: rgba(0, 0, 0, 0.75);
           z-index: -1;
         }
 
-        &.visible {
-          opacity: 1;
-          visibility: visible;
-
-          .nav-menu li {
-            opacity: 0;
-            animation: slideInFromTop 0.5s ease-out forwards;
-            
-            @for $i from 1 through 4 {
-              &:nth-child(#{$i}) {
-                animation-delay: #{$i * 0.1}s;
-              }
-            }
-          }
-
-          // Animazione entrata per il bottone X
-          .close-button-container {
-            opacity: 0;
-            animation: slideInFromTop 0.5s ease-out forwards;
-            animation-delay: 0.5s; // Appare dopo i link
+        // Logo in alto a sinistra
+        .menu-logo {
+          position: absolute;
+          top: 2rem;
+          left: 3rem;
+          
+          span {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
           }
         }
 
-        &.closing {
-          opacity: 1;
-          visibility: visible;
-
-          .nav-menu li {
-            opacity: 1;
-            animation: slideOutToBottom 0.4s ease-in forwards;
-            
-            @for $i from 1 through 4 {
-              &:nth-child(#{$i}) {
-                animation-delay: #{(4 - $i) * 0.08}s;
-              }
-            }
-          }
-
-          // Animazione uscita per il bottone X
-          .close-button-container {
-            opacity: 1;
-            animation: slideOutToBottom 0.4s ease-in forwards;
-            animation-delay: 0s;
-          }
-        }
-
-        .nav-menu {
-          font-size: 5vw;
-          font-weight: 600;
-
-          li {
-            padding-top: 1rem;
-            margin-bottom: 2rem;
-            opacity: 0;
-
-            a {
-              position: relative;
-              color: beige;
-              -webkit-text-stroke: 2px beige;
-              text-decoration: none;
-              cursor: pointer;
-              transition: color 0.3s ease-in-out;
-
-              &:hover {
-                color: transparent;
-              }
-
-              &::after {
-                content: '';
-                position: absolute;
-                bottom: -0.4rem;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 0;
-                height: 2px;
-                background-color: beige;
-                transition: width 0.4s ease-in-out 0.15s;
-              }
-
-              &:hover::after {
-                width: 100%;
-              }
-            }
-          }
-        }
-
-        // Close button
+        // Close button in alto a destra
         .close-button-container {
-          padding-top: 2rem;
+          position: absolute;
+          top: 2rem;
+          right: 3rem;
           opacity: 0;
 
           button {
-            text-align: end;
             border: none;
             cursor: pointer;
             background-color: transparent;
-            transition: transform 0.5s ease-in-out;
+            transition: transform 0.3s ease-in-out;
 
             &:hover {
               transform: scale(1.1);
             }
 
             img {
-              width: 60%;
+              width: 40px;
+              height: 40px;
+              filter: brightness(0) invert(1);
             }
           }
         }
-        // END close button
+
+        // Main navigation
+        .nav-menu {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 4.5rem 3rem 1rem;
+          list-style: none;
+          margin: 0;
+          
+          li {
+            width: 60%;
+            
+            // Dispari: allineati a sinistra
+            &:nth-child(odd) {
+              text-align: left;
+            }
+            
+            // Pari: allineati a destra
+            &:nth-child(even) {
+              text-align: right;
+            }
+          }
+
+          li {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 0.15rem;
+            opacity: 0;
+
+            // Numero indice - sempre vicino al testo
+            &::before {
+              content: attr(data-index);
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              font-size: 0.875rem;
+              color: rgba(255, 255, 255, 0.4);
+              font-weight: 400;
+              font-style: normal;
+            }
+
+            // Dispari: numero a sinistra del testo
+            &:nth-child(odd)::before {
+              right: calc(100% + 1rem);
+            }
+
+            // Pari: numero a destra del testo
+            &:nth-child(even)::before {
+              left: calc(100% + 1rem);
+            }
+
+            a {
+              display: inline-block;
+              font-size: clamp(1.5rem, 4.5vw, 3rem);
+              font-weight: 700;
+              text-transform: uppercase;
+              text-decoration: none;
+              color: transparent;
+              -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+              font-style: italic;
+              letter-spacing: -0.02em;
+              transition: all 0.3s ease-out;
+              cursor: pointer;
+
+              &:hover {
+                color: #fff;
+                -webkit-text-stroke: 1px #fff;
+              }
+            }
+          }
+        }
+
+        // Footer bar
+        .menu-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1.5rem 3rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+          .newsletter-section {
+            form {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+              padding-bottom: 0.5rem;
+
+              input {
+                background: transparent;
+                border: none;
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.875rem;
+                width: 200px;
+                outline: none;
+
+                &::placeholder {
+                  color: rgba(255, 255, 255, 0.6);
+                }
+              }
+
+              button {
+                background: transparent;
+                border: none;
+                color: rgba(255, 255, 255, 0.6);
+                cursor: pointer;
+                font-size: 1rem;
+                transition: color 0.3s ease;
+
+                &:hover {
+                  color: #fff;
+                }
+              }
+            }
+          }
+
+          .company-name {
+            span {
+              color: rgba(255, 255, 255, 0.6);
+              font-size: 0.875rem;
+            }
+          }
+
+          .social-links {
+            display: flex;
+            gap: 2rem;
+
+            a {
+              color: rgba(255, 255, 255, 0.6);
+              text-decoration: none;
+              font-size: 0.875rem;
+              transition: color 0.3s ease;
+
+              &:hover {
+                color: #fff;
+              }
+            }
+          }
+        }
+
+        // Stato visibile
+        &.visible {
+          opacity: 1;
+          visibility: visible;
+
+          .menu-logo {
+            opacity: 0;
+            animation: fadeIn 0.4s ease-out forwards;
+            animation-delay: 0.2s;
+          }
+
+          .close-button-container {
+            opacity: 0;
+            animation: fadeIn 0.4s ease-out forwards;
+            animation-delay: 0.3s;
+          }
+
+          .nav-menu li {
+            opacity: 0;
+            animation: slideInFromBottom 0.5s ease-out forwards;
+            
+            @for $i from 1 through 8 {
+              &:nth-child(#{$i}) {
+                animation-delay: #{0.1 + $i * 0.06}s;
+              }
+            }
+          }
+
+          .menu-footer {
+            opacity: 0;
+            animation: fadeIn 0.4s ease-out forwards;
+            animation-delay: 0.6s;
+          }
+        }
+
+        // Stato chiusura
+        &.closing {
+          opacity: 1;
+          visibility: visible;
+
+          .nav-menu li {
+            opacity: 1;
+            animation: slideOutToTop 0.3s ease-in forwards;
+            
+            @for $i from 1 through 8 {
+              &:nth-child(#{$i}) {
+                animation-delay: #{(8 - $i) * 0.04}s;
+              }
+            }
+          }
+
+          .close-button-container,
+          .menu-logo,
+          .menu-footer {
+            opacity: 1;
+            animation: fadeOut 0.3s ease-in forwards;
+          }
+        }
       }
       // END list menu
 
@@ -482,9 +628,96 @@ export default {
   }
 }
 
+// Keyframes
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOutToTop {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 // ==========================================
 // MEDIA QUERIES - TABLET
 // ==========================================
+@media (max-width: 992px) {
+  .container .col nav {
+    .list-page {
+      .menu-logo {
+        top: 1.5rem;
+        left: 2rem;
+      }
+
+      .close-button-container {
+        top: 1.5rem;
+        right: 2rem;
+      }
+
+      .nav-menu {
+        padding: 5rem 2rem;
+
+        li {
+          margin-left: 5% !important;
+          
+          a {
+            font-size: clamp(2rem, 6vw, 4rem);
+          }
+
+          &::before {
+            font-size: 0.75rem;
+          }
+        }
+      }
+
+      .menu-footer {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 2rem;
+        text-align: center;
+
+        .newsletter-section form {
+          justify-content: center;
+        }
+
+        .social-links {
+          gap: 1.5rem;
+        }
+      }
+    }
+  }
+}
 
 // ==========================================
 // MEDIA QUERIES - MOBILE
@@ -498,6 +731,64 @@ export default {
             .bar {
               width: 30px;
               height: 2px;
+            }
+          }
+        }
+
+        .list-page {
+          .menu-logo {
+            top: 1rem;
+            left: 1.5rem;
+            
+            span {
+              font-size: 1.2rem;
+            }
+          }
+
+          .close-button-container {
+            top: 1rem;
+            right: 1.5rem;
+
+            button img {
+              width: 20px;
+              height: 20px;
+            }
+          }
+
+          .nav-menu {
+            padding: 4rem 1.5rem;
+            justify-content: flex-start;
+            padding-top: 5rem;
+
+            li {
+              margin-bottom: 0.25rem;
+              margin-left: 0 !important;
+
+              &::before {
+                display: none;
+              }
+
+              a {
+                font-size: clamp(1.8rem, 10vw, 2.5rem);
+              }
+            }
+          }
+
+          .menu-footer {
+            padding: 1rem 1.5rem;
+
+            .newsletter-section form input {
+              width: 150px;
+              font-size: 0.75rem;
+            }
+
+            .company-name span,
+            .social-links a {
+              font-size: 0.75rem;
+            }
+
+            .social-links {
+              gap: 1rem;
             }
           }
         }
