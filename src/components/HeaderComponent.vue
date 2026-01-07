@@ -688,25 +688,26 @@ export default {
       }
 
       .nav-menu {
-        padding: 5rem 2rem;
+        padding: 4rem 2rem 0.5rem;
 
         li {
           margin-left: 5% !important;
+          margin-bottom: 0;
           
           a {
-            font-size: clamp(2rem, 6vw, 4rem);
+            font-size: clamp(1.4rem, 4vw, 2.5rem);
           }
 
           &::before {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
           }
         }
       }
 
       .menu-footer {
         flex-direction: column;
-        gap: 1rem;
-        padding: 1rem 2rem;
+        gap: 0.75rem;
+        padding: 0.75rem 2rem;
         text-align: center;
 
         .newsletter-section form {
@@ -798,4 +799,18 @@ export default {
     }
   }
 }
+
+// ==========================================
+// MEDIA QUERIES - TABLET
+// ==========================================
+@media (max-width: 992px) {
+  .company-name {
+    display: none;
+  }
+}
+
+
+// ==========================================
+// MEDIA QUERIES - MOBILE
+// ==========================================
 </style>
