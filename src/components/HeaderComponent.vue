@@ -137,45 +137,45 @@ export default {
               </div>
 
               <!-- Main navigation links -->
-              <ul class="nav-menu">
-                <li data-index="01">    
+              <ul class="nav-menu d-flex">
+                <li>    
                   <router-link :to="{ name: 'Homepage' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('Homepage')">Home</a>
+                    <a :href="href" @click.prevent="closeMenu('Homepage')" data-index="01">Home</a>
                   </router-link>
                 </li>
-                <li data-index="02">    
+                <li>    
                   <router-link :to="{ name: 'AboutUs' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('AboutUs')">Chi siamo</a>
+                    <a :href="href" @click.prevent="closeMenu('AboutUs')" data-index="02">Chi siamo</a>
                   </router-link>
                 </li>
-                <li data-index="03">    
+                <li>    
                   <router-link :to="{ name: 'Projects' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('Projects')">Progetti</a>
+                    <a :href="href" @click.prevent="closeMenu('Projects')" data-index="03">Progetti</a>
                   </router-link>
                 </li>
-                <li data-index="04">
+                <li>
                   <router-link :to="{ name: 'ScientificOutreach' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('ScientificOutreach')">Divulgazione</a>
+                    <a :href="href" @click.prevent="closeMenu('ScientificOutreach')" data-index="04">Divulgazione</a>
                   </router-link>
                 </li>
-                <li data-index="05">
+                <li>
                   <router-link :to="{ name: 'Socials' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('Socials')">Social</a>
+                    <a :href="href" @click.prevent="closeMenu('Socials')" data-index="05">Social</a>
                   </router-link>
                 </li>
-                <li data-index="06">
+                <li>
                   <router-link :to="{ name: 'Publications' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('Publications')">Pubblicazioni</a>
+                    <a :href="href" @click.prevent="closeMenu('Publications')" data-index="06">Pubblicazioni</a>
                   </router-link>
                 </li>
-                <li data-index="07">
+                <li>
                   <router-link :to="{ name: 'News' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('News')">News</a>
+                    <a :href="href" @click.prevent="closeMenu('News')" data-index="07">News</a>
                   </router-link>
                 </li>
-                <li data-index="08">
+                <li>
                   <router-link :to="{ name: 'Links' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('Links')">Link utili</a>
+                    <a :href="href" @click.prevent="closeMenu('Links')" data-index="08">Link utili</a>
                   </router-link>
                 </li>
               </ul>
@@ -288,11 +288,11 @@ export default {
       // List menu
       .list-page {
         width: 100vw;
-        height: 100vh;
+        height: 92vh;
         display: flex;
         flex-direction: column;
         position: fixed;
-        top: 0;
+        top: 60px;
         left: 0;
         z-index: 110;
         background: url(../assets/images/header-menu/cesena-desktop.webp) no-repeat center / cover;
@@ -360,50 +360,26 @@ export default {
           padding: 4.5rem 3rem 1rem;
           list-style: none;
           margin: 0;
-          
+
           li {
             width: 60%;
+            position: relative;
+            display: flex;
+            margin-bottom: 0.15rem;
+            opacity: 0;
             
             // Dispari: allineati a sinistra
             &:nth-child(odd) {
-              text-align: left;
+              justify-content: flex-start;
             }
             
             // Pari: allineati a destra
             &:nth-child(even) {
-              text-align: right;
-            }
-          }
-
-          li {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 0.15rem;
-            opacity: 0;
-
-            // Index number
-            &::before {
-              content: attr(data-index);
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
-              font-size: 0.875rem;
-              color: rgba(255, 255, 255, 0.4);
-              font-weight: 400;
-              font-style: normal;
-            }
-
-            // Dispari: numero a sinistra del testo
-            &:nth-child(odd)::before {
-              right: calc(100% + 1rem);
-            }
-
-            // Pari: numero a destra del testo
-            &:nth-child(even)::before {
-              left: calc(100% + 1rem);
+              justify-content: flex-end;
             }
 
             a {
+              position: relative;
               display: inline-block;
               font-size: clamp(1.5rem, 4.5vw, 3rem);
               font-weight: 700;
@@ -415,10 +391,32 @@ export default {
               transition: all 0.3s ease-out;
               cursor: pointer;
 
+              // Index number
+              &::before {
+                content: attr(data-index);
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 0.875rem;
+                color: rgba(255, 255, 255, 0.4);
+                font-weight: 400;
+                font-style: normal;
+              }
+
               &:hover {
                 color: #fff;
                 -webkit-text-stroke: 1px #fff;
               }
+            }
+
+            // Dispari: numero a sinistra del testo
+            &:nth-child(odd) a::before {
+              right: calc(100% + 1rem);
+            }
+
+            // Pari: numero a destra del testo
+            &:nth-child(even) a::before {
+              left: calc(100% + 1rem);
             }
           }
         }
@@ -692,14 +690,14 @@ export default {
       }
 
       .nav-menu {
+        margin-top: 2rem;
         padding: 4rem 2rem 0.5rem;
 
         li {
-          margin-left: 5% !important;
           margin-bottom: 0;
           
           a {
-            font-size: clamp(1.4rem, 4vw, 2.5rem);
+            font-size: clamp(1.4rem, 6vw, 2.5rem);
           }
 
           &::before {
@@ -713,6 +711,10 @@ export default {
         gap: 0.75rem;
         padding: 0.75rem 2rem;
         text-align: center;
+
+        .company-name {
+          display: none;
+        }
 
         .newsletter-section form {
           justify-content: center;
@@ -763,16 +765,31 @@ export default {
           }
 
           .nav-menu {
-            padding: 4rem 1.5rem;
-            justify-content: flex-start;
+            padding: 0;
+            justify-content: center;
             padding-top: 5rem;
 
             li {
+              width: 85%;
               margin-bottom: 0.25rem;
-              margin-left: 0 !important;
+              justify-content: center !important;
+              
+              // Dispari: leggero offset a sinistra
+              &:nth-child(odd) {
+                transform: translateX(-10%);
+              }
+              
+              // Pari: leggero offset a destra
+              &:nth-child(even) {
+                transform: translateX(10%);
+              }
 
               a {
                 font-size: clamp(1.8rem, 10vw, 2.5rem);
+                
+                &::before {
+                  font-size: 0.65rem;
+                }
               }
             }
           }
@@ -792,36 +809,6 @@ export default {
 
             .social-links {
               gap: 1rem;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-// ==========================================
-// MEDIA QUERIES - TABLET
-// ==========================================
-@media (max-width: 992px) {
-  .container {
-    .col {
-      nav {
-        .list-page {
-          .nav-menu {
-            justify-content: unset;
-            margin-top: 5rem;
-
-            li {
-              a {
-                font-size: clamp(1.4rem, 6vw, 2.5rem);
-              }
-            }
-          }
-
-          .menu-footer {
-            .company-name {
-              display: none;
             }
           }
         }
