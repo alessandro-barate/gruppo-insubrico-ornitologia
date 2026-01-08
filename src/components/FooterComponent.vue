@@ -55,7 +55,7 @@ export default {
             <!-- END logo box -->
 
             <!-- Details section -->
-            <div class="details-container d-flex">
+            <div class="details-container">
               <div class="details-column">
                 <h3 class="uppercase">contatti</h3>
                 <p>
@@ -64,6 +64,9 @@ export default {
                 <p>ODV - RUNTS 89826 del 07.11.2022</p>
                 <p>Codice Fiscale</p>
               </div>
+
+              <hr class="first-space">
+
               <div class="details-column">
                 <h3 class="uppercase">il gruppo</h3>
                 <p>
@@ -82,6 +85,10 @@ export default {
                   >
                 </p>
               </div>
+
+              <hr class="second-space">
+
+
               <div class="details-column">
                 <h3 class="uppercase">dove siamo</h3>
                 <div class="map-icon">
@@ -132,16 +139,7 @@ export default {
     }
 
     img {
-      width: 100%;
-    }
-
-    .overlay-2 {
-      width: 20%;
-
-      img {
-        width: 100%;
-        padding-top: 1rem;
-      }
+      width: 25%;
     }
   }
 
@@ -152,12 +150,17 @@ export default {
   }
 
   .details-container {
+    display: flex;
     width: 80%;
     margin: 0 auto;
     margin-bottom: 3rem;
     padding-bottom: 3rem;
     border-radius: 0.5rem;
     background-color: rgba(128, 128, 128, 0.9);
+
+    hr {
+      display: none;
+    }
 
     .details-column {
       text-align: center;
@@ -218,15 +221,57 @@ export default {
 // MEDIA QUERIES - MOBILE
 // ==========================================
 @media (max-width: 576px) {
+  .logo-container,
+  .copyright-container  {
+    margin: 0 auto;
+  }
+
+  .logo-box .logo-container img,
+  .copyright-container {
+    width: 60%;
+  }
+
   .col .main-container {
     .logo-box {
       .logo-text h1{
         font-size: 3.2rem;
       }
+    }
 
-      .logo-container {
-        width: 60%;
-        margin: 0 auto;
+    .details-container {
+      width: 90%;
+      display: block;
+
+      hr {
+        display: block;
+        border: none;
+        position: relative;
+        border-bottom: 1px solid black;
+      }
+
+      .first-space {
+        width: 30%;
+        left: 20%;
+      }
+
+      .second-space {
+        width: 20%;
+        left: 60%;
+      }
+
+      .details-column {
+        width: 100%;
+        padding-left: 1rem;
+
+        h3 {
+          text-align: start;
+          margin-bottom: 2rem;
+        }
+
+        p {
+          text-align: end;
+          padding-right: 1rem;
+        }
       }
     }
   }
