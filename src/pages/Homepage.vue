@@ -109,6 +109,7 @@ export default {
 
           <!-- News list -->
           <div class="news-list-container">
+            <p>In mobile fare carosello</p>
             <div class="news-list-box d-flex">
               <div class="single-news">
                 <img src="../assets/images/bird-1.webp" alt="" />
@@ -1032,34 +1033,41 @@ export default {
     }
   }
 
-  // Activities - mobile: cards in colonna
+  // Subscription
+  .subscription-container {
+    // background-attachment: scroll; -> Fix per iOS
+
+    .sections-title {
+      margin-top: 3rem;
+    }
+
+    .subscription-box {
+      width: 90%;
+      margin-bottom: 4rem;
+    }
+  }
+
+  // Activities
   .activities-container {
     .activities-box {
       .activities-list {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 3rem;
 
         .activity-card {
-          aspect-ratio: 16 / 9;
+          width: 70%;
+          margin: 0 auto;
         }
       }
     }
   }
 
-  // Subscription - mobile
-  .subscription-container {
-    background-attachment: scroll; // Fix per iOS
-
-    .subscription-box {
-      width: 95%;
-    }
-  }
-
-  // Contacts - mobile
+  // Contacts
   .contacts-container {
-    background-attachment: scroll; // Fix per iOS
+    // background-attachment: scroll; -> Fix per iOS
 
     .contacts-box {
+      margin-top: 5rem;
       .socials-container {
         .facebook,
         .instagram,
