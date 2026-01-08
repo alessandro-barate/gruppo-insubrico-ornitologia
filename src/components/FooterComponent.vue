@@ -44,13 +44,11 @@ export default {
 
               <!-- Logo container -->
               <div class="logo-container d-flex">
-                <div class="overlay-2">
-                  <img
-                    class="footer-logo"
-                    src="../assets/images/gio-logo.webp"
-                    alt="Logo del Gruppo Insubrico di Ornitologia"
-                  />
-                </div>
+                <img
+                  class="footer-logo"
+                  src="../assets/images/gio-logo.webp"
+                  alt="Logo del Gruppo Insubrico di Ornitologia"
+                />
               </div>
               <!-- END container -->
             </div>
@@ -205,6 +203,32 @@ export default {
 
   .copyright-container {
     text-align: center;
+  }
+}
+
+// ==========================================
+// MEDIA QUERIES - TABLET
+// ==========================================
+@media (max-width: 992px) {
+
+}
+
+
+// ==========================================
+// MEDIA QUERIES - MOBILE
+// ==========================================
+@media (max-width: 576px) {
+  .col .main-container {
+    .logo-box {
+      .logo-text h1{
+        font-size: 3.2rem;
+      }
+
+      .logo-container {
+        width: 60%;
+        margin: 0 auto;
+      }
+    }
   }
 }
 </style>
