@@ -257,7 +257,18 @@ export default {
 
     .details-container {
       width: 90%;
-      display: block;
+      display: flex;
+      flex-direction: column;
+
+      .copyright-container {
+        width: 100%;
+        order: 3;
+        margin-top: 3rem;
+        padding-top: 3rem;
+        padding-left: 0;
+        text-align: center;
+        border-top: 1px solid black;
+      }
 
       .details-column {
         width: 100%;

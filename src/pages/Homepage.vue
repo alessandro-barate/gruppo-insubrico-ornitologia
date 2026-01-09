@@ -1020,64 +1020,90 @@ export default {
 // MEDIA QUERIES - MOBILE
 // ==========================================
 @media (max-width: 576px) {
-  .news-list-container {
-    --news-card-size: min(300px, 80vw);
-    
-    .news-list-box {
-      grid-template-columns: var(--news-card-size);
-      gap: 1rem;
+  .col {
+    .title-section {
+      .logo-section {
+        .logo-container {
+          .overlay-2 {
 
-      .single-news {
-        aspect-ratio: 1 / 1;
-      }
-    }
-  }
-
-  // Subscription
-  .subscription-container {
-    // background-attachment: scroll; -> Fix per iOS
-
-    .sections-title {
-      margin-top: 3rem;
-    }
-
-    .subscription-box {
-      width: 90%;
-      margin-bottom: 4rem;
-    }
-  }
-
-  // Activities
-  .activities-container {
-    .activities-box {
-      .activities-list {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-
-        .activity-card {
-          width: 70%;
-          margin: 0 auto;
+            img {
+              width: 100%;
+              padding-top: 1rem;
+            }
+          }
         }
       }
     }
-  }
 
-  // Contacts
-  .contacts-container {
-    // background-attachment: scroll; -> Fix per iOS
+    // News
+    .news-list-container {
+      --news-card-size: min(300px, 80vw);
+    
+      .news-list-box {
+        grid-template-columns: var(--news-card-size);
+        gap: 1rem;
 
-    .contacts-box {
-      margin-top: 5rem;
-      .socials-container {
-        .facebook,
-        .instagram,
-        .newsletter {
-          flex-direction: column;
-          text-align: center;
+        .single-news {
+          aspect-ratio: 1 / 1;
+        }
+      }
+    }
 
-          h3 {
-            padding-left: 0;
-            padding-top: 0.5rem;
+    // Subscription
+    .subscription-container {
+      // background-attachment: scroll; -> Fix per iOS
+
+      .sections-title {
+        margin-top: 3rem;
+      }
+
+      .subscription-box {
+        width: 90%;
+        margin-bottom: 4rem;
+      }
+    }
+
+    // Activities
+    .activities-container {
+      .activities-box {
+        .activities-list {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+
+          .activity-card {
+            width: 70%;
+            margin: 0 auto;
+
+            .card-default:hover {
+              opacity: 1;
+            }
+
+            .card-hover {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    // Contacts
+    .contacts-container {
+      // background-attachment: scroll; -> Fix per iOS
+
+      .contacts-box {
+        margin-top: 5rem;
+        
+        .socials-container {
+          .facebook,
+          .instagram,
+          .newsletter {
+            flex-direction: column;
+            text-align: center;
+
+            h3 {
+              padding-left: 0;
+              padding-top: 0.5rem;
+            }
           }
         }
       }
