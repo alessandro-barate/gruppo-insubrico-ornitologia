@@ -36,12 +36,6 @@ export default {
           <div class="main-container">
             <!-- Logo box -->
             <div class="logo-box">
-              <!-- Text -->
-              <div class="logo-text">
-                <h1>Gruppo Insubrico di Ornitologia G I O</h1>
-              </div>
-              <!-- END text -->
-
               <!-- Logo container -->
               <div class="logo-container d-flex">
                 <img
@@ -50,23 +44,43 @@ export default {
                   alt="Logo del Gruppo Insubrico di Ornitologia"
                 />
               </div>
-              <!-- END container -->
+              <!-- END logo container -->
+
+              <!-- Text -->
+              <div class="logo-text">
+                <h1>Gruppo Insubrico di Ornitologia G I O</h1>
+              </div>
+              <!-- END text -->
             </div>
             <!-- END logo box -->
 
             <!-- Details section -->
             <div class="details-container">
+              <!-- Copyright container -->
+              <div class="copyright-container">
+                <p>
+                  Gruppo Insubrico di Ornitologia
+                </p>
+                <p>&copy; 2014</p>
+              </div>
+              <!-- END copyright container -->
+
+              <!-- First column -->
               <div class="details-column">
                 <h3 class="uppercase">contatti</h3>
                 <p>
                   <a href="" @click.prevent="openMail">Scrivici una mail</a>
                 </p>
-                <p>ODV - RUNTS 89826 del 07.11.2022</p>
+                <p>
+                  <a href="https://maps.app.goo.gl/eLrT1GPGxuw4QmLeA"
+                    target="_blank">Dove siamo</a>
+                </p>
                 <p>Codice Fiscale</p>
+                <p>ODV - RUNTS 89826 del 07.11.2022</p>
               </div>
+              <!-- END first column -->
 
-              <hr class="first-space">
-
+              <!-- Second column -->
               <div class="details-column">
                 <h3 class="uppercase">il gruppo</h3>
                 <p>
@@ -85,11 +99,10 @@ export default {
                   >
                 </p>
               </div>
+              <!-- END second column -->
 
-              <hr class="second-space">
-
-
-              <div class="details-column">
+              <!-- Third column -->
+              <!-- <div class="details-column">
                 <h3 class="uppercase">dove siamo</h3>
                 <div class="map-icon">
                   <a
@@ -102,18 +115,10 @@ export default {
                     />
                   </a>
                 </div>
-              </div>
+              </div> -->
+              <!-- END third column -->
             </div>
             <!-- END details section -->
-
-            <!-- Copyright container -->
-            <div class="copyright-container">
-              <p>
-                &copy; 2014 Gruppo Insubrico di Ornitologia - Tutti i diritti
-                riservati
-              </p>
-            </div>
-            <!-- END copyright container -->
           </div>
         </div>
       </div>
@@ -124,47 +129,59 @@ export default {
 <style scoped lang="scss">
 .col {
   width: 100%;
-  padding-top: 1rem;
-  padding-bottom: 4rem;
   background-size: cover;
   background-image: url(../assets/images/footer-image.jpg);
 
+  .main-container {
+    padding-top: 3rem;
+    background-color: rgba(128, 128, 128, 0.9);
+  }
+
   .logo-box {
+    display: flex;
     width: 100%;
     padding: 2rem;
 
     .logo-container {
       width: 100%;
       justify-content: center;
+
+      img {
+        width: 35%;
+      }
     }
 
-    img {
-      width: 25%;
+    .logo-text {
+      width: 100%;
+      padding: 3rem;
+      text-align: center;
     }
-  }
-
-  .logo-text {
-    width: 100%;
-    padding: 3rem;
-    text-align: center;
   }
 
   .details-container {
     display: flex;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
-    margin-bottom: 3rem;
     padding-bottom: 3rem;
     border-radius: 0.5rem;
-    background-color: rgba(128, 128, 128, 0.9);
 
-    hr {
-      display: none;
+    .copyright-container {
+      width: 30%;
+      font-size: 1.1rem;
+      padding-top: 6rem;
+      padding-left: 2.5rem;
+
+      & p:last-child {
+        font-size: 2rem;
+        padding-top: 1rem;
+      }
     }
 
     .details-column {
+      margin-top: 3rem;
       text-align: center;
       width: calc(100% / 3);
+      border-top: 1px solid black;
 
       h3 {
         letter-spacing: 0.4rem;
@@ -188,24 +205,20 @@ export default {
         }
       }
 
-      .map-icon {
-        width: 100%;
-        margin-bottom: 1rem;
+      // .map-icon {
+      //   width: 100%;
+      //   margin-bottom: 1rem;
 
-        img {
-          width: 20%;
-          transition: transform 0.5s ease-in-out;
+      //   img {
+      //     width: 20%;
+      //     transition: transform 0.5s ease-in-out;
 
-          &:hover {
-            transform: scale(1.2);
-          }
-        }
-      }
+      //     &:hover {
+      //       transform: scale(1.2);
+      //     }
+      //   }
+      // }
     }
-  }
-
-  .copyright-container {
-    text-align: center;
   }
 }
 
@@ -233,6 +246,10 @@ export default {
 
   .col .main-container {
     .logo-box {
+      .logo-container {
+        display: none;
+      }
+
       .logo-text h1{
         font-size: 3.2rem;
       }
@@ -241,23 +258,6 @@ export default {
     .details-container {
       width: 90%;
       display: block;
-
-      hr {
-        display: block;
-        border: none;
-        position: relative;
-        border-bottom: 1px solid black;
-      }
-
-      .first-space {
-        width: 30%;
-        left: 20%;
-      }
-
-      .second-space {
-        width: 20%;
-        left: 60%;
-      }
 
       .details-column {
         width: 100%;

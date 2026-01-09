@@ -339,7 +339,7 @@ export default {
           margin: 0 auto;
 
           img {
-            width: 100%;
+            width: 80%;
             padding-top: 1rem;
           }
         }
