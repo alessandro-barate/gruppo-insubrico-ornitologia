@@ -159,3 +159,15 @@ BEFORE AND AFTER EFFECTS
   background: #ffffff;
   clip-path: polygon(0 0, 100% 0, 0 100%);
 }
+
+
+// ==========================================
+// MEDIA QUERIES - MOBILE
+// ==========================================
+.title-section::after,
+.subscription-container::before,
+.subscription-container::after,
+.contacts-container::before
+ {
+  height: 90px;
+}

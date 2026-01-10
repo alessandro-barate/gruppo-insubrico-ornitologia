@@ -1021,6 +1021,8 @@ export default {
 @media (max-width: 576px) {
   .col {
     .title-section {
+      height: 80vh;
+
       .logo-section {
         .logo-container {
           .overlay-2 {
@@ -1035,15 +1037,32 @@ export default {
     }
 
     // News
-    .news-list-container {
-      --news-card-size: min(300px, 80vw);
-    
-      .news-list-box {
-        grid-template-columns: var(--news-card-size);
-        gap: 1rem;
+    .news-section {
+      .news-container {
+        .sections-title {
+          .title-2 {
+            padding-left: clamp(2rem, 16vw, 12rem);
+          }
+        }
 
-        .single-news {
-          aspect-ratio: 1 / 1;
+        .news-description {
+          hr {
+            width: 100%;
+            margin-left: 0;
+          }
+        }
+      }
+
+      .news-list-container {
+        --news-card-size: min(300px, 80vw);
+    
+        .news-list-box {
+          grid-template-columns: var(--news-card-size);
+          gap: 3rem;
+
+          .single-news {
+            aspect-ratio: 1 / 1;
+          }
         }
       }
     }
@@ -1051,9 +1070,13 @@ export default {
     // Subscription
     .subscription-container {
       // background-attachment: scroll; -> Fix per iOS
+      hr {
+        display: none;
+      }
 
       .sections-title {
         margin-top: 3rem;
+        margin-bottom: 4rem;
       }
 
       .subscription-box {
