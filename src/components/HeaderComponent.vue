@@ -772,17 +772,8 @@ export default {
             li {
               width: 85%;
               margin-bottom: 0.25rem;
+              // Tutte le voci centrate in mobile
               justify-content: center !important;
-              
-              // Dispari: leggero offset a sinistra
-              &:nth-child(odd) {
-                transform: translateX(-10%);
-              }
-              
-              // Pari: leggero offset a destra
-              &:nth-child(even) {
-                transform: translateX(10%);
-              }
 
               a {
                 font-size: clamp(1.8rem, 10vw, 2.5rem);
@@ -790,6 +781,18 @@ export default {
                 &::before {
                   font-size: 0.65rem;
                 }
+              }
+              
+              // Dispari: numero a sinistra
+              &:nth-child(odd) a::before {
+                right: calc(100% + 0.5rem);
+                left: auto;
+              }
+              
+              // Pari: numero a destra
+              &:nth-child(even) a::before {
+                left: calc(100% + 0.5rem);
+                right: auto;
               }
             }
           }

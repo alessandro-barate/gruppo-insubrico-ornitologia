@@ -340,7 +340,6 @@ export default {
 
           img {
             width: 80%;
-            padding-top: 1rem;
           }
         }
       }
