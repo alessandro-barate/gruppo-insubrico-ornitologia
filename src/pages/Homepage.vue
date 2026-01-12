@@ -244,7 +244,7 @@ export default {
                 <h2 class="text-5">newsletter</h2>
               </div>
             </div>
-            <div class="socials-container d-flex">
+            <div class="socials-container">
 
               <!-- Facebook -->
               <div class="facebook">
@@ -261,7 +261,7 @@ export default {
               </div>
               <!-- END Facebook -->
 
-              <hr class="space-1" />
+              <hr class="space" />
 
               <!-- Instagram -->
               <div class="instagram">
@@ -278,7 +278,7 @@ export default {
               </div>
               <!-- END Instagram -->
 
-              <hr class="space-2" />
+              <hr class="space" />
 
               <!-- Newsletter -->
               <div class="newsletter">
@@ -292,7 +292,7 @@ export default {
               </div>
               <!-- END newsletter -->
 
-              <hr class="space-3" />
+              <hr class="space" />
 
               <!-- Change -->
               <div class="change">
@@ -305,7 +305,7 @@ export default {
                     alt="Change.org logo e link"
                   />
                 </a>
-                <h3>Vedi le nostre campagne o lanciane una</h3>
+                <h3>Sostieni le nostre campagne o lanciane una</h3>
               </div>
               <!-- END Change -->
             </div>
@@ -861,26 +861,13 @@ export default {
 
     .socials-container {
       width: 40%;
+      display: flex;
       flex-direction: column;
 
-      .space-1 {
+      .space {
         border: none;
-        width: clamp(80px, 15vw, 150px);
-        margin-left: clamp(5rem, 19vw, 19rem);
-        border-bottom: 2px solid black;
-      }
-
-      .space-2 {
-        border: none;
-        width: clamp(120px, 20vw, 250px);
-        margin-left: clamp(2rem, 6vw, 6rem);
-        border-bottom: 2px solid black;
-      }
-
-      .space-3 {
-        border: none;
-        width: clamp(120px, 20vw, 100px);
-        margin-right: clamp(2rem, 6vw, 6rem);
+        width: 63%;
+        margin-left: clamp(2rem, 12vw, 12rem);
         border-bottom: 2px solid black;
       }
 
@@ -943,7 +930,19 @@ export default {
   // Jumbo section
   .col {
     .title-section {
-      height: 110vh;
+      height: 80vh;
+
+      .overlay {
+        .logo-section {
+          .logo-container {
+            .overlay-2 {
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
     }
   }
   // END jumbo section
@@ -978,6 +977,24 @@ export default {
   }
   // END news section
 
+  // Subscription
+  .subscription-container {
+      // background-attachment: scroll; -> Fix per iOS
+      hr {
+        display: none;
+      }
+
+      .sections-title {
+        margin-top: 3rem;
+        margin-bottom: 4rem;
+      }
+
+      .subscription-box {
+        width: 90%;
+        margin-bottom: 4rem;
+      }
+  }
+
   // Activities section
   .activities-container {
     flex-direction: column-reverse;
@@ -989,15 +1006,27 @@ export default {
     .activities-box {
       width: 100%;
       margin-top: 2rem;
+
+      .activities-list {
+        .activity-card {
+          .card-default:hover {
+              opacity: 1;
+            }
+
+            .card-hover {
+              display: none;
+            }
+        }
+      }
     }
 
     .activities-title {
       width: 100%;
       text-align: center;
 
-      .title-1,
       .title-2 {
-        text-align: center;
+        left: 5rem;
+        position: relative;
       }
     }
   }
@@ -1006,6 +1035,7 @@ export default {
   // Contacts section
   .contacts-container {
     .contacts-box {
+      margin-top: 5rem;
       flex-direction: column;
 
       .contacts-text {
@@ -1029,22 +1059,40 @@ export default {
         width: 100%;
         align-items: center;
 
-        .space-1,
-        .space-2,
-        .space-3 {
+        .space{
+          width: 65%;
           margin-left: auto;
           margin-right: auto;
+        }
+
+        .facebook a {
+          width: 33%;
+        }
+
+        .instagram a {
+          width: 38%;
+        }
+
+        .newsletter a {
+          width: 27%;
+        }
+
+        .space {
+          width: 75%;
         }
 
         .facebook,
         .instagram,
         .newsletter,
         .change {
-          justify-content: center;
           padding-left: 0;
-          padding: 1rem 0;
+          padding: 2rem 0;
+          flex-direction: column;
+          text-align: center;
 
           h3 {
+            font-size: 1.3rem;
+            padding-top: 1rem;
             padding-left: 1.5rem;
           }
         }
@@ -1061,7 +1109,6 @@ export default {
   .col {
     // Jumbo
     .title-section {
-      height: 80vh;
 
       .logo-section {
         .logo-container {
@@ -1107,24 +1154,6 @@ export default {
       }
     }
 
-    // Subscription
-    .subscription-container {
-      // background-attachment: scroll; -> Fix per iOS
-      hr {
-        display: none;
-      }
-
-      .sections-title {
-        margin-top: 3rem;
-        margin-bottom: 4rem;
-      }
-
-      .subscription-box {
-        width: 90%;
-        margin-bottom: 4rem;
-      }
-    }
-
     // Activities
     .activities-container {
       .activities-box {
@@ -1135,14 +1164,6 @@ export default {
           .activity-card {
             width: 70%;
             margin: 0 auto;
-
-            .card-default:hover {
-              opacity: 1;
-            }
-
-            .card-hover {
-              display: none;
-            }
           }
         }
       }
@@ -1153,38 +1174,20 @@ export default {
       // background-attachment: scroll; -> Fix per iOS
 
       .contacts-box {
-        margin-top: 5rem;
-        
         .socials-container {
           .facebook,
           .instagram,
           .newsletter,
           .change {
-            flex-direction: column;
-            text-align: center;
-
+            
             h3 {
               padding-left: 0;
               padding-top: 0.5rem;
             }
           }
 
-          .facebook a {
-            width: 33%;
-          }
-
-          .instagram a {
-            width: 38%;
-          }
-
-          .newsletter a {
-            width: 27%;
-          }
-
-          .space-1,
-          .space-2,
-          .space-3 {
-            width: 50%;
+          .space {
+            width: 70%;
           }
         }
       }

@@ -48,7 +48,7 @@ export default {
 
               <!-- Text -->
               <div class="logo-text">
-                <h1>Gruppo Insubrico di Ornitologia G I O</h1>
+                <h1>Gruppo Insubrico di Ornitologia</h1>
               </div>
               <!-- END text -->
             </div>
@@ -65,42 +65,45 @@ export default {
               </div>
               <!-- END copyright container -->
 
-              <!-- First column -->
-              <div class="details-column">
-                <h3 class="uppercase">contatti</h3>
-                <p>
-                  <a href="" @click.prevent="openMail">Scrivici una mail</a>
-                </p>
-                <p>
-                  <a href="https://maps.app.goo.gl/eLrT1GPGxuw4QmLeA"
-                    target="_blank">Dove siamo</a>
-                </p>
-                <p>Codice Fiscale</p>
-                <p>ODV - RUNTS 89826 del 07.11.2022</p>
-              </div>
-              <!-- END first column -->
+              <!-- Footer details columns wrapper -->
+              <div class="footer-details">
+                <!-- First column -->
+                <div class="details-column">
+                  <h3 class="uppercase">contatti</h3>
+                  <p>
+                    <a href="" @click.prevent="openMail">Scrivici una mail</a>
+                  </p>
+                  <p>
+                    <a href="https://maps.app.goo.gl/eLrT1GPGxuw4QmLeA"
+                      target="_blank">Dove siamo</a>
+                  </p>
+                  <p>Codice Fiscale</p>
+                  <p>ODV - RUNTS 89826 del 07.11.2022</p>
+                </div>
+                <!-- END first column -->
 
-              <!-- Second column -->
-              <div class="details-column">
-                <h3 class="uppercase">il gruppo</h3>
-                <p>
-                  <a href="/documents/atto-costitutivo.pdf" target="_blank"
-                    >Atto Costitutivo</a
-                  >
-                </p>
-                <p>
-                  <a href="/documents/statuto.pdf" target="_blank">Statuto</a>
-                </p>
-                <p>
-                  <a
-                    href="/documents/iscrizione-registro-volontariato.pdf"
-                    target="_blank"
-                    >Iscrizione Registro Volontariato</a
-                  >
-                </p>
+                <!-- Second column -->
+                <div class="details-column">
+                  <h3 class="uppercase">il gruppo</h3>
+                  <p>
+                    <a href="/documents/atto-costitutivo.pdf" target="_blank"
+                      >Atto Costitutivo</a
+                    >
+                  </p>
+                  <p>
+                    <a href="/documents/statuto.pdf" target="_blank">Statuto</a>
+                  </p>
+                  <p>
+                    <a
+                      href="/documents/iscrizione-registro-volontariato.pdf"
+                      target="_blank"
+                      >Iscrizione Registro Volontariato</a
+                    >
+                  </p>
+                </div>
+                <!-- END second column -->
               </div>
-              <!-- END second column -->
-
+              <!-- END footer details columns wrapper -->
             </div>
             <!-- END details section -->
           </div>
@@ -165,10 +168,15 @@ export default {
         }
       }
 
+      .footer-details {
+        display: flex;
+        width: 70%;
+      }
+
       .details-column {
         margin-top: 3rem;
         text-align: center;
-        width: calc(100% / 3);
+        width: 50%;
         border-top: 1px solid black;
 
         h3 {
@@ -201,7 +209,44 @@ export default {
 // MEDIA QUERIES - TABLET
 // ==========================================
 @media (max-width: 992px) {
+  .col .main-container {
 
+    .logo-box {
+      .logo-container {
+        img {
+          width: 64%;
+        }
+      }
+
+      .logo-text h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .details-container {
+      flex-direction: column;
+      align-items: center;
+
+      .copyright-container {
+        order: 1;
+        width: 100%;
+        padding: 2rem 0 0 0;
+        margin-top: 2rem;
+        text-align: center;
+        border-top: 1px solid black;
+      }
+
+      .footer-details {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+      }
+
+      .details-column {
+        width: 45%;
+      }
+    }
+  }
 }
 
 
@@ -243,6 +288,11 @@ export default {
         padding-left: 0;
         text-align: center;
         border-top: 1px solid black;
+      }
+
+      .footer-details {
+        flex-direction: column;
+        width: 100%;
       }
 
       .details-column {

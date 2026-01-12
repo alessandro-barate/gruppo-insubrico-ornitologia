@@ -107,7 +107,7 @@ button {
 
 #cookies-button {
   left: 2%;
-  bottom: 2rem;
+  bottom: 3rem;
 
   img {
     width: 2em;
@@ -124,20 +124,24 @@ button {
   bottom: 2.9rem;
 
   img {
-    width: 2.08em;
+    width: 2rem;
   }
 }
 
 /* Media queries */
 /* Mobile layout */
 @media (max-width: 936px) {
-  #up-button {
-    right: 7px;
-    bottom: 53px;
+  button:hover {
+    transform: none;
+  }
 
-    button:hover {
-      transform: none;
-    }
+  #cookies-button {
+    bottom: 2.7rem;
+  }
+
+  #up-button {
+    right: 20px;
+    bottom: 53px;
   }
 }
 </style>
