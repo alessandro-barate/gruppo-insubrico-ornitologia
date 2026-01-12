@@ -346,7 +346,7 @@ export default {
   .title-section {
     position: relative;
     width: 100%;
-    height: 160vh;
+    height: 140vh;
     overflow: hidden;
 
     .logo-section {
@@ -931,7 +931,7 @@ export default {
   // Jumbo section
   .col {
     .title-section {
-      height: 80vh;
+      height: 110vh;
 
       .overlay {
         .logo-section {
@@ -949,7 +949,8 @@ export default {
   // END jumbo section
 
   // News section
-  .news-container {
+  .news-section {
+    .news-container {
     flex-direction: column;
     align-items: center;
 
@@ -963,7 +964,7 @@ export default {
       }
 
       .title-2 {
-        padding-left: 0;
+        padding-left: clamp(2rem, 16vw, 12rem);
         text-align: center;
       }
     }
@@ -972,9 +973,11 @@ export default {
       width: 100%;
       
       hr {
+        width: 60%;
         margin: 2rem auto;
       }
     }
+  }
   }
   // END news section
 
@@ -1110,6 +1113,7 @@ export default {
   .col {
     // Jumbo
     .title-section {
+      height: 80vh;
 
       .logo-section {
         .logo-container {
@@ -1127,16 +1131,9 @@ export default {
     // News
     .news-section {
       .news-container {
-        .sections-title {
-          .title-2 {
-            padding-left: clamp(2rem, 16vw, 12rem);
-          }
-        }
-
         .news-description {
           hr {
-            width: 100%;
-            margin-left: 0;
+            width: 50%;
           }
         }
       }

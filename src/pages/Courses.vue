@@ -1,7 +1,7 @@
 <script></script>
 <template>
     <div>
-        <h1>PROGETTI</h1>
+        <h1>CORSI</h1>
     </div>
 </template>
 <style scoped lang="scss">
