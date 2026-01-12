@@ -776,6 +776,7 @@ export default {
 .contacts-container {
   width: 100%;
   position: relative;
+  padding-bottom: 3rem;
   background-image: linear-gradient(
       90deg,
       rgba(0, 119, 255, 0.85),
@@ -866,7 +867,7 @@ export default {
 
       .space {
         border: none;
-        width: 63%;
+        width: 70%;
         margin-left: clamp(2rem, 12vw, 12rem);
         border-bottom: 2px solid black;
       }
