@@ -245,6 +245,8 @@ export default {
               </div>
             </div>
             <div class="socials-container d-flex">
+
+              <!-- Facebook -->
               <div class="facebook">
                 <a
                   href="https://www.facebook.com/GruppoInsubricoDiOrnitologia"
@@ -257,9 +259,11 @@ export default {
                 </a>
                 <h3>Aggiungigi su Facebook</h3>
               </div>
+              <!-- END Facebook -->
 
               <hr class="space-1" />
 
+              <!-- Instagram -->
               <div class="instagram">
                 <a
                   href="https://www.instagram.com/gruppoinsubricoornitologia/"
@@ -272,9 +276,11 @@ export default {
                 </a>
                 <h3>Seguici su Instagram</h3>
               </div>
+              <!-- END Instagram -->
 
               <hr class="space-2" />
 
+              <!-- Newsletter -->
               <div class="newsletter">
                 <a href="">
                   <img
@@ -284,6 +290,24 @@ export default {
                 </a>
                 <h3>Iscriviti alla nostra newsletter</h3>
               </div>
+              <!-- END newsletter -->
+
+              <hr class="space-3" />
+
+              <!-- Change -->
+              <div class="change">
+                <a
+                  href="https://www.change.org/"
+                  target="_blank"
+                >
+                  <img
+                    src="../assets/images/change.svg"
+                    alt="Change.org logo e link"
+                  />
+                </a>
+                <h3>Vedi le nostre campagne o lanciane una</h3>
+              </div>
+              <!-- END Change -->
             </div>
           </div>
         </section>
@@ -853,9 +877,17 @@ export default {
         border-bottom: 2px solid black;
       }
 
+      .space-3 {
+        border: none;
+        width: clamp(120px, 20vw, 100px);
+        margin-right: clamp(2rem, 6vw, 6rem);
+        border-bottom: 2px solid black;
+      }
+
       .facebook,
       .instagram,
-      .newsletter {
+      .newsletter,
+      .change {
         display: flex;
         padding-left: clamp(1rem, 3vw, 3rem);
         align-items: center;
@@ -893,6 +925,11 @@ export default {
           padding-left: clamp(1rem, 4vw, 4rem);
           font-size: clamp(0.9rem, 2vw, 1.5rem);
         }
+      }
+
+      .change a {
+        width: clamp(50px, 20%, 100px);
+        padding: 8px 6px 4px 6px;
       }
     }
   }
@@ -993,14 +1030,16 @@ export default {
         align-items: center;
 
         .space-1,
-        .space-2 {
+        .space-2,
+        .space-3 {
           margin-left: auto;
           margin-right: auto;
         }
 
         .facebook,
         .instagram,
-        .newsletter {
+        .newsletter,
+        .change {
           justify-content: center;
           padding-left: 0;
           padding: 1rem 0;
@@ -1020,6 +1059,7 @@ export default {
 // ==========================================
 @media (max-width: 576px) {
   .col {
+    // Jumbo
     .title-section {
       height: 80vh;
 
@@ -1118,7 +1158,8 @@ export default {
         .socials-container {
           .facebook,
           .instagram,
-          .newsletter {
+          .newsletter,
+          .change {
             flex-direction: column;
             text-align: center;
 
@@ -1126,6 +1167,24 @@ export default {
               padding-left: 0;
               padding-top: 0.5rem;
             }
+          }
+
+          .facebook a {
+            width: 33%;
+          }
+
+          .instagram a {
+            width: 38%;
+          }
+
+          .newsletter a {
+            width: 27%;
+          }
+
+          .space-1,
+          .space-2,
+          .space-3 {
+            width: 50%;
           }
         }
       }

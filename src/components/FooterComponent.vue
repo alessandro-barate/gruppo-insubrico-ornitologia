@@ -101,22 +101,6 @@ export default {
               </div>
               <!-- END second column -->
 
-              <!-- Third column -->
-              <!-- <div class="details-column">
-                <h3 class="uppercase">dove siamo</h3>
-                <div class="map-icon">
-                  <a
-                    href="https://maps.app.goo.gl/eLrT1GPGxuw4QmLeA"
-                    target="_blank"
-                  >
-                    <img
-                      src="../assets/images/map-icon.svg"
-                      alt="Icona per aprire l'indirizzo in Google Maps"
-                    />
-                  </a>
-                </div>
-              </div> -->
-              <!-- END third column -->
             </div>
             <!-- END details section -->
           </div>
@@ -135,89 +119,80 @@ export default {
   .main-container {
     padding-top: 3rem;
     background-color: rgba(128, 128, 128, 0.9);
-  }
 
-  .logo-box {
-    display: flex;
-    width: 100%;
-    padding: 2rem;
-
-    .logo-container {
+    .logo-box {
+      display: flex;
       width: 100%;
-      justify-content: center;
+      padding: 2rem;
 
-      img {
-        width: 35%;
-      }
-    }
+      .logo-container {
+        width: 100%;
+        justify-content: center;
 
-    .logo-text {
-      width: 100%;
-      padding: 3rem;
-      text-align: center;
-    }
-  }
-
-  .details-container {
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    padding-bottom: 3rem;
-    border-radius: 0.5rem;
-
-    .copyright-container {
-      width: 30%;
-      font-size: 1.1rem;
-      padding-top: 6rem;
-      padding-left: 2.5rem;
-
-      & p:last-child {
-        font-size: 2rem;
-        padding-top: 1rem;
-      }
-    }
-
-    .details-column {
-      margin-top: 3rem;
-      text-align: center;
-      width: calc(100% / 3);
-      border-top: 1px solid black;
-
-      h3 {
-        letter-spacing: 0.4rem;
-        font-size: 1.5rem;
-        padding-top: 3rem;
-        margin-bottom: 4rem;
-        text-decoration: 2px solid black;
-      }
-
-      p {
-        margin-bottom: 1.5rem;
-      }
-
-      a {
-        transition: color 0.3s ease-in-out, text-decoration 0.6s ease-in-out;
-
-        &:hover {
-          color: bisque;
-          text-underline-offset: 0.4rem;
-          text-decoration: underline 2px solid bisque;
+        img {
+          width: 35%;
         }
       }
 
-      // .map-icon {
-      //   width: 100%;
-      //   margin-bottom: 1rem;
+      .logo-text {
+        width: 100%;
+        display: flex;
+        text-align: center;
+        align-items: center;
 
-      //   img {
-      //     width: 20%;
-      //     transition: transform 0.5s ease-in-out;
+        h1 {
+          font-size: 3.2rem;
+        }
+      }
+    }
 
-      //     &:hover {
-      //       transform: scale(1.2);
-      //     }
-      //   }
-      // }
+    .details-container {
+      display: flex;
+      width: 100%;
+      margin: 0 auto;
+      padding-bottom: 3rem;
+      border-radius: 0.5rem;
+
+      .copyright-container {
+        width: 30%;
+        font-size: 1.1rem;
+        padding-top: 6rem;
+        padding-left: 2.5rem;
+
+        & p:last-child {
+          font-size: 2rem;
+          padding-top: 1rem;
+        }
+      }
+
+      .details-column {
+        margin-top: 3rem;
+        text-align: center;
+        width: calc(100% / 3);
+        border-top: 1px solid black;
+
+        h3 {
+          letter-spacing: 0.4rem;
+          font-size: 1.5rem;
+          padding-top: 3rem;
+          margin-bottom: 4rem;
+          text-decoration: 2px solid black;
+        }
+
+        p {
+          margin-bottom: 1.5rem;
+        }
+
+        a {
+          transition: color 0.3s ease-in-out, text-decoration 0.6s ease-in-out;
+
+          &:hover {
+            color: bisque;
+            text-underline-offset: 0.4rem;
+            text-decoration: underline 2px solid bisque;
+          }
+        }
+      }
     }
   }
 }
@@ -251,7 +226,7 @@ export default {
       }
 
       .logo-text h1{
-        font-size: 3.2rem;
+        font-size: 2rem;
       }
     }
 
