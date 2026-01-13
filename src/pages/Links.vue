@@ -239,4 +239,25 @@ export default {
     }
   }
 }
+
+// ==========================================
+// MEDIA QUERIES - TABLET
+// ==========================================
+@media (max-width: 992px) {
+  .row {
+    .col {
+      .grid-container {
+        .grid-table {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// ==========================================
+// MEDIA QUERIES - MOBILE
+// ==========================================
+@media (max-width: 576px) {
+}
 </style>
