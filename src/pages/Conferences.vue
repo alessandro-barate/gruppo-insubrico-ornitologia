@@ -1,9 +1,7 @@
 <script></script>
 <template>
-    <div>
-        <h1>CONFERENZE</h1>
-    </div>
+  <div>
+    <h1>CONVEGNI</h1>
+  </div>
 </template>
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

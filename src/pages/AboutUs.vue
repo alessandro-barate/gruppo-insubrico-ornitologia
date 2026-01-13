@@ -312,6 +312,10 @@ const display = (section) => {
 </template>
 
 <style scoped lang="scss">
+button {
+  cursor: pointer;
+}
+
 .first-paragraph,
 .second-paragraph,
 .bottom-paragraph {
@@ -696,5 +700,19 @@ const display = (section) => {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+// ==========================================
+// MEDIA QUERIES - TABLET
+// ==========================================
+@media (max-width: 992px) {
+
+}
+
+// ==========================================
+// MEDIA QUERIES - MOBILE
+// ==========================================
+@media (max-width: 576px) {
+
 }
 </style>

@@ -70,7 +70,10 @@ export default {
             <div class="logo-section fade-wrapper-3">
               <div class="logo-container">
                 <div class="overlay-2">
-                  <img src="../assets/images/gio-logo.webp" alt="Logo del Gruppo Insubrico di Ornitologia" />
+                  <img
+                    src="../assets/images/gio-logo.webp"
+                    alt="Logo del Gruppo Insubrico di Ornitologia"
+                  />
                 </div>
               </div>
             </div>
@@ -158,7 +161,7 @@ export default {
                 <p>Ti aspettiamo!</p>
               </div>
               <div class="subscription-button button">
-                <router-link :to="{ name: 'AboutUs' }">
+                <router-link :to="{ name: 'Chi Siamo' }">
                   <button>Diventa socio</button>
                 </router-link>
               </div>
@@ -174,7 +177,7 @@ export default {
             <div class="activities-box">
               <div class="activities-list d-grid uppercase">
                 <router-link
-                  :to="{ name: 'Projects' }"
+                  :to="{ name: 'Progetti' }"
                   class="activity-card card-1 d-flex"
                 >
                   <div class="card-default d-flex">
@@ -187,7 +190,7 @@ export default {
                 </router-link>
 
                 <router-link
-                  :to="{ name: 'ScientificOutreach' }"
+                  :to="{ name: 'Divulgazione' }"
                   class="activity-card card-3 d-flex"
                 >
                   <div class="card-default d-flex">
@@ -200,7 +203,7 @@ export default {
                 </router-link>
 
                 <router-link
-                  :to="{ name: 'Publications' }"
+                  :to="{ name: 'Pubblicazioni' }"
                   class="activity-card card-5 d-flex"
                 >
                   <div class="card-default d-flex">
@@ -245,7 +248,6 @@ export default {
               </div>
             </div>
             <div class="socials-container">
-
               <!-- Facebook -->
               <div class="facebook">
                 <a
@@ -296,10 +298,7 @@ export default {
 
               <!-- Change -->
               <div class="change">
-                <a
-                  href="https://www.change.org/"
-                  target="_blank"
-                >
+                <a href="https://www.change.org/" target="_blank">
                   <img
                     src="../assets/images/change.svg"
                     alt="Change.org logo e link"
@@ -951,52 +950,52 @@ export default {
   // News section
   .news-section {
     .news-container {
-    flex-direction: column;
-    align-items: center;
+      flex-direction: column;
+      align-items: center;
 
-    .sections-title {
-      width: 100%;
-      text-align: center;
-
-      .title-1 {
-        padding-left: 0;
+      .sections-title {
+        width: 100%;
         text-align: center;
+
+        .title-1 {
+          padding-left: 0;
+          text-align: center;
+        }
+
+        .title-2 {
+          padding-left: clamp(2rem, 16vw, 12rem);
+          text-align: center;
+        }
       }
 
-      .title-2 {
-        padding-left: clamp(2rem, 16vw, 12rem);
-        text-align: center;
+      .news-description {
+        width: 100%;
+
+        hr {
+          width: 60%;
+          margin: 2rem auto;
+        }
       }
     }
-
-    .news-description {
-      width: 100%;
-      
-      hr {
-        width: 60%;
-        margin: 2rem auto;
-      }
-    }
-  }
   }
   // END news section
 
   // Subscription
   .subscription-container {
-      // background-attachment: scroll; -> Fix per iOS
-      hr {
-        display: none;
-      }
+    // background-attachment: scroll; -> Fix per iOS
+    hr {
+      display: none;
+    }
 
-      .sections-title {
-        margin-top: 3rem;
-        margin-bottom: 4rem;
-      }
+    .sections-title {
+      margin-top: 3rem;
+      margin-bottom: 4rem;
+    }
 
-      .subscription-box {
-        width: 90%;
-        margin-bottom: 4rem;
-      }
+    .subscription-box {
+      width: 90%;
+      margin-bottom: 4rem;
+    }
   }
 
   // Activities section
@@ -1014,12 +1013,12 @@ export default {
       .activities-list {
         .activity-card {
           .card-default:hover {
-              opacity: 1;
-            }
+            opacity: 1;
+          }
 
-            .card-hover {
-              display: none;
-            }
+          .card-hover {
+            display: none;
+          }
         }
       }
     }
@@ -1063,7 +1062,7 @@ export default {
         width: 100%;
         align-items: center;
 
-        .space{
+        .space {
           width: 65%;
           margin-left: auto;
           margin-right: auto;
@@ -1118,7 +1117,6 @@ export default {
       .logo-section {
         .logo-container {
           .overlay-2 {
-
             img {
               width: 100%;
               padding-top: 1rem;
@@ -1140,7 +1138,7 @@ export default {
 
       .news-list-container {
         --news-card-size: min(300px, 80vw);
-    
+
         .news-list-box {
           grid-template-columns: var(--news-card-size);
           gap: 3rem;
@@ -1177,7 +1175,6 @@ export default {
           .instagram,
           .newsletter,
           .change {
-            
             h3 {
               padding-left: 0;
               padding-top: 0.5rem;

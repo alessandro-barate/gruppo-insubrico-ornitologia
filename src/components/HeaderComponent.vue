@@ -48,7 +48,7 @@ export default {
         // Chiusura: aggiungi classe closing per animazione uscita
         listPage.classList.add("closing");
         listPage.classList.remove("visible");
-        
+
         // Rimuovi closing E nascondi il menu insieme
         setTimeout(() => {
           listPage.classList.remove("closing");
@@ -59,7 +59,7 @@ export default {
         listPage.style.visibility = "";
         listPage.classList.add("visible");
       }
-      
+
       bar2.classList.toggle("bar-active");
     },
 
@@ -71,18 +71,18 @@ export default {
       // Aggiungi classe closing per animazione uscita
       listPage.classList.add("closing");
       listPage.classList.remove("visible");
-      
+
       // Rimuovi closing E nascondi il menu, poi naviga
       setTimeout(() => {
         listPage.classList.remove("closing");
         listPage.style.visibility = "hidden";
-        
+
         // Naviga alla pagina dopo che l'animazione è finita (solo se routeName è definito)
         if (routeName) {
           this.$router.push({ name: routeName });
         }
       }, 500);
-      
+
       bar2.classList.remove("bar-active");
     },
 
@@ -132,50 +132,117 @@ export default {
               <!-- Close button top right -->
               <div class="close-button-container">
                 <button @click="closeMenu()">
-                  <img src="../assets/images/header-menu/close-button.svg" alt="">
+                  <img
+                    src="../assets/images/header-menu/close-button.svg"
+                    alt=""
+                  />
                 </button>
               </div>
 
               <!-- Main navigation links -->
               <ul class="nav-menu d-flex">
-                <li>    
-                  <router-link :to="{ name: 'Homepage' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('Homepage')" data-index="01">Home</a>
-                  </router-link>
-                </li>
-                <li>    
-                  <router-link :to="{ name: 'AboutUs' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('AboutUs')" data-index="02">Chi siamo</a>
-                  </router-link>
-                </li>
-                <li>    
-                  <router-link :to="{ name: 'Projects' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('Projects')" data-index="03">Progetti</a>
+                <li>
+                  <router-link
+                    :to="{ name: 'Homepage' }"
+                    custom
+                    v-slot="{ href }"
+                  >
+                    <a
+                      :href="href"
+                      @click.prevent="closeMenu('Homepage')"
+                      data-index="01"
+                      >Home</a
+                    >
                   </router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'ScientificOutreach' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('ScientificOutreach')" data-index="04">Divulgazione</a>
+                  <router-link
+                    :to="{ name: 'Chi Siamo' }"
+                    custom
+                    v-slot="{ href }"
+                  >
+                    <a
+                      :href="href"
+                      @click.prevent="closeMenu('Chi Siamo')"
+                      data-index="02"
+                      >Chi siamo</a
+                    >
                   </router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'Socials' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('Socials')" data-index="05">Social</a>
+                  <router-link
+                    :to="{ name: 'Progetti' }"
+                    custom
+                    v-slot="{ href }"
+                  >
+                    <a
+                      :href="href"
+                      @click.prevent="closeMenu('Progetti')"
+                      data-index="03"
+                      >Progetti</a
+                    >
                   </router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'Publications' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('Publications')" data-index="06">Pubblicazioni</a>
+                  <router-link
+                    :to="{ name: 'Divulgazione' }"
+                    custom
+                    v-slot="{ href }"
+                  >
+                    <a
+                      :href="href"
+                      @click.prevent="closeMenu('Divulgazione')"
+                      data-index="04"
+                      >Divulgazione</a
+                    >
+                  </router-link>
+                </li>
+                <li>
+                  <router-link
+                    :to="{ name: 'Socials' }"
+                    custom
+                    v-slot="{ href }"
+                  >
+                    <a
+                      :href="href"
+                      @click.prevent="closeMenu('Socials')"
+                      data-index="05"
+                      >Social</a
+                    >
+                  </router-link>
+                </li>
+                <li>
+                  <router-link
+                    :to="{ name: 'Pubblicazioni' }"
+                    custom
+                    v-slot="{ href }"
+                  >
+                    <a
+                      :href="href"
+                      @click.prevent="closeMenu('Pubblicazioni')"
+                      data-index="06"
+                      >Pubblicazioni</a
+                    >
                   </router-link>
                 </li>
                 <li>
                   <router-link :to="{ name: 'News' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('News')" data-index="07">News</a>
+                    <a
+                      :href="href"
+                      @click.prevent="closeMenu('News')"
+                      data-index="07"
+                      >News</a
+                    >
                   </router-link>
                 </li>
                 <li>
                   <router-link :to="{ name: 'Links' }" custom v-slot="{ href }">
-                    <a :href="href" @click.prevent="closeMenu('Links')" data-index="08">Link utili</a>
+                    <a
+                      :href="href"
+                      @click.prevent="closeMenu('Links')"
+                      data-index="08"
+                      >Link utili</a
+                    >
                   </router-link>
                 </li>
               </ul>
@@ -184,7 +251,10 @@ export default {
               <div class="menu-footer">
                 <div class="newsletter-section">
                   <form action="">
-                    <input type="email" placeholder="Iscriviti alla Newsletter">
+                    <input
+                      type="email"
+                      placeholder="Iscriviti alla Newsletter"
+                    />
                     <button type="submit" aria-label="Invia">
                       <span>→</span>
                     </button>
@@ -194,10 +264,16 @@ export default {
                   <span>Gruppo Insubrico di Ornitologia</span>
                 </div>
                 <div class="social-links">
-                  <a href="https://www.instagram.com/gruppoinsubricoornitologia/"
-                  target="_blank">Instagram</a>
-                  <a href="https://www.facebook.com/GruppoInsubricoDiOrnitologia"
-                  target="_blank">Facebook</a>
+                  <a
+                    href="https://www.instagram.com/gruppoinsubricoornitologia/"
+                    target="_blank"
+                    >Instagram</a
+                  >
+                  <a
+                    href="https://www.facebook.com/GruppoInsubricoDiOrnitologia"
+                    target="_blank"
+                    >Facebook</a
+                  >
                   <a href="#" @click.prevent="">Change</a>
                 </div>
               </div>
@@ -237,7 +313,6 @@ export default {
 </template>
 
 <style scoped lang="scss">
-
 // Sticky header
 .sticky-header {
   top: 0;
@@ -295,13 +370,14 @@ export default {
         top: 60px;
         left: 0;
         z-index: 110;
-        background: url(../assets/images/header-menu/cesena-desktop.webp) no-repeat center / cover;
+        background: url(../assets/images/header-menu/cesena-desktop.webp)
+          no-repeat center / cover;
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
 
         &::before {
-          content: '';
+          content: "";
           position: absolute;
           top: 0;
           left: 0;
@@ -316,7 +392,7 @@ export default {
           position: absolute;
           top: 2rem;
           left: 3rem;
-          
+
           span {
             color: #fff;
             font-size: 1.5rem;
@@ -367,12 +443,12 @@ export default {
             display: flex;
             margin-bottom: 0.15rem;
             opacity: 0;
-            
+
             // Dispari: allineati a sinistra
             &:nth-child(odd) {
               justify-content: flex-start;
             }
-            
+
             // Pari: allineati a destra
             &:nth-child(even) {
               justify-content: flex-end;
@@ -509,7 +585,7 @@ export default {
           .nav-menu li {
             opacity: 0;
             animation: slideInFromBottom 0.5s ease-out forwards;
-            
+
             @for $i from 1 through 8 {
               &:nth-child(#{$i}) {
                 animation-delay: #{0.1 + $i * 0.06}s;
@@ -532,7 +608,7 @@ export default {
           .nav-menu li {
             opacity: 1;
             animation: slideOutToTop 0.3s ease-in forwards;
-            
+
             @for $i from 1 through 8 {
               &:nth-child(#{$i}) {
                 animation-delay: #{(8 - $i) * 0.04}s;
@@ -695,7 +771,7 @@ export default {
 
         li {
           margin-bottom: 0;
-          
+
           a {
             font-size: clamp(1.4rem, 6vw, 2.5rem);
           }
@@ -748,7 +824,7 @@ export default {
           .menu-logo {
             top: 1rem;
             left: 1.5rem;
-            
+
             span {
               font-size: 1.2rem;
             }
@@ -777,18 +853,18 @@ export default {
 
               a {
                 font-size: clamp(1.8rem, 10vw, 2.5rem);
-                
+
                 &::before {
                   font-size: 0.65rem;
                 }
               }
-              
+
               // Dispari: numero a sinistra
               &:nth-child(odd) a::before {
                 right: calc(100% + 0.5rem);
                 left: auto;
               }
-              
+
               // Pari: numero a destra
               &:nth-child(even) a::before {
                 left: calc(100% + 0.5rem);

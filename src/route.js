@@ -3,13 +3,23 @@ import { siteMeta, metaDescriptions } from "./store";
 
 // Pages
 import AboutUs from "./pages/AboutUs.vue";
+import Bol from "./pages/Bol.vue";
+import Books from "./pages/Books.vue";
+import Conferences from "./pages/Conferences.vue";
+import Courses from "./pages/Courses.vue";
+import Events from "./pages/Events.vue";
 import Homepage from "./pages/Homepage.vue";
+import Iwc from "./pages/Iwc.vue";
 import Links from "./pages/Links.vue";
 import News from "./pages/News.vue";
+import PressReview from "./pages/PressReview.vue";
 import Projects from "./pages/Projects.vue";
 import Publications from "./pages/Publications.vue";
+import Report from "./pages/Report.vue";
 import ScientificOutreach from "./pages/ScientificOutreach.vue";
 import Socials from "./pages/Socials.vue";
+import Swifts from "./pages/Swifts.vue";
+import Zps from "./pages/Zps.vue";
 import { usePageTransition } from "./composables/usePageTransition";
 
 // Routes
@@ -20,19 +30,39 @@ const routes = [
     component: Homepage,
   },
   {
-    path: "/about-us",
-    name: "AboutUs",
+    path: "/chi-siamo",
+    name: "Chi Siamo",
     component: AboutUs,
   },
   {
-    path: "/scientific-outreach",
-    name: "ScientificOutreach",
-    component: ScientificOutreach,
+    path: "/pubblicazioni/bol",
+    name: "Bol",
+    component: Bol,
   },
   {
-    path: "/socials",
-    name: "Socials",
-    component: Socials,
+    path: "/pubblicazioni/quaderni",
+    name: "Quaderni",
+    component: Books,
+  },
+  {
+    path: "/divulgazione/convegni",
+    name: "Convegni",
+    component: Conferences,
+  },
+  {
+    path: "/divulgazione/corsi",
+    name: "Corsi",
+    component: Courses,
+  },
+  {
+    path: "/divulgazione/eventi",
+    name: "Eventi",
+    component: Events,
+  },
+  {
+    path: "/progetti/iwc",
+    name: "Iwc",
+    component: Iwc,
   },
   {
     path: "/links",
@@ -45,14 +75,44 @@ const routes = [
     component: News,
   },
   {
-    path: "/projects",
-    name: "Projects",
+    path: "/divulgazione/rassegna-stampa",
+    name: "Rassegna Stampa",
+    component: PressReview,
+  },
+  {
+    path: "/progetti",
+    name: "Progetti",
     component: Projects,
   },
   {
-    path: "/publications",
-    name: "Publications",
+    path: "/pubblicazioni",
+    name: "Pubblicazioni",
     component: Publications,
+  },
+  {
+    path: "/pubblicazioni/resoconto-ornitologico",
+    name: "Resoconto Ornitologico",
+    component: Report,
+  },
+  {
+    path: "/divulgazione",
+    name: "Divulgazione",
+    component: ScientificOutreach,
+  },
+  {
+    path: "/socials",
+    name: "Socials",
+    component: Socials,
+  },
+  {
+    path: "/progetti/rondoni",
+    name: "Rondoni",
+    component: Swifts,
+  },
+  {
+    path: "/progetti/zps",
+    name: "Zps",
+    component: Zps,
   },
 ];
 
