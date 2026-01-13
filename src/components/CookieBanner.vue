@@ -16,70 +16,98 @@ export default {
       cookies,
       showCookieBanner: false,
       consentValidityDays: 180,
+      storageAvailable: true,
     };
   },
 
   created() {
+    this.checkStorageAvailability();
     this.checkCookieConsent();
   },
 
   computed: {
     shouldShowBanner() {
-      // Shows the banner if forced from the outside or if the internal logic needs to
       return this.forceShow || this.showCookieBanner;
     },
   },
 
   methods: {
-    checkCookieConsent() {
-      // Check if the cookie privacy is valid
-      const cookieAccepted = localStorage.getItem("cookieAccepted");
-      const expiryDateStr = localStorage.getItem("cookieExpiryDate");
+    // Controlla se localStorage è disponibile
+    checkStorageAvailability() {
+      try {
+        const test = "__storage_test__";
+        localStorage.setItem(test, test);
+        localStorage.removeItem(test);
+        this.storageAvailable = true;
+      } catch (e) {
+        console.warn("localStorage non disponibile:", e);
+        this.storageAvailable = false;
+      }
+    },
 
-      // Check if the user has already accepted the cookie
-      if (cookieAccepted !== "true") {
+    checkCookieConsent() {
+      if (!this.storageAvailable) {
+        // Se localStorage non è disponibile, mostra il banner dopo il delay
+        setTimeout(() => {
+          this.showCookieBanner = true;
+        }, 6000);
+        return;
+      }
+
+      try {
+        const cookieAccepted = localStorage.getItem("cookieAccepted");
+        const expiryDateStr = localStorage.getItem("cookieExpiryDate");
+
+        if (cookieAccepted !== "true") {
+          setTimeout(() => {
+            this.showCookieBanner = true;
+          }, 6000);
+        }
+
+        if (!expiryDateStr) {
+          this.setConsentExpiry();
+          return;
+        }
+
+        const expiryDate = new Date(expiryDateStr);
+        const currentDate = new Date();
+
+        if (currentDate > expiryDate) {
+          console.log("Cookie consent expired. Showing the banner again");
+          this.showCookieBanner = true;
+        } else {
+          this.showCookieBanner = false;
+        }
+      } catch (error) {
+        console.warn("Errore accesso localStorage:", error);
         setTimeout(() => {
           this.showCookieBanner = true;
         }, 6000);
       }
-
-      // Check if the expiry date exists
-      if (!expiryDateStr) {
-        this.setConsentExpiry();
-        return;
-      }
-
-      // Check if the expiry date passed by
-      const expiryDate = new Date(expiryDateStr);
-      const currentDate = new Date();
-
-      if (currentDate > expiryDate) {
-        // If the consent expired, show the banner again
-        console.log("Cookie consent expired. Showing the banner again");
-        this.showCookieBanner = true;
-      } else {
-        this.showCookieBanner = false;
-      }
     },
 
-    // Function to set the consent's expiry date
     setConsentExpiry() {
-      const expiryDate = new Date();
-      // Add the days setted above to the actual date
-      expiryDate.setDate(expiryDate.getDate() + this.consentValidityDays);
-      // Save the expiry date into local storage
-      localStorage.setItem("cookieExpiryDate", expiryDate.toISOString());
+      if (!this.storageAvailable) return;
+
+      try {
+        const expiryDate = new Date();
+        expiryDate.setDate(expiryDate.getDate() + this.consentValidityDays);
+        localStorage.setItem("cookieExpiryDate", expiryDate.toISOString());
+      } catch (error) {
+        console.warn("Impossibile salvare expiry date:", error);
+      }
     },
 
-    // Function to accept the cookie
     acceptCookies() {
-      // Save the acceptance in localStorage
-      localStorage.setItem("cookieAccepted", "true");
-      // Set the expiry date
-      this.setConsentExpiry();
-      // Hide the banner
+      if (this.storageAvailable) {
+        try {
+          localStorage.setItem("cookieAccepted", "true");
+          this.setConsentExpiry();
+        } catch (error) {
+          console.warn("Impossibile salvare consenso:", error);
+        }
+      }
       this.showCookieBanner = false;
-      // Emit close event to close also the banner if forced by the button
       this.$emit("close");
     },
   },

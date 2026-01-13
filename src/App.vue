@@ -114,7 +114,9 @@ button {
   }
 
   p {
+    color: black;
     font-size: 0.7rem;
+    -webkit-text-fill-color: black;
   }
 }
 

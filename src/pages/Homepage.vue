@@ -1099,6 +1099,10 @@ export default {
             padding-left: 1.5rem;
           }
         }
+
+        .change a {
+          width: clamp(50px, 25%, 100px);
+        }
       }
     }
   }
@@ -1161,6 +1165,13 @@ export default {
             width: 70%;
             margin: 0 auto;
           }
+        }
+      }
+
+      .activities-title {
+        .title-2 {
+          padding-left: 0;
+          padding-right: 2rem;
         }
       }
     }

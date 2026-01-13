@@ -170,6 +170,16 @@ export default {
                   </router-link>
                 </li>
                 <li>
+                  <router-link :to="{ name: 'News' }" custom v-slot="{ href }">
+                    <a
+                      :href="href"
+                      @click.prevent="closeMenu('News')"
+                      data-index="03"
+                      >News</a
+                    >
+                  </router-link>
+                </li>
+                <li>
                   <router-link
                     :to="{ name: 'Progetti' }"
                     custom
@@ -178,7 +188,7 @@ export default {
                     <a
                       :href="href"
                       @click.prevent="closeMenu('Progetti')"
-                      data-index="03"
+                      data-index="04"
                       >Progetti</a
                     >
                   </router-link>
@@ -192,22 +202,8 @@ export default {
                     <a
                       :href="href"
                       @click.prevent="closeMenu('Divulgazione')"
-                      data-index="04"
-                      >Divulgazione</a
-                    >
-                  </router-link>
-                </li>
-                <li>
-                  <router-link
-                    :to="{ name: 'Socials' }"
-                    custom
-                    v-slot="{ href }"
-                  >
-                    <a
-                      :href="href"
-                      @click.prevent="closeMenu('Socials')"
                       data-index="05"
-                      >Social</a
+                      >Divulgazione</a
                     >
                   </router-link>
                 </li>
@@ -226,12 +222,16 @@ export default {
                   </router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'News' }" custom v-slot="{ href }">
+                  <router-link
+                    :to="{ name: 'Socials' }"
+                    custom
+                    v-slot="{ href }"
+                  >
                     <a
                       :href="href"
-                      @click.prevent="closeMenu('News')"
+                      @click.prevent="closeMenu('Socials')"
                       data-index="07"
-                      >News</a
+                      >Social</a
                     >
                   </router-link>
                 </li>
@@ -770,7 +770,7 @@ export default {
         padding: 4rem 2rem 0.5rem;
 
         li {
-          margin-bottom: 0;
+          margin-bottom: 1.5rem;
 
           a {
             font-size: clamp(1.4rem, 6vw, 2.5rem);
@@ -807,6 +807,20 @@ export default {
 // ==========================================
 // MEDIA QUERIES - MOBILE
 // ==========================================
+@media (max-width: 350px) {
+  .container {
+    .col {
+      nav {
+        .list-page {
+          .nav-menu {
+            margin-top: 3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 576px) {
   .container {
     .col {
@@ -843,7 +857,6 @@ export default {
           .nav-menu {
             padding: 0;
             justify-content: center;
-            padding-top: 5rem;
 
             li {
               width: 85%;
